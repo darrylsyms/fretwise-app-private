@@ -1,0 +1,2843 @@
+{
+    "smallText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 12.24,
+        "color": "#000000"
+    },
+    "photosSegmentFilterWrapper": {
+        "backgroundColor": "#f14b4b",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "height": 54.746,
+        "borderBottomWidth": 0.3333333333333333,
+        "borderBottomColor": "#b7b7b7"
+    },
+    "photosSegmentFilterInner": {
+        "width": 341,
+        "marginTop": 10,
+        "marginBottom": 20
+    },
+    "groupInviteMessageText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#000000"
+    },
+    "developmentSessionTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "emailInvitesRevokeButtonText": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#FF3B30"
+    },
+    "emailInvitesHeader": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 20.4,
+        "color": "#000000"
+    },
+    "radio": {
+        "height": 25,
+        "width": 25,
+        "borderRadius": 12.5,
+        "borderWidth": 1.5,
+        "borderColor": "#C3C5CA"
+    },
+    "activeRadio": {
+        "height": 25,
+        "width": 25,
+        "borderRadius": 12.5,
+        "borderWidth": 8,
+        "borderColor": "#f24b4b"
+    },
+    "privacySettingsHeader": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#000000"
+    },
+    "privacySettingsItemText": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "headerRightButton": {
+        "flexDirection": "row",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "paddingHorizontal": 14,
+        "borderRadius": 14,
+        "backgroundColor": "#ffffff",
+        "minWidth": 63,
+        "height": 28
+    },
+    "headerRightButtonText": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#f14b4b"
+    },
+    "helperText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98"
+    },
+    "reportRadios": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "reportHeaderTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 20.4,
+        "color": "#000000",
+        "width": 200,
+        "textAlign": "center"
+    },
+    "signUpTitle": {
+        "marginBottom": 60,
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 28.56,
+        "color": "#000000"
+    },
+    "nativeConfirmText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#f24b4b",
+        "paddingTop": 1,
+        "paddingRight": 2
+    },
+    "nativeCancelText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "rgba(0,0,0,0.33)",
+        "paddingTop": 1,
+        "paddingRight": 2
+    },
+    "searchBarText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000",
+        "flex": 1,
+        "paddingTop": 0,
+        "paddingBottom": 0
+    },
+    "formLabel": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 20.4,
+        "color": "#000000"
+    },
+    "formSubLabel": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "formItemContainer": {
+        "paddingBottom": 32
+    },
+    "formInput": {
+        "paddingHorizontal": 16,
+        "minHeight": 50,
+        "borderRadius": 10,
+        "borderColor": "#95A0AC",
+        "backgroundColor": "#f6f6f8"
+    },
+    "formInputText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "formTextArea": {
+        "minHeight": 150,
+        "paddingTop": 12
+    },
+    "formDropdown": {
+        "borderRadius": 10,
+        "minHeight": 48,
+        "paddingHorizontal": 16,
+        "backgroundColor": "#f6f6f8",
+        "borderBottomWidth": 0
+    },
+    "formCheckboxOuter": {
+        "paddingLeft": 16
+    },
+    "formCheckboxInner": {
+        "borderTopColor": "#c6c6c8",
+        "paddingRight": 16,
+        "minHeight": 48
+    },
+    "selectContainer": {
+        "backgroundColor": "#f6f6f8",
+        "borderRadius": 10
+    },
+    "selectItemOuter": {
+        "paddingLeft": 16
+    },
+    "selectItemInner": {
+        "borderTopColor": "#c6c6c8",
+        "paddingRight": 16,
+        "minHeight": 48
+    },
+    "nativeAccessoryText": {
+        "color": "#f24b4b"
+    },
+    "repeaterButtonText": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#f24b4b"
+    },
+    "viewAsRestoreHeaderTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3
+    },
+    "viewAsRestoreHeaderUser": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 15.3
+    },
+    "viewAsRestoreTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3
+    },
+    "viewAsRestoreUser": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 15.3
+    },
+    "pointsTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#000000"
+    },
+    "pointsSubTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#838A98"
+    },
+    "achievementTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "achievementSubtitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98"
+    },
+    "achievementContent": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "achievementSheetInnerContent": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98"
+    },
+    "rankTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 19.38,
+        "color": "#000000"
+    },
+    "rankDesc": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98"
+    },
+    "profileCoverEditTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 19.38,
+        "color": "#000000"
+    },
+    "profileCoverEditDesc": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#838A98"
+    },
+    "xProfileNicename": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.5656,
+        "color": "#000000"
+    },
+    "xProfileJoined": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#838A98"
+    },
+    "xProfileTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#000000"
+    },
+    "xProfileCount": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "xProfileCountTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98"
+    },
+    "xProfileSectionText": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#000000"
+    },
+    "xProfileItemTitle": [
+        {
+            "fontFamily": "Nunito-SemiBold",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "fontSize": 13.26,
+            "color": "#000000"
+        },
+        {
+            "fontSize": 18,
+            "paddingBottom": 10
+        }
+    ],
+    "xProfileItemValue": [
+        {
+            "flexShrink": 1,
+            "fontFamily": "Nunito-Regular",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "fontSize": 20.4,
+            "color": "#000000"
+        },
+        {
+            "size": 15
+        }
+    ],
+    "xProfileItemLink": {
+        "flexShrink": 1,
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 20.4,
+        "color": "#f24b4b"
+    },
+    "xProfileItemTextArea": [
+        {
+            "fontFamily": "Nunito-Regular",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "fontSize": 20.4,
+            "color": "#000000",
+            "flexShrink": 1
+        },
+        {
+            "size": 14
+        }
+    ],
+    "quizTextInput": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "quizQuestionText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "courseHeaderTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 27.54,
+        "color": "#000000"
+    },
+    "courseHeaderSubTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98"
+    },
+    "activityPostInText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#000000"
+    },
+    "parentGroupSubTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#737679"
+    },
+    "parentGroupTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "textHeaderTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 28.56,
+        "color": "#000000"
+    },
+    "textHeaderMeta": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#737679"
+    },
+    "textHeaderShortContent": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "textHeaderActionButton": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 12.24,
+        "color": "#f24b4b"
+    },
+    "textSingleScreenTab": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "textGroupBreadCrumb": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#737679"
+    },
+    "textItemSubtitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#737679"
+    },
+    "viewAsSwitchButton": {
+        "backgroundColor": "#edeef2"
+    },
+    "viewAsSwitchButtonLabel": {
+        "color": "#F24B4B",
+        "fontWeight": "600"
+    },
+    "loadMoreButton": {
+        "padding": 15,
+        "justifyContent": "center",
+        "flexDirection": "row",
+        "alignItems": "center",
+        "backgroundColor": "#f24b4b",
+        "borderRadius": 20,
+        "marginHorizontal": 17,
+        "marginTop": 20
+    },
+    "loadMoreButtonText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#ffffff",
+        "backgroundColor": "transparent"
+    },
+    "shadow": {
+        "shadowOffset": {
+            "width": 0,
+            "height": 0
+        },
+        "shadowRadius": 3,
+        "shadowColor": "#000000",
+        "shadowOpacity": 0.15,
+        "elevation": 1,
+        "zIndex": 1
+    },
+    "shadowBelow": {
+        "shadowOffset": {
+            "width": 0,
+            "height": 2
+        },
+        "shadowRadius": 1,
+        "shadowColor": "#000000",
+        "shadowOpacity": 0.12,
+        "elevation": 1,
+        "zIndex": 1
+    },
+    "container": {
+        "flex": 1,
+        "backgroundColor": "#ffffff"
+    },
+    "title": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 18.36,
+        "color": "#000000"
+    },
+    "heading": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "boldText": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "semiboldText": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "text": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "desc": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#737679"
+    },
+    "textAlt": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#000000"
+    },
+    "textAltSemi": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#000000"
+    },
+    "textMeta": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#838A98"
+    },
+    "textMetaSemiBold": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#838A98"
+    },
+    "xProfileSubtitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#000000"
+    },
+    "regularText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000",
+        "backgroundColor": "transparent"
+    },
+    "textHtml": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "notificationHtml": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "activityHtml": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "activityHtmlrawtext": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "activityHtmlp": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "activityHtmla": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "countText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 34.68,
+        "color": "#000000"
+    },
+    "textSmall": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "rgba(0,0,0,0.64)",
+        "backgroundColor": "transparent"
+    },
+    "primaryButtonColor": {
+        "color": "#ffffff"
+    },
+    "primaryButtonColorText": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 15.3
+    },
+    "link": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#f24b4b",
+        "backgroundColor": "transparent"
+    },
+    "deleteLink": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#FF3B30",
+        "backgroundColor": "transparent"
+    },
+    "cancelSearch": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#f24b4b",
+        "backgroundColor": "transparent"
+    },
+    "seeLink": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#f24b4b",
+        "backgroundColor": "transparent"
+    },
+    "linkRegular": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#f24b4b"
+    },
+    "linkArrow": {
+        "width": 10,
+        "height": 8,
+        "marginRight": 6
+    },
+    "linkArrowRight": {
+        "width": 10,
+        "height": 8,
+        "marginLeft": 6
+    },
+    "linkWithArrow": {
+        "flexDirection": "row",
+        "alignItems": "center"
+    },
+    "listWrap": {
+        "flex": 1,
+        "backgroundColor": "#ffffff"
+    },
+    "input": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "invalidField": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 12.24,
+        "color": "#FF3B30"
+    },
+    "label": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 12.24,
+        "color": "#000000",
+        "marginBottom": 7
+    },
+    "inputWrap": {
+        "position": "relative",
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "borderBottomWidth": 0.3333333333333333
+    },
+    "quizInput": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#000000",
+        "paddingLeft": 10,
+        "paddingRight": 10,
+        "height": 36,
+        "borderRadius": 3,
+        "borderWidth": 1,
+        "borderColor": "#b7b7b7"
+    },
+    "buttonLabel": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#F24B4B"
+    },
+    "singleScreenActionButton": {
+        "paddingHorizontal": 22,
+        "height": 28,
+        "borderRadius": 18.5,
+        "backgroundColor": "#FFFFFF"
+    },
+    "profileInputText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "profileInput": {
+        "paddingHorizontal": 16,
+        "minHeight": 48,
+        "borderRadius": 10,
+        "borderColor": "#95A0AC",
+        "backgroundColor": "#f6f6f8"
+    },
+    "profileDropdown": {
+        "borderRadius": 10,
+        "minHeight": 48,
+        "paddingHorizontal": 16,
+        "backgroundColor": "#f6f6f8",
+        "borderBottomWidth": 0
+    },
+    "profileInputLabel": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 20.4,
+        "color": "#000000"
+    },
+    "profileInputDesc": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98"
+    },
+    "profileItemIconWrap": {
+        "width": 22
+    },
+    "profileItemIcon": {
+        "alignSelf": "center"
+    },
+    "button": {
+        "height": 46,
+        "backgroundColor": "#f24b4b",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "flexDirection": "row",
+        "borderRadius": 12
+    },
+    "buttonSecondary": {
+        "height": 46,
+        "backgroundColor": "#edeef2",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "flexDirection": "row",
+        "borderRadius": 12
+    },
+    "buttonPrimaryLabel": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#ffffff"
+    },
+    "buttonSecondaryLabel": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#F24B4B"
+    },
+    "buttonText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#F24B4B"
+    },
+    "listButton": {
+        "height": 50,
+        "backgroundColor": "transparent",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "flexDirection": "row"
+    },
+    "roundButton": {
+        "height": 38,
+        "borderRadius": 19
+    },
+    "playButton": {
+        "width": 38,
+        "height": 38,
+        "borderRadius": 19,
+        "borderStyle": "solid",
+        "borderWidth": 1.2,
+        "borderColor": "#FFFFFF",
+        "padding": 0,
+        "alignItems": "center",
+        "justifyContent": "center"
+    },
+    "primaryButtonContainer": {
+        "backgroundColor": "#f24b4b"
+    },
+    "secondaryButtonContainer": {
+        "backgroundColor": "#edeef2"
+    },
+    "primaryButtonLabel": {
+        "color": "#ffffff"
+    },
+    "secondaryButtonLabel": {
+        "color": "#F24B4B"
+    },
+    "authButtonContainer": {
+        "backgroundColor": "#efefef"
+    },
+    "authButtonLabel": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#f24b4b"
+    },
+    "regButtonContainer": {
+        "backgroundColor": "#efefef"
+    },
+    "regButtonLabel": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#f24b4b"
+    },
+    "twitterLoginButton": [],
+    "facebookLoginButton": [],
+    "googleLoginButton": [],
+    "appleLoginButton": [],
+    "footerButton": {
+        "height": 48,
+        "backgroundColor": "#ffffff",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "flexDirection": "row"
+    },
+    "buttonInner": {
+        "flexDirection": "row",
+        "alignItems": "center"
+    },
+    "mediaItem": {
+        "width": 80,
+        "height": 80,
+        "marginRight": 15,
+        "resizeMode": "cover"
+    },
+    "logo": {
+        "width": "100%",
+        "height": "100%",
+        "maxHeight": 100,
+        "maxWidth": 150,
+        "resizeMode": "contain"
+    },
+    "authHeader": {
+        "flex": 1,
+        "marginTop": 50
+    },
+    "screenTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 20.4,
+        "color": "#000000",
+        "marginTop": 14,
+        "backgroundColor": "transparent",
+        "marginBottom": 14
+    },
+    "iosStyleScreenTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 34.68,
+        "color": "#ffffff"
+    },
+    "iosStyleScreenSubtitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#838A98"
+    },
+    "titleWithButton": {
+        "flexDirection": "row",
+        "alignItems": "center",
+        "marginTop": 14,
+        "marginBottom": 14
+    },
+    "screenDescription": {
+        "textAlign": "center",
+        "backgroundColor": "transparent",
+        "width": 279
+    },
+    "screenMetas": {
+        "flexDirection": "row",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "marginTop": 12,
+        "backgroundColor": "transparent"
+    },
+    "screenMeta": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#838A98",
+        "backgroundColor": "transparent"
+    },
+    "screenHeaderBottom": {
+        "marginTop": "auto",
+        "flexDirection": "row",
+        "alignItems": "center"
+    },
+    "listItem": {
+        "paddingTop": 25,
+        "paddingRight": 16,
+        "paddingBottom": 16,
+        "paddingLeft": 16,
+        "position": "relative"
+    },
+    "forumListTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 21.42,
+        "color": "#000000"
+    },
+    "forumListItem": {
+        "paddingHorizontal": 17,
+        "position": "relative"
+    },
+    "replyListItem": {
+        "paddingBottom": 16,
+        "paddingHorizontal": 16
+    },
+    "itemHeader": {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "alignItems": "flex-start"
+    },
+    "itemContent": {
+        "marginTop": 7,
+        "marginLeft": 42,
+        "marginBottom": 12
+    },
+    "itemFooterMeta": {
+        "flexDirection": "row",
+        "alignItems": "center",
+        "marginLeft": 43
+    },
+    "itemFooter": {
+        "flexDirection": "row",
+        "alignItems": "center"
+    },
+    "itemLeft": {
+        "flexDirection": "row",
+        "alignItems": "flex-start",
+        "flex": 1
+    },
+    "itemName": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000",
+        "backgroundColor": "transparent"
+    },
+    "itemText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000",
+        "backgroundColor": "transparent"
+    },
+    "itemAuthorName": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000",
+        "backgroundColor": "transparent"
+    },
+    "itemMeta": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98",
+        "backgroundColor": "transparent"
+    },
+    "optionItemIcon": {
+        "height": 24,
+        "width": 24,
+        "tintColor": "#000000",
+        "marginRight": 13
+    },
+    "progressCount": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#838A98",
+        "backgroundColor": "transparent"
+    },
+    "linkMeta": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#f24b4b"
+    },
+    "itemLightMeta": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#838A98",
+        "backgroundColor": "transparent"
+    },
+    "dotSep": {
+        "width": 3,
+        "height": 3,
+        "marginLeft": 8,
+        "marginRight": 8,
+        "backgroundColor": "#838A98",
+        "borderRadius": 2
+    },
+    "widgetItemTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34
+    },
+    "itemTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "subForumTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#000000"
+    },
+    "itemTopicTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "itemDesc": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#737679"
+    },
+    "itemAltDesc": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#838A98"
+    },
+    "itemAvatar": {
+        "marginRight": 10,
+        "width": 32,
+        "height": 32,
+        "borderRadius": 15,
+        "backgroundColor": "transparent"
+    },
+    "itemSubforums": {
+        "maxWidth": 260
+    },
+    "itemSticky": {
+        "backgroundColor": "rgba(239,110,0,0.2)",
+        "borderLeftColor": "#ef6e00",
+        "borderLeftWidth": 2
+    },
+    "itemClosed": {
+        "opacity": 0.6,
+        "backgroundColor": "#f6f6f8",
+        "borderLeftColor": "#b7b7b7",
+        "borderLeftWidth": 2
+    },
+    "itemSpam": {
+        "backgroundColor": "rgba(255,59,48,0.3)",
+        "borderLeftColor": "#FF3B30",
+        "borderLeftWidth": 2
+    },
+    "dialogPopup": {
+        "borderRadius": 8,
+        "flexDirection": "column"
+    },
+    "dialogPopupInner": {
+        "paddingVertical": 8
+    },
+    "dialogPopupButton": {
+        "paddingVertical": 10
+    },
+    "bottomBorder": {
+        "borderBottomColor": "#b7b7b7",
+        "borderBottomWidth": 0.3333333333333333
+    },
+    "topBorder": {
+        "borderTopColor": "#b7b7b7",
+        "borderTopWidth": 0.3333333333333333
+    },
+    "avatarWrap": {
+        "marginRight": 10
+    },
+    "listSeparator": {
+        "height": 22,
+        "backgroundColor": "#f6f6f8"
+    },
+    "listSeparatorBordered": {
+        "marginLeft": 17,
+        "borderColor": "#b7b7b7",
+        "borderBottomWidth": 0.3333333333333333
+    },
+    "menuLabelStyle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 10.2,
+        "color": "#000000"
+    },
+    "settingsPage": {
+        "backgroundColor": "#f6f6f8",
+        "flex": 1
+    },
+    "settingsSeparator": {
+        "marginTop": 22,
+        "height": 0,
+        "marginBottom": 0
+    },
+    "settingsItemIcon": {
+        "alignSelf": "center",
+        "height": 30,
+        "width": 30
+    },
+    "moreItemIcon": {
+        "alignSelf": "center",
+        "height": 30,
+        "width": 30
+    },
+    "settingsItemTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "settingsTitleInfo": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#838A98",
+        "marginRight": 16
+    },
+    "separator": {
+        "backgroundColor": "#b7b7b7"
+    },
+    "logout": {
+        "height": 60,
+        "backgroundColor": "#ffffff",
+        "alignItems": "center",
+        "justifyContent": "center"
+    },
+    "logoutInner": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#FF3B30"
+    },
+    "subFilterIcon": {
+        "width": "100%"
+    },
+    "panelSimple": {
+        "backgroundColor": "#f6f6f8",
+        "borderBottomColor": "#b7b7b7",
+        "borderBottomWidth": 0.3333333333333333,
+        "borderTopRightRadius": 12,
+        "borderTopLeftRadius": 12,
+        "padding": 15
+    },
+    "panelHeader": {
+        "minHeight": 64,
+        "backgroundColor": "#f6f6f8",
+        "borderBottomColor": "#b7b7b7",
+        "borderBottomWidth": 0.3333333333333333,
+        "justifyContent": "space-between",
+        "paddingLeft": 20,
+        "paddingRight": 16,
+        "borderTopRightRadius": 12,
+        "borderTopLeftRadius": 12
+    },
+    "panel": {
+        "backgroundColor": "#f6f6f8",
+        "paddingTop": 12,
+        "paddingBottom": 20,
+        "shadowColor": "#FFFFFF",
+        "shadowOpacity": 0.1,
+        "shadowRadius": 10,
+        "zIndex": 1,
+        "height": "100%"
+    },
+    "panelInner": {
+        "paddingTop": 12,
+        "paddingHorizontal": 20
+    },
+    "panelSubtitleText": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98",
+        "textTransform": "uppercase",
+        "marginTop": 8
+    },
+    "panelSubtitle": {
+        "borderBottomWidth": 0.3333333333333333,
+        "borderBottomColor": "#b7b7b7",
+        "paddingBottom": 7
+    },
+    "panelSubtitleAlt": [],
+    "filterTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 20.4,
+        "color": "#000000",
+        "marginRight": 8
+    },
+    "bottomSheetAlertTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000",
+        "marginRight": 8
+    },
+    "roundBox": {
+        "marginTop": 12,
+        "borderRadius": 10,
+        "backgroundColor": "#ffffff",
+        "overflow": "hidden"
+    },
+    "filterListItem": {
+        "marginLeft": 16,
+        "paddingRight": 20,
+        "justifyContent": "center",
+        "borderTopWidth": 0.3333333333333333,
+        "borderTopColor": "#b7b7b7",
+        "height": 52
+    },
+    "activeListFilter": {
+        "color": "#000000"
+    },
+    "activeBg": {
+        "backgroundColor": "rgba(242,75,75,0.08)"
+    },
+    "activeBorder": {
+        "borderColor": "rgba(242,75,75,0.4)",
+        "borderWidth": 0.3333333333333333
+    },
+    "activeText": {
+        "fontWeight": "500",
+        "color": "#f24b4b"
+    },
+    "iosFilterHeader": {
+        "marginTop": 10,
+        "paddingHorizontal": 17
+    },
+    "iosFilterWrap": {
+        "borderColor": "#c6c6c8"
+    },
+    "iosFilterWrapInner": {
+        "height": 61,
+        "paddingLeft": 17,
+        "flexDirection": "row",
+        "alignItems": "center"
+    },
+    "iosFilterBottomBorder": {
+        "marginHorizontal": 17,
+        "borderColor": "#b7b7b7",
+        "borderBottomWidth": 0.3333333333333333
+    },
+    "iosSingleFilterWrap": {
+        "borderRadius": 15,
+        "alignItems": "center",
+        "justifyContent": "center",
+        "height": 30,
+        "borderWidth": 1
+    },
+    "iosSingleFilterText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#000000"
+    },
+    "filter": {
+        "backgroundColor": "rgba(98, 100, 151,0.11)",
+        "zIndex": 1
+    },
+    "courseExcerpt": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000",
+        "lineHeight": 25
+    },
+    "newFilterBubble": {
+        "borderRadius": 10,
+        "height": 20,
+        "minWidth": 30,
+        "paddingHorizontal": 4,
+        "alignItems": "center",
+        "justifyContent": "center",
+        "backgroundColor": "rgba(242,75,75,0.1)",
+        "marginLeft": 4
+    },
+    "newFilterBubbleText": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 11.22,
+        "color": "#f24b4b",
+        "marginHorizontal": 3
+    },
+    "filterBubble": {
+        "borderRadius": 6,
+        "height": 20,
+        "minWidth": 20,
+        "paddingHorizontal": 4,
+        "backgroundColor": "rgba(98, 100, 151,0.11)",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "marginLeft": 8
+    },
+    "filterBubbleText": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 11.22,
+        "color": "#f24b4b"
+    },
+    "filterLine": {
+        "borderBottomColor": "#b7b7b7",
+        "borderBottomWidth": 1
+    },
+    "filtersRow": {
+        "flexDirection": "row",
+        "alignItems": "flex-end"
+    },
+    "filtersMain": {
+        "flex": 1
+    },
+    "activeFilter": {
+        "fontWeight": "500",
+        "borderBottomColor": "#f24b4b",
+        "opacity": 1
+    },
+    "filterText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "notificationBox": {
+        "backgroundColor": "rgba(239,110,0,0.2)",
+        "paddingVertical": 10,
+        "paddingHorizontal": 16,
+        "borderBottomWidth": 0.3333333333333333,
+        "borderBottomColor": "#b7b7b7"
+    },
+    "notificationStatusAccepted": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#10D639"
+    },
+    "notificationStatusRejected": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#FF3B30"
+    },
+    "notificationBoxText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 12.24,
+        "color": "#ef6e00",
+        "lineHeight": 15
+    },
+    "itemBox": {
+        "backgroundColor": "#f6f6f8",
+        "paddingHorizontal": 16,
+        "paddingTop": 15,
+        "paddingBottom": 17,
+        "borderBottomWidth": 0.3333333333333333,
+        "borderBottomColor": "#b7b7b7"
+    },
+    "itemBoxInner": {
+        "backgroundColor": "#ffffff",
+        "paddingVertical": 20,
+        "paddingHorizontal": 17
+    },
+    "itemBoxTitle": [],
+    "row": {
+        "flexDirection": "row",
+        "alignItems": "center"
+    },
+    "widgetNotif": {
+        "paddingTop": 14,
+        "paddingRight": 16,
+        "paddingBottom": 7,
+        "paddingLeft": 16
+    },
+    "widgetInner": {
+        "paddingVertical": 25
+    },
+    "widgetHeader": {
+        "alignItems": "flex-end",
+        "marginBottom": 18,
+        "paddingHorizontal": 17
+    },
+    "widgetContent": {
+        "paddingHorizontal": 17
+    },
+    "widgetBorder": {
+        "marginHorizontal": 17,
+        "borderBottomWidth": 0.3333333333333333,
+        "borderBottomColor": "#b7b7b7"
+    },
+    "widgetNotifTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#000000"
+    },
+    "widgetItemDesc": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#737679"
+    },
+    "widgetItemDescFat": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#000000"
+    },
+    "widgetTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 21,
+        "color": "#000000",
+        "flex": 1,
+        "flexWrap": "wrap"
+    },
+    "widgetSeeLink": {
+        "paddingLeft": 10
+    },
+    "widgetProgressItemText": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 11.839285714285715,
+        "color": "#000000",
+        "backgroundColor": "transparent",
+        "lineHeight": 17
+    },
+    "actionButtonWrap": {
+        "marginLeft": 16,
+        "paddingVertical": 15,
+        "borderTopColor": "#b7b7b7"
+    },
+    "wrappedButton": {
+        "height": 31.746,
+        "backgroundColor": "#edeef2",
+        "borderRadius": 15,
+        "alignItems": "center",
+        "justifyContent": "center"
+    },
+    "wrappedIconButton": {
+        "width": 48,
+        "height": 48,
+        "backgroundColor": "rgba(255,255,255,0.18)",
+        "borderRadius": 24
+    },
+    "wrappedIconButtonHighlight": {
+        "width": 48,
+        "height": 48,
+        "backgroundColor": "#f24b4b",
+        "borderRadius": 24
+    },
+    "wrappedActionIcon": {
+        "backgroundColor": "rgba(98, 100, 151,0.11)",
+        "borderRadius": 15,
+        "alignItems": "center",
+        "justifyContent": "center",
+        "width": 32,
+        "height": 32
+    },
+    "actionIconText": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 12.24,
+        "color": "#000000"
+    },
+    "wrappedTextButton": {
+        "paddingHorizontal": 16,
+        "borderRadius": 14,
+        "height": 29.746,
+        "minWidth": 50
+    },
+    "wrappedTextButtonLabel": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#f24b4b"
+    },
+    "quickLinksContainer": [],
+    "restCount": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 11.22,
+        "color": "#000000"
+    },
+    "drawerMeta": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 11.22,
+        "color": "#838A98",
+        "lineHeight": 17
+    },
+    "sitesTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 38.76,
+        "color": "#000000"
+    },
+    "siteTitle": {
+        "flex": 1,
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "userHandle": {
+        "marginBottom": 14,
+        "color": "#737679"
+    },
+    "moreName": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 19.38,
+        "color": "#000000"
+    },
+    "appHeaderTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#ffffff",
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "backgroundColor": "transparent"
+    },
+    "content": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000",
+        "lineHeight": 23.9904
+    },
+    "linkContent": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#f24b4b"
+    },
+    "caption": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#838A98"
+    },
+    "borderTop": {
+        "borderTopColor": "#b7b7b7",
+        "borderTopWidth": 0.3333333333333333
+    },
+    "header": {
+        "backgroundColor": "#f14b4b",
+        "borderBottomColor": "transparent",
+        "elevation": 0,
+        "shadowOpacity": 0,
+        "paddingLeft": 10,
+        "paddingRight": 10
+    },
+    "headerTransparent": {
+        "borderBottomColor": "transparent",
+        "elevation": 0,
+        "shadowOpacity": 0,
+        "paddingLeft": 10,
+        "paddingRight": 10
+    },
+    "headerBorder": {
+        "borderBottomColor": "#b7b7b7",
+        "borderBottomWidth": 0.3333333333333333
+    },
+    "headerLogo": {
+        "width": "100%",
+        "flex": 1,
+        "alignItems": "center"
+    },
+    "headerCustomTitle": {
+        "marginHorizontal": 16,
+        "maxWidth": 146.25,
+        "alignItems": "center"
+    },
+    "headerButtonLeft": {
+        "position": "absolute",
+        "left": 0,
+        "top": 0,
+        "bottom": 0,
+        "justifyContent": "center",
+        "alignItems": "flex-start"
+    },
+    "headerButtonRight": {
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "justifyContent": "center",
+        "alignItems": "flex-end"
+    },
+    "headerTitle": {
+        "marginLeft": "auto",
+        "marginRight": "auto"
+    },
+    "headerText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#ffffff",
+        "maxWidth": 75
+    },
+    "headerTextButton": {
+        "padding": 5
+    },
+    "headerTextButtonLeft": {
+        "padding": 5,
+        "marginLeft": 10
+    },
+    "headerTextButtonRight": {
+        "padding": 5,
+        "marginRight": 10
+    },
+    "headerLeft": {
+        "position": "relative",
+        "left": -5
+    },
+    "headerRight": {
+        "position": "relative",
+        "right": -5
+    },
+    "emptyIcon": {
+        "marginBottom": 24,
+        "height": 90,
+        "minWidth": 90,
+        "opacity": 0.8,
+        "tintColor": "rgba(131,138,152,0.4)"
+    },
+    "emptyTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#838A98",
+        "marginBottom": 1
+    },
+    "emptyDesc": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 12.24,
+        "color": "#b7b7b7",
+        "lineHeight": 25,
+        "marginBottom": 1
+    },
+    "coverImage": {
+        "flex": 1,
+        "width": "100%"
+    },
+    "sectionHeader": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "rgba(0,0,0,0.4)"
+    },
+    "overlay": {
+        "position": "absolute",
+        "width": "100%",
+        "height": "100%",
+        "top": 0,
+        "left": 0,
+        "bottom": 0,
+        "right": 0,
+        "backgroundColor": "#f24b4b",
+        "opacity": 0.5
+    },
+    "courseOverlay": {
+        "position": "absolute",
+        "width": "100%",
+        "height": "100%",
+        "top": 0,
+        "left": 0,
+        "bottom": 0,
+        "right": 0,
+        "backgroundColor": "#f24b4b",
+        "opacity": 0.5
+    },
+    "socialProfileButton": {
+        "borderColor": "transparent",
+        "height": 30,
+        "borderRadius": 15,
+        "opacity": 1
+    },
+    "socialProfileAvatar": {
+        "width": 80,
+        "height": 80,
+        "borderRadius": 40,
+        "backgroundColor": "#FFFFFF",
+        "shadowColor": "rgba(18,43,70,0.12)",
+        "shadowOffset": {
+            "width": 0,
+            "height": 3
+        },
+        "shadowRadius": 5,
+        "shadowOpacity": 1,
+        "justifyContent": "center",
+        "alignItems": "center"
+    },
+    "inputLabel": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal"
+    },
+    "courseDescriptionTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "courseDate": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98"
+    },
+    "courseIncludesTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#000000",
+        "textTransform": "uppercase"
+    },
+    "courseRoundBox": {
+        "marginBottom": 16,
+        "borderRadius": 10,
+        "backgroundColor": "#ffffff"
+    },
+    "courseRoundBoxStart": {
+        "borderTopRightRadius": 10,
+        "borderTopLeftRadius": 10,
+        "backgroundColor": "#ffffff",
+        "height": 10
+    },
+    "courseRoundBoxEnd": {
+        "borderBottomRightRadius": 10,
+        "borderBottomLeftRadius": 10,
+        "backgroundColor": "#ffffff",
+        "height": 10
+    },
+    "courseRoundBoxTitleAbove": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#000000",
+        "marginBottom": 9
+    },
+    "courseRoundBoxTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#737679",
+        "marginBottom": 8
+    },
+    "courseRoundBoxSectionTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#737679",
+        "marginBottom": 10
+    },
+    "courseRoundP": {
+        "padding": 18
+    },
+    "courseContentBoxItem": {
+        "paddingHorizontal": 18,
+        "justifyContent": "space-between",
+        "flexDirection": "row",
+        "alignItems": "center",
+        "paddingTop": 10,
+        "height": 60
+    },
+    "courseRoundBoxItem": {
+        "paddingHorizontal": 18,
+        "height": 50,
+        "justifyContent": "center"
+    },
+    "courseRoundBoxItemText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "courseRoundBoxItemCount": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#838A98"
+    },
+    "courseRoundBoxSeparator": {
+        "borderBottomColor": "#b7b7b7",
+        "borderBottomWidth": 0.3333333333333333
+    },
+    "courseStatusTagText": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 12.24,
+        "color": "#FFFFFF"
+    },
+    "courseItem": {
+        "overflow": "hidden"
+    },
+    "courseItemContent": {
+        "flex": 1,
+        "marginRight": 5
+    },
+    "courseItemWrap": {
+        "flex": 1,
+        "flexDirection": "row",
+        "borderBottomColor": "#b7b7b7",
+        "borderBottomWidth": 0.3333333333333333,
+        "paddingBottom": 18
+    },
+    "courseIapErrorText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#838A98"
+    },
+    "courseFooterPriceText": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 20.4,
+        "color": "#000000"
+    },
+    "bigTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 28.56,
+        "color": "#000000",
+        "backgroundColor": "transparent"
+    },
+    "subtitle": {
+        "marginBottom": 10,
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#f24b4b"
+    },
+    "lessonTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#000000"
+    },
+    "completeButton": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "completeLessonButtonW": {
+        "height": 40,
+        "alignItems": "center",
+        "justifyContent": "center",
+        "flexDirection": "row",
+        "borderRadius": 10
+    },
+    "completeLessonButton": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "categoryTag": {
+        "backgroundColor": "#F7F8F9",
+        "height": 27,
+        "borderRadius": 13,
+        "paddingHorizontal": 14,
+        "marginTop": 10,
+        "marginRight": 7,
+        "alignItems": "center",
+        "justifyContent": "center"
+    },
+    "categoryTagInner": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#838A98"
+    },
+    "courseCategoryTag": {
+        "backgroundColor": "#edeef2",
+        "height": 30,
+        "borderRadius": 16,
+        "paddingHorizontal": 14,
+        "marginTop": 10,
+        "marginRight": 6,
+        "alignItems": "center",
+        "justifyContent": "center"
+    },
+    "courseCategoryTagInner": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#F24B4B"
+    },
+    "section": {
+        "marginBottom": 30
+    },
+    "sectionTitleWrap": {
+        "justifyContent": "center",
+        "marginBottom": 15,
+        "marginLeft": 15
+    },
+    "sectionTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 20.4,
+        "color": "#000000",
+        "letterSpacing": 0.7,
+        "marginRight": 8
+    },
+    "sectionItem": {
+        "borderLeftColor": "transparent",
+        "borderLeftWidth": 2,
+        "paddingHorizontal": 15
+    },
+    "sectionItemInner": {
+        "height": 48,
+        "borderBottomColor": "#b7b7b7",
+        "borderBottomWidth": 0.3333333333333333
+    },
+    "sectionText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#000000",
+        "flex": 1,
+        "marginRight": 10
+    },
+    "profileHeaderColor": {
+        "color": "#000000",
+        "fontWeight": "500"
+    },
+    "profileAlbumHeaderText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "profileAlbumText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98"
+    },
+    "flexColumnCenter": {
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "alignItems": "center"
+    },
+    "locked": {
+        "opacity": 0.5
+    },
+    "sectionItemDetails": {
+        "marginLeft": "auto"
+    },
+    "lessonTopicCount": {
+        "marginRight": 11
+    },
+    "h5pTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 18.36,
+        "color": "#F24B4B",
+        "backgroundColor": "transparent"
+    },
+    "progressText": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#FFFFFF",
+        "lineHeight": 18,
+        "backgroundColor": "transparent"
+    },
+    "progressLargeText": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 18.36,
+        "color": "#000000",
+        "backgroundColor": "transparent"
+    },
+    "quizCheckTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 18.36,
+        "color": "#000000",
+        "backgroundColor": "transparent"
+    },
+    "quizQuestionStatus": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#737679",
+        "backgroundColor": "transparent"
+    },
+    "quizCheckMessage": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 18.36,
+        "color": "#737679",
+        "backgroundColor": "transparent"
+    },
+    "checkDialogButton": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "quizResultsTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000",
+        "backgroundColor": "transparent"
+    },
+    "quizDetailsButton": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000",
+        "backgroundColor": "transparent"
+    },
+    "quizStartButtonLabel": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#F24B4B"
+    },
+    "quizSubmitButtonLabel": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#ffffff"
+    },
+    "quizTakeAgainButtonLabel": [],
+    "quizReviewButtonLabel": [],
+    "sideMenuHeader": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#FFFFFF",
+        "marginBottom": 30
+    },
+    "scrollHeaderContainer": {
+        "flex": 1,
+        "backgroundColor": "#ffffff"
+    },
+    "fakeHeader": {
+        "backgroundColor": "#f14b4b",
+        "alignItems": "center",
+        "minHeight": 88,
+        "paddingTop": 44
+    },
+    "fakeBar": {
+        "height": 88,
+        "backgroundColor": "#f14b4b",
+        "position": "absolute",
+        "width": "100%",
+        "top": 0
+    },
+    "fakeHeaderOffset": {
+        "marginTop": 88
+    },
+    "fakeBarOffset": {
+        "marginTop": 44
+    },
+    "fakeHeaderFix": {
+        "position": "absolute",
+        "top": 0,
+        "left": 0,
+        "right": 0
+    },
+    "timer": {
+        "marginLeft": "auto",
+        "marginRight": 18,
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "placeholder": {
+        "backgroundColor": "#FFFFFF",
+        "opacity": 0.15,
+        "color": "transparent"
+    },
+    "placeholderDark": {
+        "backgroundColor": "#000000",
+        "opacity": 0.1,
+        "color": "transparent"
+    },
+    "placeholderDarkTin": {
+        "backgroundColor": "#000000",
+        "opacity": 0.1,
+        "color": "transparent",
+        "height": 9
+    },
+    "place": {
+        "backgroundColor": "rgba(255,255,255,0.15)"
+    },
+    "placeDarkTin": {
+        "backgroundColor": "rgba(0,0,0,0.05)",
+        "height": 9
+    },
+    "placeDark": {
+        "backgroundColor": "rgba(0,0,0,0.05)"
+    },
+    "holderOneLine": {
+        "width": 100
+    },
+    "pointTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "resultTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "footerButtonFixed": {
+        "position": "absolute",
+        "left": 0,
+        "bottom": 0,
+        "width": "100%",
+        "backgroundColor": "#FFFFFF"
+    },
+    "resultsSubTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#000000",
+        "marginBottom": 20
+    },
+    "tableHeaderCell": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 11.22,
+        "color": "#838A98"
+    },
+    "tableCell": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#000000"
+    },
+    "saveButton": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#000000"
+    },
+    "activityDate": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#000000"
+    },
+    "activityDateComment": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 12.24,
+        "color": "#000000"
+    },
+    "activityCount": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#000000",
+        "marginTop": 1
+    },
+    "activityUsername": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#000000"
+    },
+    "activityNicename": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 10.2,
+        "color": "#838A98"
+    },
+    "h1": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 53,
+        "color": "#000000"
+    },
+    "h2": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 42,
+        "color": "#000000"
+    },
+    "h3": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 31,
+        "color": "#000000"
+    },
+    "h4": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 26,
+        "color": "#000000"
+    },
+    "h5": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 21,
+        "color": "#000000"
+    },
+    "h6": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 15,
+        "color": "#000000"
+    },
+    "contentText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal"
+    },
+    "blockListItemContainer": {
+        "overflow": "hidden"
+    },
+    "blockListItemVisibleContainer": {
+        "overflow": "visible",
+        "marginTop": -1
+    },
+    "blockScreenBlockWrap": {
+        "marginVertical": 0
+    },
+    "actionSheetHeader": {
+        "borderBottomColor": "#b7b7b7",
+        "borderBottomWidth": 0.3333333333333333,
+        "alignItems": "center",
+        "paddingLeft": 20,
+        "paddingRight": 14,
+        "paddingBottom": 20,
+        "marginBottom": 6
+    },
+    "actionSheetContent": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#737679"
+    },
+    "actionSheetHeaderContent": {
+        "marginTop": 3
+    },
+    "actionSheetHeaderTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#000000"
+    },
+    "messageExcerpt": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#737679",
+        "backgroundColor": "transparent"
+    },
+    "toUserLabel": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#737679",
+        "backgroundColor": "transparent"
+    },
+    "toUserInput": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000",
+        "backgroundColor": "transparent"
+    },
+    "accountSettingsModalTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 19.38,
+        "color": "#000000"
+    },
+    "accountSettingsModalInfoText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#737679",
+        "lineHeight": 19,
+        "textAlign": "center"
+    },
+    "settingsFormContainer": {
+        "flexGrow": 1,
+        "paddingTop": 20,
+        "paddingHorizontal": 17,
+        "backgroundColor": "#ffffff"
+    },
+    "settingsFormLoader": {
+        "flex": 1,
+        "alignItems": "center",
+        "justifyContent": "flex-start",
+        "paddingTop": 20
+    },
+    "settingsFormErrorText": {
+        "textAlign": "center",
+        "margin": 17
+    },
+    "settingsFormInfoContainer": {
+        "paddingBottom": 20
+    },
+    "tabLinksContainer": {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 10,
+        "overflow": "hidden",
+        "marginHorizontal": 17
+    },
+    "tabBarText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 10.2,
+        "color": "#f24b4b",
+        "opacity": 1,
+        "textAlign": "center"
+    },
+    "readMore": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#f24b4b",
+        "width": 100
+    },
+    "boxTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "changeVideoThumbTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 18.36,
+        "color": "#000000"
+    },
+    "uploadImageText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#838A98"
+    },
+    "radioBoxTitle": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "radioBoxDesc": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#838A98"
+    },
+    "boxDesc": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#838A98"
+    },
+    "topicSingleTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#000000"
+    },
+    "topicMediaItem": {
+        "width": 50,
+        "height": 54,
+        "borderRadius": 8,
+        "marginRight": 8,
+        "resizeMode": "cover"
+    },
+    "topicTag": {
+        "backgroundColor": "#edeef2",
+        "borderRadius": 12,
+        "paddingVertical": 4,
+        "paddingHorizontal": 10
+    },
+    "topicTagText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#000000"
+    },
+    "groupSelect": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "groupManageSectionTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#000000",
+        "letterSpacing": 0.25,
+        "marginBottom": 5
+    },
+    "groupManageSectionSubtitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 18.36,
+        "color": "#000000"
+    },
+    "advancedSearchLabel": {
+        "textTransform": "uppercase",
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 14.28
+    },
+    "productDescription": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "iapSelectProductTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 18.36,
+        "color": "#000000",
+        "textAlign": "center"
+    },
+    "iapLabelText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#fff",
+        "textAlign": "center",
+        "textAlignVertical": "center"
+    },
+    "iapProductTitle": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 26.52,
+        "color": "#000000",
+        "textAlign": "center"
+    },
+    "iapProductPrice": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 16.32,
+        "color": "#F24B4B",
+        "textAlign": "center"
+    },
+    "iapCollapsableProductPrice": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 14.28,
+        "color": "#F24B4B",
+        "textAlign": "center"
+    },
+    "iapProductPriceDescription": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#737679",
+        "textAlign": "center"
+    },
+    "iapCollapsableProductPriceDescription": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 8.16,
+        "color": "#737679",
+        "textAlign": "center"
+    },
+    "iapProductMissingPriceDescription": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 10.2,
+        "color": "#737679"
+    },
+    "iapPurchasedLabel": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 20.4,
+        "color": "#000000"
+    },
+    "moveToText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 15.3,
+        "color": "#000000"
+    },
+    "folderTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 22.44,
+        "color": "#000000"
+    },
+    "documentTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "documentMeta": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98"
+    },
+    "assignmentHeading": {
+        "fontFamily": "Nunito-Bold",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "fontSize": 25.5,
+        "color": "#000000"
+    },
+    "assignmentDesc": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 13.26,
+        "color": "#838A98",
+        "textAlign": "center"
+    },
+    "assignmentTitle": {
+        "fontFamily": "Nunito-SemiBold",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "fontSize": 17.34,
+        "color": "#000000"
+    },
+    "videoUploadProgressText": {
+        "fontFamily": "Nunito-Regular",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "fontSize": 11.22,
+        "color": "#FFFFFF"
+    },
+    "webVideoPlayer": {
+        "borderRadius": 14
+    },
+    "localVideoContainer": {
+        "borderRadius": 14
+    },
+    "localVideoPlayer": {
+        "borderRadius": 14
+    },
+    "offlineVideoContainer": {
+        "borderRadius": 14
+    }
+}
