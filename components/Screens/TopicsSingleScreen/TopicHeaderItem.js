@@ -2,9 +2,6 @@ import React from "react";
 import { View, Text } from "react-native";
 import { getAvatar } from "@src/utils";
 import AppTouchableOpacity from "@src/components/AppTouchableOpacity";
-import AppAvatar from "@src/components/AppAvatar";
-import LinearGradient from 'react-native-linear-gradient';
-import AvatarBadge from "../../Global/SmallComponents/AvatarBadge";
 import AvatarSpecial from "../../Global/SmallComponents/AvatarSpecial";
 
 const ItemHeader = (props) => {

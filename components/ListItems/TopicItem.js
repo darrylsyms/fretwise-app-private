@@ -8,13 +8,10 @@ import {
 } from 'react-native';
 import AppTouchableOpacity from "@src/components/AppTouchableOpacity";
 import { getAvatar } from "@src/utils";
-import AppAvatar from "@src/components/AppAvatar";
 import AuthWrapper from "@src/components/AuthWrapper";
 import ActionSheetButton from "@src/components/ActionButtons/ActionSheetButton";
 import { GUTTER } from "@src/styles/global";
 import { withNavigation } from 'react-navigation';
-import LinearGradient from 'react-native-linear-gradient';
-import AvatarBadge from "../Global/SmallComponents/AvatarBadge";
 import AvatarSpecial from '../Global/SmallComponents/AvatarSpecial';
 
 const TopicItem = (props) => {
