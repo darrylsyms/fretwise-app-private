@@ -53,7 +53,7 @@ import courseIncludesReducer from "./state/reducers/courseIncludes.reducer"
 import SpacerComponent from "./components/Global/CoreSpacerBlock";
 import MessageText from "./components/Screens/MessagesScreen/MessageContents";
 
-import ReplyItemContent from "./components/Screens/TopicsSingleScreen/ReplyItemContent";
+//import ReplyItemContent from "./components/Screens/TopicsSingleScreen/ReplyItemContent";
 import ReplyItemAvatar from "./components/Screens/TopicsSingleScreen/ReplyItemAvatar";
 import { ScreenNames } from "./data/ScreensWithoutTabBar";
 
