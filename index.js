@@ -53,7 +53,15 @@ import courseIncludesReducer from "./state/reducers/courseIncludes.reducer"
 import SpacerComponent from "./components/Global/CoreSpacerBlock";
 import MessageText from "./components/Screens/MessagesScreen/MessageContents";
 
+import ReplyItemContent from "./components/Screens/TopicsSingleScreen/ReplyItemContent";
+import ReplyItemAvatar from "./components/Screens/TopicsSingleScreen/ReplyItemAvatar";
+import { ScreenNames } from "./data/ScreensWithoutTabBar";
+
 export const applyCustomCode = externalCodeSetup => {
+
+	//externalCodeSetup.topicsApi.setReplyItemContent(props => <ReplyItemContent {...props} />)
+
+	externalCodeSetup.topicsApi.setReplyItemAvatar(props => <ReplyItemAvatar {...props} />)
 
 	/*-----------------------------------------------------------------------------------*/
 	/* BUG FIX */
@@ -134,39 +142,7 @@ export const applyCustomCode = externalCodeSetup => {
 
 
 	// 4. Hide Tab Bar From These Screens
-	externalCodeSetup.navigationApi.setScreensWithoutTabBar([
-		"LessonSingleScreen",
-		"LearnTopicSingleScreen",
-		"TopicsSingleScreen",
-		"AddTopicScreen",
-		"MessagesScreen",
-		"MessagesCreatePostScreen", // Buggy bottom padding
-		"GroupMessageCreatePostScreen",
-		"BlogSingleScreen",
-		"GroupsSingleScreen",
-		"ProfileScreen",
-		//"CoursesSingleScreen",
-		"ProductsScreen", // doesnt work
-		"ProductSingleScreen",
-		"EditNavigation",
-		"EditXprofile",
-		"ViewXprofile",
-		"PhotoXprofile",
-		"CoverXprofile",
-		"ProfileCourses",
-		"ProfilePhotos",
-		"GlobalPhotos",
-		"ProfileGamipress_achievements",
-		"ProfileGamipress_points",
-		"ProfileActivities",
-		"ProfileCertificates",
-		"ProfileResults",
-		"ProfileBlog",
-		"ProfileXprofile",
-		"ProfileForums",
-		"ProfileGroups",
-		"MyLibraryScreen",
-	])
+	externalCodeSetup.navigationApi.setScreensWithoutTabBar(ScreenNames)
 
 	// 5. Set Header Height Across App Index Screens
 	externalCodeSetup.indexScreenApiHooks.setHeaderHeight(IndexScreenHeaderHeight);
@@ -360,13 +336,6 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.cssApi.addGlobalStyle("completeTopicButton", { marginBottom: LESSON_ACTION_BUTTON_TEXT_MARGIN, fontWeight: '600', }); // topic complete text
 	externalCodeSetup.cssApi.addGlobalStyle("learnTopicActionCompleteIcon", { marginBottom: LESSON_ACTION_BUTTON_ICON_MARGIN, width: 30, height: 30 });
 	externalCodeSetup.cssApi.addGlobalStyle("learnTopicButtonLoadingIcon", { marginBottom: IOS_HOME_INDICATOR, left: -5 });
-
-	externalCodeSetup.cssApi.addGlobalStyle("messageExcerpt", {
-		color: '#000',
-		fontFamily: "Nunito-Regular",
-		fontWeight: "400",
-		fontStyle: "normal",
-	});
 
 
 	/*-----------------------------------------------------------------------------------*/

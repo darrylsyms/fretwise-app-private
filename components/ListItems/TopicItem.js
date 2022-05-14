@@ -15,6 +15,7 @@ import { GUTTER } from "@src/styles/global";
 import { withNavigation } from 'react-navigation';
 import LinearGradient from 'react-native-linear-gradient';
 import AvatarBadge from "../Global/SmallComponents/AvatarBadge";
+import AvatarSpecial from '../Global/SmallComponents/AvatarSpecial';
 
 const TopicItem = (props) => {
 
@@ -65,7 +66,7 @@ const TopicItem = (props) => {
                 //Purple
                 return (
                     <View style={{ backgroundColor: '#F0DBEC', ...tagStyle }}>
-                        <Text style={[ global.widgetProgressItemText, { color: '#C3449F' }]}>
+                        <Text style={[global.widgetProgressItemText, { color: '#C3449F' }]}>
                             {forumTitle}
                         </Text>
                     </View>
@@ -132,35 +133,16 @@ const TopicItem = (props) => {
                         flex: 1,
                         flexDirection: 'row',
                         marginHorizontal: GUTTER,
-                        paddingBottom: 16,
+                        paddingBottom: 14,
                     }}>
-                        <View style={{ marginRight: 10, JustifyContent: 'center', borderWidth: 4, borderColor: 'rgba(158, 150, 150, 0)' }}>
-                            <LinearGradient 
-                                colors={isSubscriber ? ['#F49934', '#BC3B77', '#3A66E0'] : ['#fff', '#fff']} 
-                                useAngle={true} 
-                                angle={140} 
-                                angleCenter={{x:0.5,y:0.5}} 
-                                style={{flex: 1, borderRadius: 55}}
-                            >
-                                    <AppAvatar
-                                        size={42}
-                                        name={topic.author.name}
-                                        source={{
-                                            uri: getAvatar(topic.author.avatar, 96)
-                                        }}
-                                        style={{ 
-                                            alignSelf: "flex-start", 
-                                            justifyContent: 'center', 
-                                            elevation: 1, 
-                                            backgroundColor: '#fff', 
-                                            padding: 1, 
-                                            margin: 1, 
-                                            borderRadius: 55 
-                                        }}
-                                    />
-                            </LinearGradient>
-                            {isSubscriber && <AvatarBadge />}
-                        </View>
+                        <AvatarSpecial
+                            isSubscriber={isSubscriber}
+                            size={42}
+                            source={{
+                                uri: getAvatar(topic.author.avatar, 96)
+                            }}
+                            name={topic.author.name}
+                        />
                         <View style={{}}>
                             <Text style={{ fontWeight: "Bold", marginBottom: 4, ...global.itemTitle }}>{topic.author.name}</Text>
                             <View style={{
@@ -226,26 +208,30 @@ const TopicItem = (props) => {
                             >
                                 <View style={{
                                     borderLeftWidth: 2,
-                                    borderLeftColor: "red"
+                                    borderLeftColor: "red",
+                                    marginBottom: 8
                                 }}>
                                     <Text
                                         style={{
                                             ...global.itemTitle,
                                             paddingRight: 40,
-                                            marginBottom: 3,
-                                            marginLeft: 5
+                                            marginLeft: 5,
                                         }}
                                         numberOfLines={2}
                                         ellipsizeMode={"tail"}
                                     >
                                         {topic.title}
                                     </Text>
-
                                 </View>
+                                {topic.topicTags !== "" && (
+                                    <View style={{ flexDirection: "row", alignItems: 'center', marginBottom: 8 }}>
+                                        <Image source={require('../../assets/img/metadata/topic-tags.png')} style={{ marginRight: 6, height: 14, width: 14 }} />
+                                        <Text numberOfLines={1} ellipsizeMode={"tail"} style={global.itemMeta}>{topic.topicTags}</Text>
+                                    </View>
+                                )}
                                 <Text
                                     style={{
                                         ...global.textAlt,
-                                        paddingTop: 9,
                                         paddingBottom: 10,
                                         marginRight: 20,
                                         lineHeight: 20

@@ -1,5 +1,4 @@
 import React from "react";
-import ReadMore from "@src/components/ReadMore";
 import HTML from "react-native-render-html";
 import htmlclean from "htmlclean";
 
@@ -9,7 +8,7 @@ const MessageText = (props) => {
 
    return <HTML
                html={htmlclean(message.message)}
-               tagsStyles={{p: {...global.messageExcerpt, ...{color: '#000', paddingBottom: 10}}}}
+               tagsStyles={{p: {...global.messageExcerpt, ...{color: '#000', paddingBottom: 2}}}}
                onLinkPress={attemptDeepLink(false)}
            />
 }

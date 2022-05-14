@@ -4,8 +4,6 @@ import DeviceInfo from 'react-native-device-info';
 
 const IndexScreenHeaderHeight = (defaultHeaderHeight, filterType, navigation) => {
 
-    console.log(navigation)
-    console.log(filterType)
     const SEARCH_COMPONENT = Platform.OS === 'ios' ? 51 : 55; // it appears that the search component on android is sized differently
     const FILTER_BAR = 60;
     const COUNTDOWN_COMPONENT = DeviceInfo.isTablet() && !Platform.isPad ? 87 : 81; // strange how it's different on tablet.
