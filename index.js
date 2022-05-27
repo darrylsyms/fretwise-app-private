@@ -382,7 +382,7 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.navigationApi.replaceScreenComponent("messages", MessagesListScreen);
 	externalCodeSetup.navigationApi.replaceScreenComponent("HomeTopicsScreen", TopicsScreeen);
 	externalCodeSetup.navigationApi.replaceScreenComponent("topics", TopicsScreeen);
-/*
+
 	// 2. Custom App Welcome Screen Navigation Properties
 	externalCodeSetup.navigationApi.setAnimatedSwitchNavigator((routes, options, routeProps) => {
 
@@ -436,7 +436,5 @@ export const applyCustomCode = externalCodeSetup => {
 		}
 
 	})
-
-*/
 
 };
