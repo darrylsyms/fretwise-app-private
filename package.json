@@ -14,7 +14,9 @@
   "peerDependencies": {
     "react-native": "0.61.5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-instagram-zoom": "^1.0.1"
+  },
   "nativeDependencies": {},
   "podDependencies": {}
 }
