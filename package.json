@@ -13,5 +13,14 @@
   "license": "",
   "peerDependencies": {
     "react-native": "0.61.5"
+  },
+  "dependencies": {
+    "react-native-pinchable": "^0.2.1"
+  },
+  "nativeDependencies": {
+    "react-native-pinchable": "^0.2.1"
+  },
+  "podDependencies": {
+    "react-native-pinchable": "react-native-pinchable"
   }
 }
