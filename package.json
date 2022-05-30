@@ -15,8 +15,12 @@
     "react-native": "0.61.5"
   },
   "dependencies": {
-    "react-instagram-zoom": "^1.0.1"
+    "react-native-pinchable": "^0.2.1"
   },
-  "nativeDependencies": {},
-  "podDependencies": {}
+  "nativeDependencies": {
+    "react-native-pinchable": "^0.2.1"
+  },
+  "podDependencies": {
+    "react-native-pinchable": "react-native-pinchable"
+  }
 }
