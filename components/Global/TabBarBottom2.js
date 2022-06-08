@@ -38,6 +38,7 @@ const CustomTabBarBottom = (props) => {
              item.icon.monochrome &&
              (!focused ? item.icon?.tint_color || tintColor : tintColor);
  
+         const icon = getIconUri(route);
  
          if (item.object === "notifications" || item.object === "messages") {
              return (
