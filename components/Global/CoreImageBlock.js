@@ -17,7 +17,7 @@ const ImageComponent = (props) => {
     return (
         <View style={{ flex: 1 }}>
             <Pinchable>
-                <Animated.Image source={{ uri: block?.content }} style={{ paddingHorizontal: 17, borderRadius: 12 }} resizeMode="contain" />
+                <Image source={{ uri: block?.content }} style={{ paddingHorizontal: 17, borderRadius: 12 }} resizeMode="contain" />
             </Pinchable>
         </View>
     )
