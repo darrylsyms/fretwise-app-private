@@ -43,6 +43,8 @@ import HomeHeaderRight from "./components/Screens/TopicsScreen/HeaderRight";
 import EmbedsComponent from "./components/Global/CoreEmbedBlock";
 import AnimatedHeaderTitle from "./components/Global/AnimatedHeaderTitle";
 import GroupDetailsComponent from "./components/Screens/GroupSingleScreen/GroupDetailsComponent";
+import TopicHeaderContent from "./components/Screens/TopicsSingleScreen/TopicHeaderContent";
+import LessonActionComponent from "./components/Screens/LessonSingleScreen/LessonActionButton";
 // * Reducers * //
 import hotTopicsReducer from './state/reducers/hotTopics.reducer';
 import coursesReducer from './state/reducers/courses.reducer';
@@ -62,6 +64,8 @@ export const applyCustomCode = externalCodeSetup => {
 	//externalCodeSetup.topicsApi.setReplyItemContent(props => <ReplyItemContent {...props} />)
 
 	externalCodeSetup.topicsApi.setReplyItemAvatar(props => <ReplyItemAvatar {...props} />)
+	//externalCodeSetup.topicSingleApi.setTopicContentComponent(props => <TopicHeaderContent {...props} />)
+	//externalCodeSetup.lessonSingleScreenApi.setLessonActionComponent(props => <LessonActionComponent {...props} />)
 
 	/*-----------------------------------------------------------------------------------*/
 	/* BUG FIX */
