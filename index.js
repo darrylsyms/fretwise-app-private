@@ -57,11 +57,19 @@ import MessageText from "./components/Screens/MessagesScreen/MessageContents";
 import ReplyItemAvatar from "./components/Screens/TopicsSingleScreen/ReplyItemAvatar";
 import { ScreenNames } from "./data/ScreensWithoutTabBar";
 
+import TopicHeaderContent from "./components/Screens/TopicsSingleScreen/TopicHeaderContent";
+import LessonActionComponent from "./components/Screens/LessonSingleScreen/LessonBottomActionButton";
+import LearnTopicActionComponent from "./components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
+
 export const applyCustomCode = externalCodeSetup => {
 
 	//externalCodeSetup.topicsApi.setReplyItemContent(props => <ReplyItemContent {...props} />)
 
 	externalCodeSetup.topicsApi.setReplyItemAvatar(props => <ReplyItemAvatar {...props} />)
+
+	externalCodeSetup.topicSingleApi.setTopicContentComponent(props => <TopicHeaderContent {...props} />)
+	externalCodeSetup.lessonSingleScreenApi.setLessonActionComponent(props => <LessonActionComponent {...props} />)
+	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicActionComponent(props => <LearnTopicActionComponent {...props} />)
 
 	/*-----------------------------------------------------------------------------------*/
 	/* BUG FIX */
