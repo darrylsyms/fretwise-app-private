@@ -53,21 +53,74 @@ import courseIncludesReducer from "./state/reducers/courseIncludes.reducer"
 import SpacerComponent from "./components/Global/CoreSpacerBlock";
 import MessageText from "./components/Screens/MessagesScreen/MessageContents";
 
-//import ReplyItemContent from "./components/Screens/TopicsSingleScreen/ReplyItemContent";
+import ReplyItemContent from "./components/Screens/TopicsSingleScreen/ReplyItemContent";
 import ReplyItemAvatar from "./components/Screens/TopicsSingleScreen/ReplyItemAvatar";
 import { ScreenNames } from "./data/ScreensWithoutTabBar";
 
-import TopicHeaderContent from "./components/Screens/TopicsSingleScreen/TopicHeaderContent";
 import LessonActionComponent from "./components/Screens/LessonSingleScreen/LessonBottomActionButton";
 import LearnTopicActionComponent from "./components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
 
+
+import HTML from "react-native-render-html";
+import ReadMore from "@src/components/ReadMore";
+import {
+    alterChildrenHTML
+} from "@src/utils";
+import { aTagRenderer } from "@src/utils/htmlRender";
+
 export const applyCustomCode = externalCodeSetup => {
 
-	//externalCodeSetup.topicsApi.setReplyItemContent(props => <ReplyItemContent {...props} />)
-
+	externalCodeSetup.topicsApi.setReplyItemContent(props => <ReplyItemContent {...props} />)
 	externalCodeSetup.topicsApi.setReplyItemAvatar(props => <ReplyItemAvatar {...props} />)
 
-	externalCodeSetup.topicSingleApi.setTopicContentComponent(props => <TopicHeaderContent {...props} />)
+	externalCodeSetup.topicSingleApi.setTopicContentComponent(({
+        colors,
+        content,
+        global,
+        t,
+        tagsStyles,
+        attemptDeepLink,
+        computedWidth,
+        topic
+    }) => {
+
+        return <View style={{ marginTop: -4 }}>
+            <ReadMore
+                colors={colors}
+                content={content}
+                size={1000}
+                t={t}
+                global={global}
+                style={{ marginBottom: 20 }}
+            >
+                {content => (
+                    <HTML
+                        html={content}
+                        tagsStyles={{
+                            ...tagsStyles,
+							p: {
+								marginBottom: 0
+							},
+							ul: {
+                                marginTop: 5
+                            },
+                            iframe: {
+                                marginTop: 10,
+                                marginBottom: 10
+                            }
+                        }}
+                        baseFontStyle={global.textHtml}
+                        onLinkPress={attemptDeepLink}
+                        staticContentMaxWidth={computedWidth}
+                        alterChildren={alterChildrenHTML(computedWidth)}
+                        renderers={{
+                            a: aTagRenderer(computedWidth)
+                        }}
+                    />
+                )}
+            </ReadMore>
+        </View>
+    })
 	externalCodeSetup.lessonSingleScreenApi.setLessonActionComponent(props => <LessonActionComponent {...props} />)
 	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicActionComponent(props => <LearnTopicActionComponent {...props} />)
 
@@ -137,7 +190,7 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.forumsHooksApi.setShowSearch((bbSetting) => false);
 
 	// 2. Custom Tab Bar Bottom
-	externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
+	//externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
 
 	// 3. Custom Core Block Components
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/heading", (props) => <ContentHeadingsBlock {...props} />);

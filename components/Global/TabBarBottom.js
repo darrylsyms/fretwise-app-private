@@ -1,128 +1,170 @@
 import React from 'react';
-import { BlurView } from "@react-native-community/blur";
 import { BottomTabBar } from "react-navigation-tabs";
+import {
+    Image,
+    View,
+    StyleSheet,
+    Text,
+    Platform,
+} from 'react-native';
 import BadgeIcon from "@src/components/BadgeIcon";
 import AppImage from "@src/components/AppImage";
 import { isTabletOrIPad } from "@src/utils";
+import { BlurView } from "@react-native-community/blur";
 import {
     FontWeights,
     textRTLStyleFix,
 } from "@src/styles/global";
+import { IOS_HOME_INDICATOR } from '../../styles/global';
 
 const CustomTabBarBottom = (props) => {
 
-    const {screenProps, color} = props;
-     
-    const getIconUri = (route) => {
-         let icon = route?.routes?.[0]?.params?.item?.icon || "";
-         if (icon) {
-             if (icon.uri) {
-                 icon = icon.uri;
-             } else {
-                 icon = Platform.select({ ios: icon.ios_uri, android: icon.android_uri });
-             }
-         }
-         return icon;
- 
-     }
- 
-     const getIcon = (iconProps) => {
-         const { route, tintColor, focused } = iconProps;
-         const { calcFontSize, colors } = props.screenProps;
-         const item = route?.routes?.[0]?.params?.item;
- 
-         if (!item) return null;
- 
-         const color =
-             item.icon.monochrome &&
-             (!focused ? item.icon?.tint_color || tintColor : tintColor);
- 
-         const icon = getIconUri(route);
- 
-         if (item.object === "notifications" || item.object === "messages") {
-             return (
-                 <BadgeIcon
-                     calcFontSize={calcFontSize}
-                     tintColor={color}
-                     bottomTabsBg={colors.bottomTabsBg}
-                     warningColor={colors.warningColor}
-                     platform="ios"
-                     inMore={false}
-                     app={"learnerapp"}
-                     type={item.object}
-                     iconUri={icon ? { uri: icon } : null}
-                 />
-             );
-         }
- 
-         return <AppImage
-             source={{ uri: icon }}
-             style={{ width: 25, height: 25 }}
-             tintColor={color}
-         />
- 
-    };
- 
+    const {
+        style,
+        safeAreaInset,
+        screenProps,
+        navigation,
+        inactiveTintColor,
+        activeTintColor,
+        showLabel
+    } = props;
+
+    const { global, colors } = screenProps;
+
+    const currentTab = navigation.state.index;
+    const currentTabKey = navigation?.state?.routes[currentTab]?.key
+
+
     const renderLabel = (props) => {
-       const label = props.route.routes[0].params.item.label;
-       return <Text
-           style={[
-               screenProps.global.menuLabelStyle,
-               {
-                   marginHorizontal: 5,
-                   marginTop: isTabletOrIPad() ? -(props.bottomSafeArea / 5) : 2,
-                   color,
-                   fontWeight: FontWeights["medium"],
-                   ...textRTLStyleFix(),
-                   opacity: 1,
-                   textAlign: "center"
-               }
-           ]}
-           numberOfLines={1}
-           ellipsizeMode={"tail"}
-           allowFontScaling={false}
-       >
-           {label}
-       </Text>
+
+        const label = props.route?.routes[0]?.params?.item?.label;
+        const tabKeys = props.route?.key;
+
+        const isTabActive = tabKeys == currentTabKey;
+        const tintColor = !isTabActive ? inactiveTintColor : activeTintColor;
+
+        if (showLabel)
+            return (
+                <Text style={[
+                    global.tabBarText,
+                    {
+                        color: tintColor,
+                        marginLeft: Platform.isPad ? 20 : 0
+                    }
+                ]}>
+                    {label}
+                </Text>
+            );
+
+        return null;
     }
- 
+
+
     const renderIcon = (props) => {
-       return getIcon(props);
+        return (
+            <View style={{ alignItems: 'center' }}>
+                <Image
+                    source={{ uri: props.route?.routes[0]?.params?.item?.icon?.uri }}
+                    //{routeName === "MoreScreen" && source={require('../../assets/img/tabbar/more.png')}} // TODO: if using my own MoreScreen, I can't utilise the icon or label props until there's better hooks available.
+                    style={[styles.icon, { tintColor: props.tintColor }]}
+                />
+            </View>
+        )
+
     }
- 
-    return Platform.select({
-       android: (
-         <BottomTabBar
-           {...props}
-           style={[props.style]}
-           getLabelText={renderLabel}
-           renderIcon={renderIcon}
-         />
-       ),
-       ios: (
-         <BlurView
-           style={{
-              left: 0,
-              right: 0,
-              bottom: 0,
-              position: "absolute",
-              backgroundColor: "transparent"
-           }}
-           blurType={"xlight"}
-           blurAmount={50}
-           onLayout={props.handleLayout}
-           reducedTransparencyFallbackColor={"#fcfcfc"}
-         >
-           <BottomTabBar
-             {...props}
-             style={[props.style]}
-             safeAreaInset={{bottom: props.bottomSafeArea}}
-             getLabelText={renderLabel}
-             renderIcon={renderIcon}
-           />
-         </BlurView>
-       )
-     });
+
+    const handleTabPress = props => ({ route }) => {
+
+        try {
+            const { navigation } = props;
+            const prevActiveTabIndex = navigation.state.index;
+            const isFocused =
+                route.key === navigation.state.routes[prevActiveTabIndex].key;
+
+            if (
+                isFocused &&
+                typeof route.routes[0]?.params?.onTabBarPress === "function"
+            ) {
+                route.routes[0].params.onTabBarPress();
+            }
+            if (
+                isFocused &&
+                typeof route.routes[0]?.params?.scrollToTop === "function"
+            ) {
+                route.routes[0]?.params?.scrollToTop(); // My custom tabBarOnPress function
+            }
+        } catch (err) {
+        } finally {
+            props.onTabPress({ route });
+        }
+
+    };
+
+    const styles = StyleSheet.create({
+        icon: {
+            width: 25,
+            height: 25,
+        },
+        label: {
+            fontSize: 11,
+        },
+    });
+
+    const blurViewStyles = {
+        left: 0,
+        right: 0,
+        bottom: 0,
+        position: "absolute",
+        backgroundColor: "transparent"
+    };
+
+    // BlurView is necessary to hide "tabbar on tabbar" iOS bug. It has zero contribution to the look.
+    return (
+        <>
+            {Platform.OS === 'ios' ? (
+                <BlurView
+                    style={blurViewStyles}
+                    blurType={"xlight"}
+                    blurAmount={0}
+                    reducedTransparencyFallbackColor={"#fff"}
+                >
+                    <BottomTabBar
+                        {...props}
+                        style={[
+                            //style,
+                            {
+                                borderTopWidth: 1,
+                                ...global.topBorder,
+                                backgroundColor: colors.bottomTabsBg,
+                            }
+                        ]}
+                        safeAreaInset={{ bottom: Platform.isPad ? IOS_HOME_INDICATOR : safeAreaInset }}
+                        onTabPress={handleTabPress(props)}
+                        getLabelText={renderLabel}
+                        renderIcon={renderIcon}
+                    />
+                </BlurView>
+            ) : (
+                <BottomTabBar
+                    {...props}
+                    style={[
+                        style,
+                        {
+                            //height: 60,
+                            borderTopWidth: 1,
+                            ...global.topBorder,
+                            backgroundColor: colors.bottomTabsBg,
+                        }
+                    ]}
+                    safeAreaInset={{ bottom: safeAreaInset }}
+                    onTabPress={handleTabPress(props)}
+                    getLabelText={renderLabel}
+                    renderIcon={renderIcon}
+                />
+            )}
+
+        </>
+    )
 
 }
 

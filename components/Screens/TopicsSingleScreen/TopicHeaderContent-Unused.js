@@ -1,3 +1,4 @@
+import React from "react";
 import HTML from "react-native-render-html";
 import ReadMore from "@src/components/ReadMore";
 import {
@@ -19,7 +20,7 @@ const TopicHeaderContent = (props) => {
     } = props;
 
     return (
-        <View style={{ marginTop: -4, background: 'red' }}>
+        <View style={{ marginTop: -4 }}>
             <ReadMore
                 colors={colors}
                 content={content}

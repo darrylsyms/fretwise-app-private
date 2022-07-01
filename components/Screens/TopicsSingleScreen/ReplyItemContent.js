@@ -27,7 +27,7 @@ const ReplyItemContent = (props) => {
     } = props;
 
     return (
-        <View style={{ flex: 1, marginTop: 6 }}>
+        <View style={{ flex: 1, marginTop: 6, marginBottom: 6 }}>
             <ReadMore
                 content={formatTextForDisplay(filterContentCss(reply.content))}
                 size={600}
