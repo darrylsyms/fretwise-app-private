@@ -234,14 +234,13 @@ const OnboardingScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <StatusBar hidden />
-            {Platform.OS === 'android' && Platform.Version <= 25 // Video component requires Android SDK 26+ (v8.0 or above)
+            {Platform.OS === 'android'
                 ? (
                     <Image
                         style={styles.video}
                         source={require('../../assets/img/intro/intro-video-poster-frame.jpg')}
                     />
-                )
-                : (
+                ) : (
                     <Video
                         style={styles.video}
                         source={{ uri: 'https://d1jnwmywz3uquj.cloudfront.net/app-preview-video.mp4' }}

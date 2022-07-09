@@ -1,5 +1,5 @@
 import {Platform} from 'react-native';
-import { IPAD_HEADER_INSET, HEADER_MAX_HEIGHT_STABLE, HEADER_MIN_HEIGHT_STABLE, NOTCH } from '../../styles/global';
+import { IPAD_HEADER_INSET, HEADER_MAX_HEIGHT_STABLE, HEADER_MIN_HEIGHT_STABLE, NOTCH } from '../../../src/styles/global';
 import DeviceInfo from 'react-native-device-info';
 
 const IndexScreenHeaderHeight = (defaultHeaderHeight, filterType, navigation) => {

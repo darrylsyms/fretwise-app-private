@@ -5,7 +5,7 @@ import { ItemTitle } from "@src/components/TextComponents";
 import IconButton from "@src/components/IconButton";
 import { useSelector } from 'react-redux';
 import { withNavigation } from 'react-navigation';
-import { formatDateTime } from "../../styles/utils";
+import { formatDateTime } from "../../../src/styles/utils";
 import { isTabletOrIPad } from "@src/utils";
 import { isColorDark } from "@src/utils";
 import Icon from "@src/components/Icon";
@@ -21,6 +21,9 @@ const BlogItem = props => {
    if (!user.member_types) memberType = "student";
    if (user.member_types) memberType = Object.keys(user?.member_types)[0];
 
+   const SubscriberRoles = ["instructor", "admin", "subscriber", "member"];
+   const isSubscriber = SubscriberRoles.includes(memberType);
+
    const regex = /(<([^>]+)>)/ig;
    const excerpt = item?.excerpt?.rendered?.replace(regex, '');
 
@@ -31,7 +34,7 @@ const BlogItem = props => {
          [
             {
                text: "Subscribe Now",
-               onPress: () => memberType == "visitor" ? navigation.navigate("SignupScreen") : navigation.navigate("ProductsScreen")
+               onPress: () => memberType == "visitor" ? navigation.navigate("SignupScreen") : navigation.navigate("ProductsScreen") // TODO: ProductsScreen needs props passed for it to work properly...
             },
             { text: "Ok", onPress: () => console.log("Ok Pressed") }
          ]
@@ -40,7 +43,7 @@ const BlogItem = props => {
    return (
       <View>
          <AppTouchableOpacity
-            onPress={memberType !== "student" && memberType !== "visitor" ? item.onClick : PopupAlert}
+            onPress={isSubscriber ? item.onClick : PopupAlert}
          >
             <View style={{ backgroundColor: '#fff' }}>
                <View style={{
@@ -80,9 +83,11 @@ const BlogItem = props => {
                         >
                            {item.title}
                         </ItemTitle>
+                        {isSubscriber && (
                         <Text numberOfLines={4} ellipsizeMode={"tail"} style={[global.textAlt, {
                            marginVertical: 10
                         }]}>{excerpt}</Text>
+                        )}
 
                         <View style={{ flex: 1 }} />
                         <View style={[global.row, { alignItems: "center" }]}>
@@ -105,7 +110,7 @@ const BlogItem = props => {
                      </View>
                   </View>
                </View>
-               {memberType == "student" || memberType == "visitor" && (
+               {!isSubscriber && (
                   <>
                      <View
                         style={{

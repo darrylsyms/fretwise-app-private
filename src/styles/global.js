@@ -12,7 +12,7 @@ export const THEME_COLOR = '#F24B4B'; // TODO - how to get this from globalStyle
 
 // * * Foot * * //
 export const IOS_HOME_INDICATOR = Platform.OS === 'ios' ? 22 : 0;
-export const SAFE_AREA_BOTTOM = Platform.isPad ? IOS_HOME_INDICATOR : ifIphoneX(35, 0);
+export const SAFE_AREA_BOTTOM = Platform.isPad ? IOS_HOME_INDICATOR + 10 : ifIphoneX(35, 0);
 export const BOTTOM_TAB_BAR_HEIGHT = Platform.OS === 'ios' ? SAFE_AREA_BOTTOM + 49 : 0;
 export const PORTAL_TAB_BAR_HEIGHT = SAFE_AREA_BOTTOM + 49;
 

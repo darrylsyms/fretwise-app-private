@@ -92,8 +92,9 @@ const CustomTabBarBottom = (props) => {
                     style={[
                         screenProps.global.menuLabelStyle,
                         {
-                            marginHorizontal: 5,
+                            marginRight: 5,
                             marginTop: isTabletOrIPad() ? -(props.bottomSafeArea / 5) : 2,
+                            marginLeft: Platform.isPad ? 25 : 5,
                             color: tintColor,
                             fontWeight: FontWeights["medium"],
                             ...textRTLStyleFix(),

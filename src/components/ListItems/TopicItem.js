@@ -13,7 +13,7 @@ import ActionSheetButton from "@src/components/ActionButtons/ActionSheetButton";
 import { GUTTER } from "@src/styles/global";
 import { withNavigation } from 'react-navigation';
 import { useSelector } from 'react-redux';
-import AvatarSpecial from '../Global/SmallComponents/AvatarSpecial';
+import AvatarSpecial from '../Global/CustomComponents/AvatarSpecial';
 
 const TopicItem = (props) => {
 

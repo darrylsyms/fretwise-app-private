@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { getAvatar } from "@src/utils";
 import AppTouchableOpacity from "@src/components/AppTouchableOpacity";
-import AvatarSpecial from "../../Global/SmallComponents/AvatarSpecial";
+import AvatarSpecial from "../../Global/CustomComponents/AvatarSpecial";
 
 const ItemHeader = (props) => {
 
