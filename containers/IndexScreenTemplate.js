@@ -136,6 +136,7 @@ const ScreenTemplate = (props) => {
           }}>
           {props.title}
         </Animated.Text>
+        {/* TODO: Insert HeaderRight default component here. Need to iimport it from src*/}
       </Animated.View>
     );
   };

@@ -12,11 +12,15 @@ import AuthWrapper from "@src/components/AuthWrapper";
 import ActionSheetButton from "@src/components/ActionButtons/ActionSheetButton";
 import { GUTTER } from "@src/styles/global";
 import { withNavigation } from 'react-navigation';
+import { useSelector } from 'react-redux';
 import AvatarSpecial from '../Global/SmallComponents/AvatarSpecial';
 
 const TopicItem = (props) => {
 
     const { topic, styles, actionButtons, formatDateFunc, t } = props;
+
+    const state = useSelector((state) => state);
+    const user = state.user?.userObject;
 
     const global = styles.global;
     const colors = styles.colors;
@@ -51,7 +55,9 @@ const TopicItem = (props) => {
         return <Text style={global.itemMeta}>{gamiPostsPoints} Posts</Text>
     }
 
-    const ProfileType = Object.keys(hash?._embedded.user[0]?.member_types)[0];
+    let ProfileType;
+    if(hash?._embedded.user[0]?.member_types) ProfileType = Object.keys(hash?._embedded.user[0]?.member_types)[0];
+    if(!hash?._embedded.user[0]?.member_types) ProfileType = "visitor";
     const SubscriberRoles = ["instructor", "admin", "subscriber", "member"];
     const isSubscriber = SubscriberRoles.includes(ProfileType);
 
@@ -118,7 +124,7 @@ const TopicItem = (props) => {
 
     const Item = useMemo(() => {
         return (
-            <AppTouchableOpacity onPress={topic.toSingle} style={[rootStyle]}>
+            <AppTouchableOpacity onPress={user ? topic.toSingle : {}} style={[rootStyle]}>
                 <View>
                     <Animated.View
                         style={{

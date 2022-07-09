@@ -77,9 +77,11 @@ export const ScreenNames = [
      "ProfileFriends",
      "ProfileForums",
      "ProfileGroups",
-     "GroupMessages",
-     "GroupMessageCreatePostScreen",
+     "GroupMessages", // Doesn't work :(
+     "GroupMessageCreatePostScreen", 
      "GroupActivity",
+     "GroupDocuments", // Test
+     "GroupVideos", // Test
      "GroupPhotos",
      "GroupAdmin",
      "GroupManageSettings",

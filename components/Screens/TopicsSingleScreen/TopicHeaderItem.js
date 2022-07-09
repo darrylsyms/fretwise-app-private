@@ -21,7 +21,9 @@ const ItemHeader = (props) => {
 
   const hash = JSON.parse(item.hash);
 
-  const ProfileType = Object.keys(hash?._embedded.user[0]?.member_types)[0];
+  let ProfileType;
+  if(hash?._embedded.user[0]?.member_types) ProfileType = Object.keys(hash?._embedded.user[0]?.member_types)[0];
+  if(!hash?._embedded.user[0]?.member_types) ProfileType = "visitor";
   const SubscriberRoles = ["instructor", "admin", "subscriber", "member"];
   const isSubscriber = SubscriberRoles.includes(ProfileType);
 

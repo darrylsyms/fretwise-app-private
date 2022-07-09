@@ -70,6 +70,10 @@ import { aTagRenderer } from "@src/utils/htmlRender";
 
 export const applyCustomCode = externalCodeSetup => {
 
+	//externalCodeSetup.moreScreenApi.setContainerPaddingTop(props => 0); //88 props.containerPaddingTop
+	//externalCodeSetup.moreScreenApi.setContentInsetTop(props => 0); // 105 props.contentInsetTop
+	//externalCodeSetup.moreScreenApi.setContentOffsetY(props => 0); // -69 props.contentOffsetY
+
 	externalCodeSetup.topicsApi.setReplyItemContent(props => <ReplyItemContent {...props} />)
 	externalCodeSetup.topicsApi.setReplyItemAvatar(props => <ReplyItemAvatar {...props} />)
 
@@ -190,7 +194,7 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.forumsHooksApi.setShowSearch((bbSetting) => false);
 
 	// 2. Custom Tab Bar Bottom
-	//externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
+	externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
 
 	// 3. Custom Core Block Components
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/heading", (props) => <ContentHeadingsBlock {...props} />);
@@ -268,7 +272,7 @@ export const applyCustomCode = externalCodeSetup => {
 			<View style={{
 				paddingHorizontal: 20,
 				paddingVertical: 16,
-				marginBottom: 30, // bug fix
+				//marginBottom: 30, // bug fix
 				flexDirection: "row",
 				alignItems: "center",
 				justifyContent: "space-between"
@@ -282,9 +286,7 @@ export const applyCustomCode = externalCodeSetup => {
 
 		const DefaultButton =
 			<View style={{
-				marginBottom: Platform.OS === 'ios'
-					? 20
-					: 0
+				marginBottom: 0
 			}}>
 				{CourseActionBtn}
 			</View>
@@ -333,6 +335,7 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.profileScreenHooksApi.setUserAvatar(UserProfileAvatar)
 
 	// 3. Settings Menu List. Removes "Export Data"
+	
 	externalCodeSetup.settingsScreenApi.setSettingsListFilter((oldTabs, props) => {
 		return [
 			oldTabs[0],
@@ -347,6 +350,7 @@ export const applyCustomCode = externalCodeSetup => {
 			oldTabs[10],
 		]
 	})
+	
 
 	// 4. Add headerRight Button On Profile Screen
 	externalCodeSetup.profileScreenHooksApi.setHeaderRightComponent(() => <ProfileHeaderButton />)

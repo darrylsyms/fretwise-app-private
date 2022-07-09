@@ -1,25 +1,46 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, Platform } from "react-native";
+import { View, StyleSheet, Text, Image, Platform, Alert } from "react-native";
 import AppTouchableOpacity from "@src/components/AppTouchableOpacity";
 import { ItemTitle } from "@src/components/TextComponents";
 import IconButton from "@src/components/IconButton";
 import { useSelector } from 'react-redux';
+import { withNavigation } from 'react-navigation';
 import { formatDateTime } from "../../styles/utils";
 import { isTabletOrIPad } from "@src/utils";
+import { isColorDark } from "@src/utils";
+import Icon from "@src/components/Icon";
 
 const BlogItem = props => {
 
-   const { item, global, colors, index, t } = props;
-   const user = useSelector((state) => state.user.userObject);
-   const memberType = Object.keys(user.member_types)[0];
+   const { item, global, colors, index, t, navigation } = props;
+   const state = useSelector((state) => state);
+   const user = state.user?.userObject;
+
+   let memberType;
+   if (!user) memberType = "visitor";
+   if (!user.member_types) memberType = "student";
+   if (user.member_types) memberType = Object.keys(user?.member_types)[0];
 
    const regex = /(<([^>]+)>)/ig;
    const excerpt = item?.excerpt?.rendered?.replace(regex, '');
 
+   const PopupAlert = () =>
+      Alert.alert(
+         "Restricted Content",
+         "You must be a subscribing Fretwise member to access this post",
+         [
+            {
+               text: "Subscribe Now",
+               onPress: () => memberType == "visitor" ? navigation.navigate("SignupScreen") : navigation.navigate("ProductsScreen")
+            },
+            { text: "Ok", onPress: () => console.log("Ok Pressed") }
+         ]
+      );
+
    return (
       <View>
          <AppTouchableOpacity
-            onPress={memberType !== "student" ? item.onClick : {}}
+            onPress={memberType !== "student" && memberType !== "visitor" ? item.onClick : PopupAlert}
          >
             <View style={{ backgroundColor: '#fff' }}>
                <View style={{
@@ -59,26 +80,9 @@ const BlogItem = props => {
                         >
                            {item.title}
                         </ItemTitle>
-                        {memberType !== "student"
-                           ? (
-                              <Text numberOfLines={4} ellipsizeMode={"tail"} style={[global.textAlt, {
-                                 marginVertical: 10
-                              }]}>{excerpt}</Text>
-                           ) : (
-                              <>
-                                 <Text numberOfLines={2} ellipsizeMode={"tail"} style={[global.textAlt, {
-                                    marginVertical: 10, marginBottom: 5
-                                 }]}>{excerpt}</Text>
-                                 <View style={{
-                                    backgroundColor: '#f9dede', borderRadius: 4, marginVertical: 10
-                                 }}>
-                                    <Text style={[global.textAlt, {
-                                       padding: 6, fontWeight: 'bold', color: '#f84343'
-                                    }]}>You must be a subscribing member to access this content.</Text>
-                                 </View>
-                              </>
-                           )
-                        }
+                        <Text numberOfLines={4} ellipsizeMode={"tail"} style={[global.textAlt, {
+                           marginVertical: 10
+                        }]}>{excerpt}</Text>
 
                         <View style={{ flex: 1 }} />
                         <View style={[global.row, { alignItems: "center" }]}>
@@ -101,6 +105,42 @@ const BlogItem = props => {
                      </View>
                   </View>
                </View>
+               {memberType == "student" || memberType == "visitor" && (
+                  <>
+                     <View
+                        style={{
+                           position: 'absolute',
+                           height: '100%',
+                           width: '100%',
+                           backgroundColor: isColorDark(colors.bodyFrontBg)
+                              ? "black"
+                              : "white",
+                           opacity: 0.8,
+                           ...global.bottomBorder,
+                           paddingHorizontal: 15
+                        }}
+                     />
+                     <View style={{
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: '100%',
+                        width: '100%',
+                        position: 'absolute',
+                     }}>
+                        <Icon
+                           webIcon={""}
+                           icon={require("../../assets/img/icons/lock.png")}
+                           tintColor={colors.headingsColor}
+                           styles={{
+                              width: 20,
+                              height: 20,
+                              paddingBottom: 4
+                           }}
+                        />
+                        <Text style={[global.itemTitle, { color: colors.headingsColor }]}>Subscriber-only content</Text>
+                     </View>
+                  </>
+               )}
             </View>
          </AppTouchableOpacity>
       </View>
@@ -126,4 +166,4 @@ const styles = StyleSheet.create({
    }
 });
 
-export default BlogItem;
+export default withNavigation(BlogItem);

@@ -16,80 +16,101 @@ const LessonActionComponent = ({
     completing,
     completeDisabled,
     labels
-}) => (<AuthWrapper actionOnGuestLogin={"hide"}>
-    {showComplete && (
-        <View
-            style={[
-                global.row,
-                {
-                    backgroundColor: colors.bodyFrontBg,
-                    borderTopColor: colors.borderColor
-                },
-                global.lessonActionButtonContainer
-            ]}
-        >
-            <AppTouchableOpacity
-                style={[
-                    { flex: 1 },
-                    {
-                        opacity: !lesson.completed && completeDisabled ? 0.5 : 1,
-                        backgroundColor: !lesson.completed
-                            ? colors.primaryButtonBg
-                            : colors.bodyFrontBg
-                    },
-                    global.completeLessonButtonW
-                ]}
-                disabled={lesson.completed || completeDisabled}
-                onPress={onCompleteButtonClick}
-            >
-                <View style={global.row}>
-                    <View style={global.linkWithArrow}>
-                        {!lesson.completed ? (
-                            completing && (
-                                <>
-                                    <Text style={{color: "#fff"}}>Completing...</Text>
-                                    <ActivityIndicator
-                                        animating={true}
-                                        color={colors.primaryButtonColor}
-                                        size="small"
-                                        style={global.lessonButtonLoadingIcon}
+}) => {
+
+    const myFunction = () => {
+        console.log('testing1')
+    }
+
+    return (
+        <AuthWrapper actionOnGuestLogin={"hide"}>
+            {showComplete && (
+                <View
+                    style={[
+                        global.row,
+                        {
+                            backgroundColor: colors.bodyFrontBg,
+                            borderTopColor: colors.borderColor
+                        },
+                        global.lessonActionButtonContainer
+                    ]}
+                >
+                    <AppTouchableOpacity
+                        style={[
+                            { flex: 1 },
+                            {
+                                opacity: !lesson.completed && completeDisabled ? 0.5 : 1,
+                                backgroundColor: !lesson.completed
+                                    ? colors.primaryButtonBg
+                                    : colors.bodyFrontBg
+                            },
+                            global.completeLessonButtonW
+                        ]}
+                        disabled={lesson.completed || completeDisabled}
+                        onPress={() => {
+                            onCompleteButtonClick();
+                            //myFunction();
+                        }
+                        }
+                    >
+                        <View style={global.row}>
+                            <View style={global.linkWithArrow}>
+                                {lesson.completed && (
+                                    <Icon
+                                        webIcon={""}
+                                        icon={require("@src/assets/img/completed-course.png")}
+                                        styles={global.lessonActionCompleteIcon}
                                     />
-                                </>
-                            )
-                        ) : (
-                            <Icon
-                                webIcon={""}
-                                icon={require("@src/assets/img/completed-course.png")}
-                                styles={global.lessonActionCompleteIcon}
-                            />
-                        )}
-                        <Text
-                            style={[
-                                {
-                                    marginLeft: 10,
-                                    color: !lesson.completed
-                                        ? colors.primaryButtonColor
-                                        : isColorDark(colors.bodyFrontBg)
-                                            ? "white"
-                                            : "black"
-                                },
-                                !lesson.completed
-                                    ? global.completeLessonButton
-                                    : global.completeButton
-                            ]}
-                        >
-                            {t(
-                                lesson.completed
-                                    ? "lesson:completed"
-                                    : "lesson:completeLesson",
-                                { label: labels.lesson.toLowerCase() }
-                            )}
-                        </Text>
-                    </View>
+                                )}
+                                <Text
+                                    style={[
+                                        {
+                                            marginLeft: 10,
+                                            color: !lesson.completed
+                                                ? colors.primaryButtonColor
+                                                : isColorDark(colors.bodyFrontBg)
+                                                    ? "white"
+                                                    : "black"
+                                        },
+                                        !lesson.completed
+                                            ? global.completeLessonButton
+                                            : global.completeButton
+                                    ]}
+                                >
+                                    {!lesson.completed ? (
+                                        completing ? (
+                                                <ActivityIndicator
+                                                    animating={true}
+                                                    color={colors.primaryButtonColor}
+                                                    size="small"
+                                                    style={global.lessonButtonLoadingIcon}
+                                                />
+                                        ) : (
+                                            <>
+                                                {t(
+                                                    !lesson.completed
+                                                    && "lesson:completeLesson",
+                                                    { label: labels.lesson.toLowerCase() }
+                                                )}
+                                            </>
+                                        )
+                                    ) : (
+                                        <>
+                                            {t(
+                                                lesson.completed
+                                                && "lesson:completed",
+                                                { label: labels.lesson.toLowerCase() }
+                                            )}
+                                        </>
+                                    )}
+                                </Text>
+                            </View>
+                        </View>
+                    </AppTouchableOpacity>
                 </View>
-            </AppTouchableOpacity>
-        </View>
-    )}
-</AuthWrapper>)
+            )}
+        </AuthWrapper>
+    )
+}
 
 export default LessonActionComponent;
