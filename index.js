@@ -7,61 +7,125 @@ import {
 	LESSON_ACTION_BUTTON_HEIGHT,
 	LESSON_ACTION_BUTTON_TEXT_MARGIN,
 	LESSON_ACTION_BUTTON_ICON_MARGIN
-} from "./styles/global";
+} from "./src/styles/global";
 import { isTabletOrIPad } from "@src/utils";
 import { NavigationActions } from 'react-navigation';
 // * Screens * //
 import DownloadedCoursesScreen from "@src/containers/DownloadedCoursesScreen";
-import DailyChallengesScreen from './containers/screens/DailyChallengesScreen';
-import TopicsScreeen from "./containers/screens/TopicsScreen";
-import CustomCourseCategoriesScreen from "./containers/screens/CustomCourseCategoriesScreen";
-import MessagesListScreen from "./containers/screens/MessagesListScreen";
-import CustomHomeScreen from "./containers/screens/CustomHomeScreen";
-import OnboardingScreen from "./containers/screens/OnboardingScreen";
-import MoreScreeen from "./containers/screens/CustomMoreScreen";
+import DailyChallengesScreen from './src/containers/screens/DailyChallengesScreen';
+import TopicsScreeen from "./src/containers/screens/TopicsScreen";
+import CustomCourseCategoriesScreen from "./src/containers/screens/CustomCourseCategoriesScreen";
+import MessagesListScreen from "./src/containers/screens/MessagesListScreen";
+import CustomHomeScreen from "./src/containers/screens/CustomHomeScreen";
+import OnboardingScreen from "./src/containers/screens/OnboardingScreen";
 // * List Items * //
-import BlogItem from "./components/ListItems/BlogItem";
-import TopicItem from "./components/ListItems/TopicItem";
-import ItemHeader from "./components/Screens/TopicsSingleScreen/TopicHeaderItem"
+import BlogItem from "./src/components/ListItems/BlogItem";
+import TopicItem from "./src/components/ListItems/TopicItem";
+import ItemHeader from "./src/components/Screens/TopicsSingleScreen/TopicHeaderItem"
 // * Components * //
-import LessonTitle from "./components/Screens/LessonSingleScreen/LessonTitle";
-import TopicTitle from "./components/Screens/LearnTopicSingleScreen/TopicTitle";
-import PrevNextLessons from './components/Screens/LessonSingleScreen/PrevNextButtonsLesson';
-import PrevNextTopics from "./components/Screens/LearnTopicSingleScreen/PrevNextButtonsTopic";
-import ContentHeadingsBlock from "./components/Global/CoreHeadingBlock";
-import ImageComponent from "./components/Global/CoreImageBlock";
-import IndexScreenHeaderHeight from "./components/Global/AnimatedHeaderHeight";
-import CourseHeaderItems from "./components/Screens/CourseSingleScreen/CourseHeaderDetails";
+import LessonTitle from "./src/components/Screens/LessonSingleScreen/LessonTitle";
+import TopicTitle from "./src/components/Screens/LearnTopicSingleScreen/TopicTitle";
+import PrevNextLessons from './src/components/Screens/LessonSingleScreen/PrevNextButtonsLesson';
+import PrevNextTopics from "./src/components/Screens/LearnTopicSingleScreen/PrevNextButtonsTopic";
+import ContentHeadingsBlock from "./src/components/Global/CoreHeadingBlock";
+import ImageComponent from "./src/components/Global/CoreImageBlock";
+import IndexScreenHeaderHeight from "./src/components/Global/AnimatedHeaderHeight";
+import CourseHeaderItems from "./src/components/Screens/CourseSingleScreen/CourseHeaderDetails";
 import CourseActionButton from "@src/components/Course/CourseActionButton";
-import FilterBarComponents from "./components/Global/ReplaceFilterBarComponent";
-import CustomTabBarBottom from "./components/Global/TabBarBottom";
-import ForumHeaderButtons from './components/Screens/ForumsSingleScreen/ForumHeaderRightButtons';
-import AfterProfileDetails from "./components/Screens/ProfileScreen/AfterProfileDetails";
-import ProfileHeaderButton from "./components/Screens/ProfileScreen/ProfileHeaderRightButton";
-import UserProfileAvatar from "./components/Screens/ProfileScreen/ProfileSubscriberBadge";
-import HomeHeaderRight from "./components/Screens/TopicsScreen/HeaderRight";
-import EmbedsComponent from "./components/Global/CoreEmbedBlock";
-import AnimatedHeaderTitle from "./components/Global/AnimatedHeaderTitle";
-import GroupDetailsComponent from "./components/Screens/GroupSingleScreen/GroupDetailsComponent";
+import FilterBarComponents from "./src/components/Global/ReplaceFilterBarComponent";
+import CustomTabBarBottom from "./src/components/Global/TabBarBottom";
+import ForumHeaderButtons from './src/components/Screens/ForumsSingleScreen/ForumHeaderRightButtons';
+import AfterProfileDetails from "./src/components/Screens/ProfileScreen/AfterProfileDetails";
+import ProfileHeaderButton from "./src/components/Screens/ProfileScreen/ProfileHeaderRightButton";
+import UserProfileAvatar from "./src/components/Screens/ProfileScreen/ProfileSubscriberBadge";
+import HomeHeaderRight from "./src/components/Screens/TopicsScreen/HeaderRight";
+import EmbedsComponent from "./src/components/Global/CoreEmbedBlock";
+import AnimatedHeaderTitle from "./src/components/Global/AnimatedHeaderTitle";
+import GroupDetailsComponent from "./src/components/Screens/GroupSingleScreen/GroupDetailsComponent";
 // * Reducers * //
-import hotTopicsReducer from './state/reducers/hotTopics.reducer';
-import coursesReducer from './state/reducers/courses.reducer';
-import courseCategoriesReducer from './state/reducers/courseCategories.reducer';
-import forumsReducer from './state/reducers/forums.reducer';
-import welcomeMessagesReducer from "./state/reducers/welcomeMessages.reducer";
-import courseIncludesReducer from "./state/reducers/courseIncludes.reducer"
-import SpacerComponent from "./components/Global/CoreSpacerBlock";
-import MessageText from "./components/Screens/MessagesScreen/MessageContents";
+import hotTopicsReducer from './src/state/reducers/hotTopics.reducer';
+import coursesReducer from './src/state/reducers/courses.reducer';
+import courseCategoriesReducer from './src/state/reducers/courseCategories.reducer';
+import forumsReducer from './src/state/reducers/forums.reducer';
+import welcomeMessagesReducer from "./src/state/reducers/welcomeMessages.reducer";
+import courseIncludesReducer from "./src/state/reducers/courseIncludes.reducer"
+import SpacerComponent from "./src/components/Global/CoreSpacerBlock";
+import MessageText from "./src/components/Screens/MessagesScreen/MessageContents";
 
-//import ReplyItemContent from "./components/Screens/TopicsSingleScreen/ReplyItemContent";
-import ReplyItemAvatar from "./components/Screens/TopicsSingleScreen/ReplyItemAvatar";
-import { ScreenNames } from "./data/ScreensWithoutTabBar";
+import ReplyItemContent from "./src/components/Screens/TopicsSingleScreen/ReplyItemContent";
+import ReplyItemAvatar from "./src/components/Screens/TopicsSingleScreen/ReplyItemAvatar";
+import { ScreenNames } from "./src/data/ScreensWithoutTabBar";
+
+import LessonActionComponent from "./src/components/Screens/LessonSingleScreen/LessonBottomActionButton";
+import LearnTopicActionComponent from "./src/components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
+
+
+import HTML from "react-native-render-html";
+import ReadMore from "@src/components/ReadMore";
+import {
+    alterChildrenHTML
+} from "@src/utils";
+import { aTagRenderer } from "@src/utils/htmlRender";
 
 export const applyCustomCode = externalCodeSetup => {
 
-	//externalCodeSetup.topicsApi.setReplyItemContent(props => <ReplyItemContent {...props} />)
+	//externalCodeSetup.moreScreenApi.setContainerPaddingTop(props => 0); //88 props.containerPaddingTop
+	//externalCodeSetup.moreScreenApi.setContentInsetTop(props => 0); // 105 props.contentInsetTop
+	//externalCodeSetup.moreScreenApi.setContentOffsetY(props => 0); // -69 props.contentOffsetY
 
+	externalCodeSetup.topicsApi.setReplyItemContent(props => <ReplyItemContent {...props} />)
 	externalCodeSetup.topicsApi.setReplyItemAvatar(props => <ReplyItemAvatar {...props} />)
+
+	externalCodeSetup.topicSingleApi.setTopicContentComponent(({
+        colors,
+        content,
+        global,
+        t,
+        tagsStyles,
+        attemptDeepLink,
+        computedWidth,
+        topic
+    }) => {
+
+        return <View style={{ marginTop: -4 }}>
+            <ReadMore
+                colors={colors}
+                content={content}
+                size={1000}
+                t={t}
+                global={global}
+                style={{ marginBottom: 20 }}
+            >
+                {content => (
+                    <HTML
+                        html={content}
+                        tagsStyles={{
+                            ...tagsStyles,
+							p: {
+								marginBottom: 0
+							},
+							ul: {
+                                marginTop: 5
+                            },
+                            iframe: {
+                                marginTop: 10,
+                                marginBottom: 10
+                            }
+                        }}
+                        baseFontStyle={global.textHtml}
+                        onLinkPress={attemptDeepLink}
+                        staticContentMaxWidth={computedWidth}
+                        alterChildren={alterChildrenHTML(computedWidth)}
+                        renderers={{
+                            a: aTagRenderer(computedWidth)
+                        }}
+                    />
+                )}
+            </ReadMore>
+        </View>
+    })
+	externalCodeSetup.lessonSingleScreenApi.setLessonActionComponent(props => <LessonActionComponent {...props} />)
+	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicActionComponent(props => <LearnTopicActionComponent {...props} />)
 
 	/*-----------------------------------------------------------------------------------*/
 	/* BUG FIX */
@@ -72,7 +136,7 @@ export const applyCustomCode = externalCodeSetup => {
 			return (
 				<View style={[global.row, { flex: 1 }]}>
 					<Image
-						source={require('./assets/img/branding/darryl-avatar.jpg')}
+						source={require('./src/assets/img/branding/darryl-avatar.jpg')}
 						style={{ marginRight: 10, width: 35, height: 35, borderRadius: 35 }}
 					/>
 					<View>
@@ -207,7 +271,7 @@ export const applyCustomCode = externalCodeSetup => {
 			<View style={{
 				paddingHorizontal: 20,
 				paddingVertical: 16,
-				marginBottom: 30, // bug fix
+				//marginBottom: 30, // bug fix
 				flexDirection: "row",
 				alignItems: "center",
 				justifyContent: "space-between"
@@ -221,9 +285,7 @@ export const applyCustomCode = externalCodeSetup => {
 
 		const DefaultButton =
 			<View style={{
-				marginBottom: Platform.OS === 'ios'
-					? 20
-					: 0
+				marginBottom: 0
 			}}>
 				{CourseActionBtn}
 			</View>
@@ -272,6 +334,7 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.profileScreenHooksApi.setUserAvatar(UserProfileAvatar)
 
 	// 3. Settings Menu List. Removes "Export Data"
+	
 	externalCodeSetup.settingsScreenApi.setSettingsListFilter((oldTabs, props) => {
 		return [
 			oldTabs[0],
@@ -282,10 +345,12 @@ export const applyCustomCode = externalCodeSetup => {
 			oldTabs[5],
 			oldTabs[6],
 			oldTabs[7],
+			//oldTabs[8], // Export Data
 			oldTabs[9],
 			oldTabs[10],
 		]
 	})
+	
 
 	// 4. Add headerRight Button On Profile Screen
 	externalCodeSetup.profileScreenHooksApi.setHeaderRightComponent(() => <ProfileHeaderButton />)
@@ -382,7 +447,7 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.navigationApi.replaceScreenComponent("messages", MessagesListScreen);
 	externalCodeSetup.navigationApi.replaceScreenComponent("HomeTopicsScreen", TopicsScreeen);
 	externalCodeSetup.navigationApi.replaceScreenComponent("topics", TopicsScreeen);
-/*
+
 	// 2. Custom App Welcome Screen Navigation Properties
 	externalCodeSetup.navigationApi.setAnimatedSwitchNavigator((routes, options, routeProps) => {
 
@@ -436,7 +501,5 @@ export const applyCustomCode = externalCodeSetup => {
 		}
 
 	})
-
-*/
 
 };
