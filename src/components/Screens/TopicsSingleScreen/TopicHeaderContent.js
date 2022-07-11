@@ -1,4 +1,5 @@
 import React from "react";
+import { View } from 'react-native';
 import HTML from "react-native-render-html";
 import ReadMore from "@src/components/ReadMore";
 import {
@@ -34,6 +35,12 @@ const TopicHeaderContent = (props) => {
                         html={content}
                         tagsStyles={{
                             ...tagsStyles,
+							p: {
+								marginBottom: 0
+							},
+							ul: {
+                                marginTop: 5
+                            },
                             iframe: {
                                 marginTop: 10,
                                 marginBottom: 10

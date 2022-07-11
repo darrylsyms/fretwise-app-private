@@ -2,14 +2,18 @@ import React from 'react';
 import { TouchableOpacity, Image, StyleSheet, View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { NavigationActions } from "react-navigation";
-import { useSelector } from "react-redux";
-import { globalStyle } from "@src/styles/global";
 
 export const ForumHeaderButtons = (props) => {
 
-  const { forum, navigation } = props;
-  const globalStyles = useSelector((state) => globalStyle(state.config.styles))
-  const { colors } = globalStyles;
+  const { 
+    forum, 
+    navigation,
+    t, 
+    colors,
+    global, 
+    headerColor, 
+    actionButtons 
+  } = props;
 
   const createDiscussion = () => {
 

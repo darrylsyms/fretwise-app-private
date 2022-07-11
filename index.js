@@ -10,6 +10,7 @@ import {
 } from "./src/styles/global";
 import { isTabletOrIPad } from "@src/utils";
 import { NavigationActions } from 'react-navigation';
+import { ScreenNames } from "./src/data/ScreensWithoutTabBar";
 // * Screens * //
 import DownloadedCoursesScreen from "@src/containers/DownloadedCoursesScreen";
 import DailyChallengesScreen from './src/containers/screens/DailyChallengesScreen';
@@ -18,10 +19,10 @@ import CustomCourseCategoriesScreen from "./src/containers/screens/CustomCourseC
 import MessagesListScreen from "./src/containers/screens/MessagesListScreen";
 import CustomHomeScreen from "./src/containers/screens/CustomHomeScreen";
 import OnboardingScreen from "./src/containers/screens/OnboardingScreen";
-// * List Items * //
+// * Main List Items * //
 import BlogItem from "./src/components/ListItems/BlogItem";
 import TopicItem from "./src/components/ListItems/TopicItem";
-import ItemHeader from "./src/components/Screens/TopicsSingleScreen/TopicHeaderItem"
+import TopicHeaderAvatar from "./src/components/Screens/TopicsSingleScreen/TopicHeaderItem"
 // * Components * //
 import LessonTitle from "./src/components/Screens/LessonSingleScreen/LessonTitle";
 import TopicTitle from "./src/components/Screens/LearnTopicSingleScreen/TopicTitle";
@@ -38,34 +39,25 @@ import ForumHeaderButtons from './src/components/Screens/ForumsSingleScreen/Foru
 import AfterProfileDetails from "./src/components/Screens/ProfileScreen/AfterProfileDetails";
 import ProfileHeaderButton from "./src/components/Screens/ProfileScreen/ProfileHeaderRightButton";
 import UserProfileAvatar from "./src/components/Screens/ProfileScreen/ProfileSubscriberBadge";
-import HomeHeaderRight from "./src/components/Screens/TopicsScreen/HeaderRight";
+import HeaderRightComponent from "./src/components/Screens/TopicsScreen/HeaderRight";
 import EmbedsComponent from "./src/components/Global/CoreEmbedBlock";
-import AnimatedHeaderTitle from "./src/components/Global/AnimatedHeaderTitle";
+import AnimatedHeaderContents from "./src/components/Global/AnimatedHeaderContents";
 import GroupDetailsComponent from "./src/components/Screens/GroupSingleScreen/GroupDetailsComponent";
+import MessageText from "./src/components/Screens/MessagesScreen/MessageContents";
+import SpacerComponent from "./src/components/Global/CoreSpacerBlock";
+import ReplyItemContent from "./src/components/Screens/TopicsSingleScreen/ReplyItemContent";
+import ReplyItemAvatar from "./src/components/Screens/TopicsSingleScreen/ReplyItemAvatar";
+import LessonActionComponent from "./src/components/Screens/LessonSingleScreen/LessonBottomActionButton";
+import LearnTopicActionComponent from "./src/components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
+import TopicHeaderContent from "./src/components/Screens/TopicsSingleScreen/TopicHeaderContent";
 // * Reducers * //
 import hotTopicsReducer from './src/state/reducers/hotTopics.reducer';
 import coursesReducer from './src/state/reducers/courses.reducer';
 import courseCategoriesReducer from './src/state/reducers/courseCategories.reducer';
 import forumsReducer from './src/state/reducers/forums.reducer';
 import welcomeMessagesReducer from "./src/state/reducers/welcomeMessages.reducer";
-import courseIncludesReducer from "./src/state/reducers/courseIncludes.reducer"
-import SpacerComponent from "./src/components/Global/CoreSpacerBlock";
-import MessageText from "./src/components/Screens/MessagesScreen/MessageContents";
+import courseIncludesReducer from "./src/state/reducers/courseIncludes.reducer";
 
-import ReplyItemContent from "./src/components/Screens/TopicsSingleScreen/ReplyItemContent";
-import ReplyItemAvatar from "./src/components/Screens/TopicsSingleScreen/ReplyItemAvatar";
-import { ScreenNames } from "./src/data/ScreensWithoutTabBar";
-
-import LessonActionComponent from "./src/components/Screens/LessonSingleScreen/LessonBottomActionButton";
-import LearnTopicActionComponent from "./src/components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
-
-
-import HTML from "react-native-render-html";
-import ReadMore from "@src/components/ReadMore";
-import {
-    alterChildrenHTML
-} from "@src/utils";
-import { aTagRenderer } from "@src/utils/htmlRender";
 
 export const applyCustomCode = externalCodeSetup => {
 
@@ -73,59 +65,8 @@ export const applyCustomCode = externalCodeSetup => {
 	//externalCodeSetup.moreScreenApi.setContentInsetTop(props => 0); // 105 props.contentInsetTop
 	//externalCodeSetup.moreScreenApi.setContentOffsetY(props => 0); // -69 props.contentOffsetY
 
-	externalCodeSetup.topicsApi.setReplyItemContent(props => <ReplyItemContent {...props} />)
-	externalCodeSetup.topicsApi.setReplyItemAvatar(props => <ReplyItemAvatar {...props} />)
-
-	externalCodeSetup.topicSingleApi.setTopicContentComponent(({
-        colors,
-        content,
-        global,
-        t,
-        tagsStyles,
-        attemptDeepLink,
-        computedWidth,
-        topic
-    }) => {
-
-        return <View style={{ marginTop: -4 }}>
-            <ReadMore
-                colors={colors}
-                content={content}
-                size={1000}
-                t={t}
-                global={global}
-                style={{ marginBottom: 20 }}
-            >
-                {content => (
-                    <HTML
-                        html={content}
-                        tagsStyles={{
-                            ...tagsStyles,
-							p: {
-								marginBottom: 0
-							},
-							ul: {
-                                marginTop: 5
-                            },
-                            iframe: {
-                                marginTop: 10,
-                                marginBottom: 10
-                            }
-                        }}
-                        baseFontStyle={global.textHtml}
-                        onLinkPress={attemptDeepLink}
-                        staticContentMaxWidth={computedWidth}
-                        alterChildren={alterChildrenHTML(computedWidth)}
-                        renderers={{
-                            a: aTagRenderer(computedWidth)
-                        }}
-                    />
-                )}
-            </ReadMore>
-        </View>
-    })
-	externalCodeSetup.lessonSingleScreenApi.setLessonActionComponent(props => <LessonActionComponent {...props} />)
-	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicActionComponent(props => <LearnTopicActionComponent {...props} />)
+	externalCodeSetup.topicSingleApi.setTopicContentComponent(props => <TopicHeaderContent {...props} />) // TEMP until https://github.com/darrylsyms/fretwise-app-private/issues/32 is fixed
+	externalCodeSetup.topicSingleApi.setReplyItemContent(props => <ReplyItemContent {...props} />) // TEMP until https://github.com/darrylsyms/fretwise-app-private/issues/32 is fixed
 
 	/*-----------------------------------------------------------------------------------*/
 	/* BUG FIX */
@@ -158,90 +99,82 @@ export const applyCustomCode = externalCodeSetup => {
 	/* GLOBAL */
 	/*-----------------------------------------------------------------------------------*/
 
-	// 0. Add To State
+	// Add To State
 	externalCodeSetup.reduxApi.addReducer(
 		"courseIncludesCache",
 		courseIncludesReducer
 	);
-
 	externalCodeSetup.reduxApi.addReducer(
 		"welcomeMessagesCache",
 		welcomeMessagesReducer
 	);
-
 	externalCodeSetup.reduxApi.addReducer(
 		"hotTopicCache",
 		hotTopicsReducer
 	);
-
 	externalCodeSetup.reduxApi.wrapReducer(
 		"forumsCache",
 		forumsReducer
 	);
-
 	externalCodeSetup.reduxApi.wrapReducer(
 		"courseCategories",
 		courseCategoriesReducer
 	);
-
 	externalCodeSetup.reduxApi.wrapReducer(
 		"coursesCache",
 		coursesReducer
 	);
 
-	// 1. Remove Search Component From ForumsScreen
-	externalCodeSetup.forumsHooksApi.setShowSearch((bbSetting) => false);
-
-	// 2. Custom Tab Bar Bottom
-	externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
-
-	// 3. Custom Core Block Components
+	// Core Block Components
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/heading", (props) => <ContentHeadingsBlock {...props} />);
-	if (!isTabletOrIPad()) {
-		externalCodeSetup.blocksApi.addCustomBlockRender("core/image", (props) => <ImageComponent {...props} />);
-	}
+	/*if (!isTabletOrIPad())*/ externalCodeSetup.blocksApi.addCustomBlockRender("core/image", (props) => <ImageComponent {...props} />);
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/embed", (props) => <EmbedsComponent {...props} />);
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/spacer", (props) => <SpacerComponent {...props} />);
 
+	externalCodeSetup.blocksApi.setBlockProps("core/embed", (props) => {
+		const { block } = props;
+		if (block.data.provider === "vimeo" || block.data.provider === "youtube") {
+			return {
+				...props,
+				viewWidth: DEVICE_WIDTH
+			}
+		}
+		return props;
+	});
 
-
-	// 4. Hide Tab Bar From These Screens
-	externalCodeSetup.navigationApi.setScreensWithoutTabBar(ScreenNames)
-
-	// 5. Set Header Height Across App Index Screens
+	// Header Variables
 	externalCodeSetup.indexScreenApiHooks.setHeaderHeight(IndexScreenHeaderHeight);
+	externalCodeSetup.indexScreenApiHooks.setRenderHeaderRight(props => <HeaderRightComponent {...props} />);
+	externalCodeSetup.indexScreenApiHooks.setAnimatedListHeaderTitleComponent(props => <AnimatedHeaderContents {...props} />);
+
+	// Group Details
+	externalCodeSetup.socialGroupSingleApi.setGroupDetailsComponent(GroupDetailsComponent);
 
 
 	/*-----------------------------------------------------------------------------------*/
 	/* FORUMS */
 	/*-----------------------------------------------------------------------------------*/
 
-	// 0. Insert headerRight button on Topics Screen.
-	externalCodeSetup.indexScreenApiHooks.setRenderHeaderRight(props => <HomeHeaderRight {...props} />);
+	// Replace default header right button with: "Create Topic".
+	externalCodeSetup.forumSingleHooksApi.setHeaderRightComponent(props => <ForumHeaderButtons {...props} />)
 
-	// 1. Replace headerRight default button with: "Create Topic".
-	externalCodeSetup.forumSingleHooksApi.setHeaderRightComponent(({ t, forum, colors, global, headerColor, actionButtons, ...rest }) => {
-		return <ForumHeaderButtons forum={forum} actionButtons={actionButtons} t={t} />
+	externalCodeSetup.topicsApi.setTopicItemComponent(props => <TopicItem {...props} />)
+	externalCodeSetup.topicsApi.setSubFiltersFilter((filters) => {
+		return ["activity", "date", "popular"];
 	})
 
-	// 2. Custom Topic & Forum Item Layout
-	externalCodeSetup.topicsApi.setTopicItemComponent(props => <TopicItem {...props} />)
-	externalCodeSetup.topicsApi.setTopicItemHeader(props => <ItemHeader {...props} />)
-
-	// 3. Add headerRight to Topics Screen
-	externalCodeSetup.indexScreenApiHooks.setAnimatedListHeaderTitleComponent(({ title, subtitle, global, titleStyle }) => {
-		return <AnimatedHeaderTitle title={title} subtitle={subtitle} global={global} titleStyle={titleStyle} />
-	});
-
-	// 4. Groups
-	externalCodeSetup.socialGroupSingleApi.setGroupDetailsComponent(GroupDetailsComponent)
+	externalCodeSetup.topicSingleApi.setTopicItemHeader(props => <TopicHeaderAvatar {...props} />)
+	externalCodeSetup.topicSingleApi.setReplyItemAvatar(props => <ReplyItemAvatar {...props} />)
 
 
 	/*-----------------------------------------------------------------------------------*/
 	/* COURSES */
 	/*-----------------------------------------------------------------------------------*/
 
-	// 1. Remove unnecessary CourseSingleScreen action button.
+	// Add custom course header details
+	externalCodeSetup.courseSingleApi.setCourseHeaderDetails(props => <CourseHeaderItems {...props} />)
+
+	// Remove unnecessary CourseSingleScreen action button.
 	externalCodeSetup.courseSingleApi.setTransformCourseActionButtons((
 		CourseActionBtn,
 		courseVM,
@@ -294,47 +227,22 @@ export const applyCustomCode = externalCodeSetup => {
 
 	})
 
-	// 2. Lesson/Topic Title changes
-	externalCodeSetup.lessonSingleScreenApi.setLessonTitleComponent(props => <LessonTitle {...props} />)
-	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicTitleComponent(props => <TopicTitle {...props} />)
-
-	// 3. Custom Prev/Next Buttons
+	// Lesson Header & Action Button
+	externalCodeSetup.lessonSingleScreenApi.setLessonTitleComponent(props => <LessonTitle {...props} />);
 	externalCodeSetup.lessonSingleScreenApi.setPrevNextComponent(props => <PrevNextLessons {...props} />);
+	externalCodeSetup.lessonSingleScreenApi.setLessonActionComponent(props => <LessonActionComponent {...props} />);
+
+	// LearnTopic Header & Action Button
+	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicTitleComponent(props => <TopicTitle {...props} />);
 	externalCodeSetup.learnTopicSingleScreenApi.setPrevNextComponent((props) => <PrevNextTopics {...props} />);
-
-	// 4. Lesson / Topic Container - Full Width Videos
-	externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: 0 }, true);
-	externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: 0 }, true);
-	externalCodeSetup.cssApi.addGlobalStyle("videoBlockContainer", { paddingHorizontal: 0 });
-
-	externalCodeSetup.blocksApi.setBlockProps("core/embed", (props) => {
-		const { block } = props;
-		if (block.data.provider === "vimeo" || block.data.provider === "youtube") {
-			return {
-				...props,
-				viewWidth: DEVICE_WIDTH
-			}
-		}
-		return props;
-	});
-
-
-	// 5. Header Details
-	externalCodeSetup.courseSingleApi.setCourseHeaderDetails(props => <CourseHeaderItems {...props} />)
+	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicActionComponent(props => <LearnTopicActionComponent {...props} />);
 
 
 	/*-----------------------------------------------------------------------------------*/
-	/* MORE SCREEN */
+	/* MORE SCREEN ITEMS */
 	/*-----------------------------------------------------------------------------------*/
-
-	// 1. Adds Gamipress info after profile Header
-	externalCodeSetup.profileScreenHooksApi.setAfterDetailsComponent(AfterProfileDetails)
-
-	// 2. Adds badge to Profile Avatar if subscribed
-	externalCodeSetup.profileScreenHooksApi.setUserAvatar(UserProfileAvatar)
 
 	// 3. Settings Menu List. Removes "Export Data"
-	
 	externalCodeSetup.settingsScreenApi.setSettingsListFilter((oldTabs, props) => {
 		return [
 			oldTabs[0],
@@ -353,27 +261,21 @@ export const applyCustomCode = externalCodeSetup => {
 	
 
 	// 4. Add headerRight Button On Profile Screen
+	externalCodeSetup.profileScreenHooksApi.setAfterDetailsComponent(AfterProfileDetails) // Adds Gamipress info after profile Header
+	externalCodeSetup.profileScreenHooksApi.setUserAvatar(UserProfileAvatar)
 	externalCodeSetup.profileScreenHooksApi.setHeaderRightComponent(() => <ProfileHeaderButton />)
-
-	// 5. Profile Items
-	externalCodeSetup.profileScreenHooksApi.setIgnoreTabsFilter((
-		list,
-		isOwnAccount
-	) => [
-			...list,
-			"courses"
-		])
+	externalCodeSetup.profileScreenHooksApi.setIgnoreTabsFilter(( list, isOwnAccount ) => [
+		...list,
+		"courses"
+	]);
 
 	externalCodeSetup.messagesSingleScreenApi.setThreadItemText((props) => <MessageText {...props} />);
 
 	/*-----------------------------------------------------------------------------------*/
-	/* BLOG */
+	/* BLOG / DAILY CHALLENGES */
 	/*-----------------------------------------------------------------------------------*/
 
-	// 1. Item List Appearance
-	externalCodeSetup.blogApi.setBlogItemComponent(props => <BlogItem {...props} />)
-
-	// 2. Hide Search Component
+	externalCodeSetup.blogApi.setBlogItemComponent(props => <BlogItem {...props} />);
 	externalCodeSetup.blogApi.hideSearch();
 
 
@@ -401,48 +303,50 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.cssApi.addGlobalStyle("completeTopicButton", { marginBottom: LESSON_ACTION_BUTTON_TEXT_MARGIN, fontWeight: '600', }); // topic complete text
 	externalCodeSetup.cssApi.addGlobalStyle("learnTopicActionCompleteIcon", { marginBottom: LESSON_ACTION_BUTTON_ICON_MARGIN, width: 30, height: 30 });
 	externalCodeSetup.cssApi.addGlobalStyle("learnTopicButtonLoadingIcon", { marginBottom: IOS_HOME_INDICATOR, left: -5 });
+	// Lesson Container - For full-width videos
+	externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: 0 }, true);
+	externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: 0 }, true);
+	externalCodeSetup.cssApi.addGlobalStyle("videoBlockContainer", { paddingHorizontal: 0 });
 
 
 	/*-----------------------------------------------------------------------------------*/
-	/* FILTER COMPONENT */
+	/* FILTER COMPONENTS */
 	/*-----------------------------------------------------------------------------------*/
 
-	// 1. Set default sorting order in Courses lists.
+	// Set default sorting order in Courses lists.
 	externalCodeSetup.coursesHooksApi.setSubFiltersFilter((filters) => {
 		return ['my_progress', 'recent', 'title'];
 	})
 
-	// 2. Set default sorting order in Course Categories lists.
+	// Set default sorting order in Course Categories lists.
 	externalCodeSetup.coursesHooksApi.setCategoriesSubFiltersFilter((filters) => {
 		return ["date", "title"];
 	})
 
-	// 3. Forum Sub Filters
+	// Forum Sub Filters
+	externalCodeSetup.forumsHooksApi.setShowSearch((bbSetting) => false);
 	externalCodeSetup.forumsHooksApi.setSubFiltersFilter((filters) => {
 		return ["popular", "activity"];
 	});
 
-	// 4. Adjust Filters Order
-	externalCodeSetup.topicsApi.setSubFiltersFilter((filters) => {
-		return ["activity", "date", "popular"];
-	})
-
-	// 5. Replace Filter Bar components
+	// Replace Filter Bar components
 	externalCodeSetup.filterScreenApiHooks.setFilterComponent(props => <FilterBarComponents {...props} />)
 
-	// 6. Remove "filter icon"
+	// Remove "filter icon"
 	externalCodeSetup.filterScreenApiHooks.setFilterAllButtonHidden(filterType => true);
 
 
 	/*-----------------------------------------------------------------------------------*/
-	/* NAVIGATION RULES */
+	/* NAVIGATION */
 	/*-----------------------------------------------------------------------------------*/
 
 	// 1. Replace Default Screens
+	externalCodeSetup.navigationApi.setScreensWithoutTabBar(ScreenNames);
+	externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
+
 	externalCodeSetup.navigationApi.replaceScreenComponent("blog", DailyChallengesScreen);
 	externalCodeSetup.navigationApi.replaceScreenComponent("BlockScreen", CustomHomeScreen);
 	externalCodeSetup.navigationApi.replaceScreenComponent("courses_category", CustomCourseCategoriesScreen);
-	//externalCodeSetup.navigationApi.replaceScreenComponent("GroupsScreen", GroupsScreeen); // TODO - this doesnt work. neither "GroupsScreen" or "groups"
 	externalCodeSetup.navigationApi.replaceScreenComponent("my_library", DownloadedCoursesScreen);
 	externalCodeSetup.navigationApi.replaceScreenComponent("messages", MessagesListScreen);
 	externalCodeSetup.navigationApi.replaceScreenComponent("HomeTopicsScreen", TopicsScreeen);
