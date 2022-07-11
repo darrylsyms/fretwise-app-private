@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { withNavigation } from "react-navigation";
 import ForumsModal from "../Screens/TopicsScreen/ForumsModal";
 
-const AnimatedHeaderTitle = (props) => {
+const AnimatedHeaderContents = (props) => {
 
     const {
         title,
@@ -29,7 +29,7 @@ const AnimatedHeaderTitle = (props) => {
                     alignSelf: "stretch",
                     ...titleStyle,
                     fontSize: 30,
-                    paddingBottom: 5
+                    paddingBottom: 5 // Fixes issue https://github.com/darrylsyms/fretwise-app-private/issues/25
                 }}
                 numberOfLines={1}
                 ellipsizeMode={"tail"}
@@ -109,4 +109,4 @@ const AnimatedHeaderTitle = (props) => {
 
 }
 
-export default withNavigation(AnimatedHeaderTitle);
+export default withNavigation(AnimatedHeaderContents);
