@@ -61,6 +61,8 @@ import courseIncludesReducer from "./src/state/reducers/courseIncludes.reducer";
 
 export const applyCustomCode = externalCodeSetup => {
 
+	externalCodeSetup.sqliteApi.disableSqlite()
+
 	//externalCodeSetup.moreScreenApi.setContainerPaddingTop(props => 0); //88 props.containerPaddingTop
 	//externalCodeSetup.moreScreenApi.setContentInsetTop(props => 0); // 105 props.contentInsetTop
 	//externalCodeSetup.moreScreenApi.setContentOffsetY(props => 0); // -69 props.contentOffsetY
