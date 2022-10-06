@@ -29,6 +29,7 @@ import TopicTitle from "./src/components/Screens/LearnTopicSingleScreen/TopicTit
 import PrevNextLessons from './src/components/Screens/LessonSingleScreen/PrevNextButtonsLesson';
 import PrevNextTopics from "./src/components/Screens/LearnTopicSingleScreen/PrevNextButtonsTopic";
 import ContentHeadingsBlock from "./src/components/Global/CoreHeadingBlock";
+import ParagraphComponent from "./src/components/Global/CoreParagraphBlock";
 import ImageComponent from "./src/components/Global/CoreImageBlock";
 import IndexScreenHeaderHeight from "./src/components/Global/AnimatedHeaderHeight";
 import CourseHeaderItems from "./src/components/Screens/CourseSingleScreen/CourseHeaderDetails";
@@ -132,6 +133,7 @@ export const applyCustomCode = externalCodeSetup => {
 	/*if (!isTabletOrIPad())*/ externalCodeSetup.blocksApi.addCustomBlockRender("core/image", (props) => <ImageComponent {...props} />);
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/embed", (props) => <EmbedsComponent {...props} />);
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/spacer", (props) => <SpacerComponent {...props} />);
+	externalCodeSetup.blocksApi.addCustomBlockRender("core/paragraph", (props) => <ParagraphComponent {...props} />);
 
 	externalCodeSetup.blocksApi.setBlockProps("core/embed", (props) => {
 		const { block } = props;
