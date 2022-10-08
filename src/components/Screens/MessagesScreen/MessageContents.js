@@ -8,7 +8,7 @@ const MessageText = (props) => {
 
    return <HTML
                html={htmlclean(message.message)}
-               tagsStyles={{p: {...global.messageExcerpt, ...{color: '#000', paddingBottom: 2}}}}
+               tagsStyles={{p: {...global.messageExcerpt, ...{color: '#000', paddingBottom: 10}}}}
                onLinkPress={attemptDeepLink(false)}
            />
 }
