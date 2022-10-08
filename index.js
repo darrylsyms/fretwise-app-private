@@ -1,6 +1,6 @@
 import React from "react";
-import { Platform, View, Text, Image } from "react-native";
-import { DEVICE_WIDTH } from "@src/styles/global";
+import { Platform, View, Text } from "react-native";
+import { DEVICE_WIDTH, GUTTER } from "@src/styles/global";
 import {
 	SAFE_AREA_BOTTOM,
 	IOS_HOME_INDICATOR,
@@ -11,7 +11,9 @@ import {
 import { isTabletOrIPad } from "@src/utils";
 import { NavigationActions } from 'react-navigation';
 import { ScreenNames } from "./src/data/ScreensWithoutTabBar";
-// * Screens * //
+/*----------------------*/
+/*    Custom Screens    */
+/*----------------------*/
 import DownloadedCoursesScreen from "@src/containers/DownloadedCoursesScreen";
 import DailyChallengesScreen from './src/containers/screens/DailyChallengesScreen';
 import TopicsScreeen from "./src/containers/screens/TopicsScreen";
@@ -19,39 +21,46 @@ import CustomCourseCategoriesScreen from "./src/containers/screens/CustomCourseC
 import MessagesListScreen from "./src/containers/screens/MessagesListScreen";
 import CustomHomeScreen from "./src/containers/screens/CustomHomeScreen";
 import OnboardingScreen from "./src/containers/screens/OnboardingScreen";
-// * Main List Items * //
-import BlogItem from "./src/components/ListItems/BlogItem";
-import TopicItem from "./src/components/ListItems/TopicItem";
-import TopicHeaderAvatar from "./src/components/Screens/TopicsSingleScreen/TopicHeaderItem"
-// * Components * //
+/*----------------------*/
+/*      Components      */
+/*----------------------*/
+// * LD Content * //
 import LessonTitle from "./src/components/Screens/LessonSingleScreen/LessonTitle";
 import TopicTitle from "./src/components/Screens/LearnTopicSingleScreen/TopicTitle";
 import PrevNextLessons from './src/components/Screens/LessonSingleScreen/PrevNextButtonsLesson';
 import PrevNextTopics from "./src/components/Screens/LearnTopicSingleScreen/PrevNextButtonsTopic";
 import ContentHeadingsBlock from "./src/components/Global/CoreHeadingBlock";
-import ParagraphComponent from "./src/components/Global/CoreParagraphBlock";
 import ImageComponent from "./src/components/Global/CoreImageBlock";
-import IndexScreenHeaderHeight from "./src/components/Global/AnimatedHeaderHeight";
+import EmbedsComponent from "./src/components/Global/CoreEmbedBlock";
+import LessonActionComponent from "./src/components/Screens/LessonSingleScreen/LessonBottomActionButton";
+import LearnTopicActionComponent from "./src/components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
+import SpacerComponent from "./src/components/Global/CoreSpacerBlock";
+// * LD Courses * //
 import CourseHeaderItems from "./src/components/Screens/CourseSingleScreen/CourseHeaderDetails";
 import CourseActionButton from "@src/components/Course/CourseActionButton";
+// * Index Screen Defaults * //
+import IndexScreenHeaderHeight from "./src/components/Global/AnimatedHeaderHeight";
 import FilterBarComponents from "./src/components/Global/ReplaceFilterBarComponent";
 import CustomTabBarBottom from "./src/components/Global/TabBarBottom";
-import ForumHeaderButtons from './src/components/Screens/ForumsSingleScreen/ForumHeaderRightButtons';
+import AnimatedHeaderContents from "./src/components/Global/AnimatedHeaderContents";
+// * User Profile * //
 import AfterProfileDetails from "./src/components/Screens/ProfileScreen/AfterProfileDetails";
 import ProfileHeaderButton from "./src/components/Screens/ProfileScreen/ProfileHeaderRightButton";
 import UserProfileAvatar from "./src/components/Screens/ProfileScreen/ProfileSubscriberBadge";
+// * Forums * //
+import ForumHeaderButtons from './src/components/Screens/ForumsSingleScreen/ForumHeaderRightButtons';
 import HeaderRightComponent from "./src/components/Screens/TopicsScreen/HeaderRight";
-import EmbedsComponent from "./src/components/Global/CoreEmbedBlock";
-import AnimatedHeaderContents from "./src/components/Global/AnimatedHeaderContents";
+import ReplyItemAvatar from "./src/components/Screens/TopicsSingleScreen/ReplyItemAvatar";
+// * Misc * //
 import GroupDetailsComponent from "./src/components/Screens/GroupSingleScreen/GroupDetailsComponent";
 import MessageText from "./src/components/Screens/MessagesScreen/MessageContents";
-import SpacerComponent from "./src/components/Global/CoreSpacerBlock";
-import ReplyItemContent from "./src/components/Screens/TopicsSingleScreen/ReplyItemContent";
-import ReplyItemAvatar from "./src/components/Screens/TopicsSingleScreen/ReplyItemAvatar";
-import LessonActionComponent from "./src/components/Screens/LessonSingleScreen/LessonBottomActionButton";
-import LearnTopicActionComponent from "./src/components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
-import TopicHeaderContent from "./src/components/Screens/TopicsSingleScreen/TopicHeaderContent";
-// * Reducers * //
+// * Main List Items * //
+import BlogItem from "./src/components/ListItems/BlogItem";
+import TopicItem from "./src/components/ListItems/TopicItem";
+import TopicHeaderAvatar from "./src/components/Screens/TopicsSingleScreen/TopicHeaderItem";
+/*----------------------*/
+/*       Reducers       */
+/*----------------------*/
 import hotTopicsReducer from './src/state/reducers/hotTopics.reducer';
 import coursesReducer from './src/state/reducers/courses.reducer';
 import courseCategoriesReducer from './src/state/reducers/courseCategories.reducer';
@@ -62,40 +71,18 @@ import courseIncludesReducer from "./src/state/reducers/courseIncludes.reducer";
 
 export const applyCustomCode = externalCodeSetup => {
 
-	externalCodeSetup.sqliteApi.disableSqlite()
+	//externalCodeSetup.sqliteApi.disableSqlite(); // TEMP Disabled because it breaks items listed on CourseCategorySingleScreen.
 
+	// TODO - would like to alter height of More screen, but it's way complicated...
 	//externalCodeSetup.moreScreenApi.setContainerPaddingTop(props => 0); //88 props.containerPaddingTop
 	//externalCodeSetup.moreScreenApi.setContentInsetTop(props => 0); // 105 props.contentInsetTop
 	//externalCodeSetup.moreScreenApi.setContentOffsetY(props => 0); // -69 props.contentOffsetY
-
-	externalCodeSetup.topicSingleApi.setTopicContentComponent(props => <TopicHeaderContent {...props} />) // TEMP until https://github.com/darrylsyms/fretwise-app-private/issues/32 is fixed
-	externalCodeSetup.topicSingleApi.setReplyItemContent(props => <ReplyItemContent {...props} />) // TEMP until https://github.com/darrylsyms/fretwise-app-private/issues/32 is fixed
 
 	/*-----------------------------------------------------------------------------------*/
 	/* BUG FIX */
 	/*-----------------------------------------------------------------------------------*/
 
-	if (Platform.OS === 'android') {
-		const BlogHeaderAvatar = ({ blog, global, textStyle }) => {
-			return (
-				<View style={[global.row, { flex: 1 }]}>
-					<Image
-						source={require('./src/assets/img/branding/darryl-avatar.jpg')}
-						style={{ marginRight: 10, width: 35, height: 35, borderRadius: 35 }}
-					/>
-					<View>
-						<Text
-							style={[global.semiboldText, textStyle]}>
-							Darryl
-						</Text>
-						<Text style={[global.textMeta, textStyle]}>{blog.date}</Text>
-					</View>
-				</View>
-			);
 
-		}
-		externalCodeSetup.blogSingleApi.setBlogHeaderAvatar(BlogHeaderAvatar);
-	}
 
 
 	/*-----------------------------------------------------------------------------------*/
@@ -133,7 +120,7 @@ export const applyCustomCode = externalCodeSetup => {
 	/*if (!isTabletOrIPad())*/ externalCodeSetup.blocksApi.addCustomBlockRender("core/image", (props) => <ImageComponent {...props} />);
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/embed", (props) => <EmbedsComponent {...props} />);
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/spacer", (props) => <SpacerComponent {...props} />);
-	externalCodeSetup.blocksApi.addCustomBlockRender("core/paragraph", (props) => <ParagraphComponent {...props} />);
+	//externalCodeSetup.blocksApi.addCustomBlockRender("core/paragraph", (props) => <ParagraphComponent {...props} />);
 
 	externalCodeSetup.blocksApi.setBlockProps("core/embed", (props) => {
 		const { block } = props;
@@ -262,13 +249,13 @@ export const applyCustomCode = externalCodeSetup => {
 			oldTabs[10],
 		]
 	})
-	
+
 
 	// 4. Add headerRight Button On Profile Screen
 	externalCodeSetup.profileScreenHooksApi.setAfterDetailsComponent(AfterProfileDetails) // Adds Gamipress info after profile Header
 	externalCodeSetup.profileScreenHooksApi.setUserAvatar(UserProfileAvatar)
 	externalCodeSetup.profileScreenHooksApi.setHeaderRightComponent(() => <ProfileHeaderButton />)
-	externalCodeSetup.profileScreenHooksApi.setIgnoreTabsFilter(( list, isOwnAccount ) => [
+	externalCodeSetup.profileScreenHooksApi.setIgnoreTabsFilter((list, isOwnAccount) => [
 		...list,
 		"courses"
 	]);
@@ -308,8 +295,10 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.cssApi.addGlobalStyle("learnTopicActionCompleteIcon", { marginBottom: LESSON_ACTION_BUTTON_ICON_MARGIN, width: 30, height: 30 });
 	externalCodeSetup.cssApi.addGlobalStyle("learnTopicButtonLoadingIcon", { marginBottom: IOS_HOME_INDICATOR, left: -5 });
 	// Lesson Container - For full-width videos
-	externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: 0 }, true);
-	externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: 0 }, true);
+	//externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: 0 }, true); // For full width Images
+	//externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: 0 }, true); // For full width Images
+	if (isTabletOrIPad()) externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: GUTTER }, true); // For full width Images
+	if (isTabletOrIPad()) externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: GUTTER }, true); // For full width Images
 	externalCodeSetup.cssApi.addGlobalStyle("videoBlockContainer", { paddingHorizontal: 0 });
 
 
@@ -357,57 +346,61 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.navigationApi.replaceScreenComponent("topics", TopicsScreeen);
 
 	// 2. Custom App Welcome Screen Navigation Properties
-	externalCodeSetup.navigationApi.setAnimatedSwitchNavigator((routes, options, routeProps) => {
 
-		const feature = routeProps.settings.features.multisite_network;
-		const hasMultiSite = Platform.select({
-			ios: feature.is_enabled_ios,
-			android: feature.is_enabled_android
-		})
+	if (Platform.OS === 'ios') {
+		externalCodeSetup.navigationApi.setAnimatedSwitchNavigator((routes, options, routeProps) => {
 
-		const getInitialSwitchRoute = () => {
+			const feature = routeProps.settings.features.multisite_network;
+			const hasMultiSite = Platform.select({
+				ios: feature.is_enabled_ios,
+				android: feature.is_enabled_android
+			})
 
-			const myCustomRoute = "OnboardingScreen"
+			const getInitialSwitchRoute = () => {
 
-			if (!routeProps.hasValidSigning) {
-				return "InvalidSigningScreen";
-			}
+				const myCustomRoute = "OnboardingScreen"
 
-			if (routeProps.shouldEnforceVersionControl) {
-				return "VersionControlScreen";
-			} else if (routeProps.isLoggedIn) {
-				if (
-					routeProps.isFeatureEnabled(hasMultiSite) &&
-					routeProps.sites.selectedSite === null
-				) {
-					return "AuthSiteSelectionScreen";
-				} else {
-					return routeProps.shouldLockApp ? "AppLockScreen" : "noAuth";
+				if (!routeProps.hasValidSigning) {
+					return "InvalidSigningScreen";
+				}
+
+				if (routeProps.shouldEnforceVersionControl) {
+					return "VersionControlScreen";
+				} else if (routeProps.isLoggedIn) {
+					if (
+						routeProps.isFeatureEnabled(hasMultiSite) &&
+						routeProps.sites.selectedSite === null
+					) {
+						return "AuthSiteSelectionScreen";
+					} else {
+						return routeProps.shouldLockApp ? "AppLockScreen" : "noAuth";
+					}
+				}
+				else {
+					return myCustomRoute; //Use my own custom route instead of the default "Auth" route
+				}
+
+			};
+
+			const newRoutes = {
+				...routes,
+				OnboardingScreen: {
+					screen: OnboardingScreen
 				}
 			}
-			else {
-				return myCustomRoute; //Use my own custom route instead of the default "Auth" route
+
+			const newOptions = {
+				...options,
+				initialRouteName: getInitialSwitchRoute()
 			}
 
-		};
-
-		const newRoutes = {
-			...routes,
-			OnboardingScreen: {
-				screen: OnboardingScreen
+			return {
+				routes: newRoutes,
+				options: newOptions,
 			}
-		}
 
-		const newOptions = {
-			...options,
-			initialRouteName: getInitialSwitchRoute()
-		}
+		})
 
-		return {
-			routes: newRoutes,
-			options: newOptions,
-		}
-
-	})
+	}
 
 };
