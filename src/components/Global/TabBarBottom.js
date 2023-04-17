@@ -51,6 +51,9 @@ const CustomTabBarBottom = (props) => {
             (!focused ? item.icon?.tint_color || tintColor : tintColor);
 
         const icon = getIconUri(route);
+        const iconTintColor = !focused ? inactiveTintColor : activeTintColor;
+
+        console.log('iconTintColor', iconTintColor)
 
         if (item.object === "notifications" || item.object === "messages") {
             return (
@@ -70,8 +73,8 @@ const CustomTabBarBottom = (props) => {
 
         return <AppImage
             source={{ uri: icon }}
-            style={{ width: 25, height: 25 }}
-            tintColor={color}
+            style={{ width: 25, height: 25, tintColor: tintColor, color: tintColor }}
+            tintColor={tintColor} // Doesnt work!
         />
 
     };

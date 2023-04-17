@@ -32,13 +32,11 @@ const CourseHeaderItems = (props) => {
         fetchCourseIncludes();
     }, []);
 
+    /*
     const CourseIncludesData = () => {
 
         const state = useSelector((state) => state);
         const courseIncludesState = state.courseIncludesCache.byId;
-
-        const courseId = courseVM.id;
-        const CourseIncludesData = courseIncludesState?.get(courseId ? courseId.toString() : "")
 
         const Item = ({ data, icon }) => {
             return (
@@ -57,6 +55,13 @@ const CourseHeaderItems = (props) => {
         }
 
         if (!courseIncludesState) return <Text>...</Text>
+
+        const courseId = courseVM.id;
+        //const CourseIncludesData = courseIncludesState[0];
+        const CourseIncludesData = courseIncludesState?.get(courseId.toString());
+
+        console.log('CourseIncludesData', CourseIncludesData);
+        console.log('courseIncludesState', courseIncludesState);
 
         return (
             <>
@@ -100,6 +105,7 @@ const CourseHeaderItems = (props) => {
         )
 
     }
+    */
 
     const size = 26;
 
@@ -222,7 +228,7 @@ const CourseHeaderItems = (props) => {
                         </Text>
                     </View>
                 )}
-                <CourseIncludesData />
+                {/*<CourseIncludesData />*/}
                 {courseVM.certificate?.available && (
                     <View style={{ flexDirection: "row" }}>
                         <Icon

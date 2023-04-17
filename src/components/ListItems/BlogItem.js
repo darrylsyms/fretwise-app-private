@@ -34,7 +34,7 @@ const BlogItem = props => {
          [
             {
                text: "Subscribe Now",
-               onPress: () => memberType == "visitor" ? navigation.navigate("SignupScreen") : navigation.navigate("ProductsScreen") // TODO: ProductsScreen needs props passed for it to work properly...
+               onPress: () => memberType == "visitor" ? navigation.navigate("SignupScreen") : navigation.navigate("MoreScreen") // TODO: ProductsScreen needs props passed for it to work properly...
             },
             { text: "Ok", onPress: () => console.log("Ok Pressed") }
          ]
@@ -85,14 +85,15 @@ const BlogItem = props => {
                         </ItemTitle>
                         {isSubscriber && (
                         <Text numberOfLines={4} ellipsizeMode={"tail"} style={[global.textAlt, {
-                           marginVertical: 10
+                           marginTop: 10,
+                           marginBottom: 0
                         }]}>{excerpt}</Text>
                         )}
 
                         <View style={{ flex: 1 }} />
                         <View style={[global.row, { alignItems: "center" }]}>
                            <Image source={require('../../assets/img/metadata/blog-date.png')} style={{ marginRight: 6, height: 14, width: 14 }} />
-                           <Text style={global.itemMeta}>{formatDateTime(item.date)}</Text>
+                           <Text style={global.itemMeta}>{formatDateTime(item.date_gmt)}</Text>
                            {item.allowComments && <View style={global.dotSep} />}
                            {item.allowComments && (
                               <IconButton

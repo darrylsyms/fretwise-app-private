@@ -41,7 +41,7 @@ import CourseActionButton from "@src/components/Course/CourseActionButton";
 // * Index Screen Defaults * //
 import IndexScreenHeaderHeight from "./src/components/Global/AnimatedHeaderHeight";
 import FilterBarComponents from "./src/components/Global/ReplaceFilterBarComponent";
-import CustomTabBarBottom from "./src/components/Global/TabBarBottom";
+//import CustomTabBarBottom from "./src/components/Global/TabBarBottom";
 import AnimatedHeaderContents from "./src/components/Global/AnimatedHeaderContents";
 // * User Profile * //
 import AfterProfileDetails from "./src/components/Screens/ProfileScreen/AfterProfileDetails";
@@ -68,7 +68,6 @@ import forumsReducer from './src/state/reducers/forums.reducer';
 import welcomeMessagesReducer from "./src/state/reducers/welcomeMessages.reducer";
 import courseIncludesReducer from "./src/state/reducers/courseIncludes.reducer";
 
-
 export const applyCustomCode = externalCodeSetup => {
 
 	//externalCodeSetup.sqliteApi.disableSqlite(); // TEMP Disabled because it breaks items listed on CourseCategorySingleScreen.
@@ -81,7 +80,6 @@ export const applyCustomCode = externalCodeSetup => {
 	/*-----------------------------------------------------------------------------------*/
 	/* BUG FIX */
 	/*-----------------------------------------------------------------------------------*/
-
 
 
 
@@ -335,7 +333,7 @@ export const applyCustomCode = externalCodeSetup => {
 
 	// 1. Replace Default Screens
 	externalCodeSetup.navigationApi.setScreensWithoutTabBar(ScreenNames);
-	externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
+	//externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
 
 	externalCodeSetup.navigationApi.replaceScreenComponent("blog", DailyChallengesScreen);
 	externalCodeSetup.navigationApi.replaceScreenComponent("BlockScreen", CustomHomeScreen);
