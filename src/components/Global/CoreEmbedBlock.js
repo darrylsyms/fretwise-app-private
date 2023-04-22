@@ -3,10 +3,12 @@ import {
     Dimensions,
     View
 } from 'react-native';
+import { GUTTER } from "@src/styles/global";
 import axios from 'axios';
 import WebView from 'react-native-webview';
 import urlParser from "js-video-url-parser";
 import { useSelector } from "react-redux";
+import { isTabletOrIPad } from "@src/utils";
 import LessonVideoPlaceholder from "./SkeletonLoaders/LessonVideoPlaceholder";
 
 const EmbedsComponent = (props) => {
@@ -15,9 +17,12 @@ const EmbedsComponent = (props) => {
     const ParseUrl = urlParser.parse(block?.data?.src);
     const vimeoAuthToken = useSelector((state) => state.config.vimeo.auth_code)
 
+    const SixteenByNineHeightCalc = 0.5625;
+    const mobileBlockPadding = isTabletOrIPad() ? (GUTTER * 2) : 10;
+
     const { width } = Dimensions.get("window"); // TODO - for tablets, this'll need to be 100%
     // 56.25% is that of 16:9.
-    const height = 0.5625 * width;
+    const height = (SixteenByNineHeightCalc * width) - (mobileBlockPadding);
 
     const [apiResponse, setApiResponse] = useState({});
     const [isLoading, seIsLoading] = useState(true);
@@ -70,24 +75,24 @@ const EmbedsComponent = (props) => {
             }}>
                 <LessonVideoPlaceholder
                     height={isLoading ? height : 0}
-                    width={width}
+                    width={width - (mobileBlockPadding)}
                 />
-                <WebView
-                    source={Source()}
-                    startInLoadingState={true}
-                    scrollEnabled={false}
-                    javascriptEnabled={true}
-                    allowsFullscreenVideo
-                    originWhitelist={['*']}
-                    allowsInlineMediaPlayback={true}
-                    style={{
-                        height: !isLoading ? height : 0,
-                        width: width,
-                        margin: 0,
-                        padding: 0,
-                        opacity: isLoading ? 0 : 0.99 // Must be 0.99 to accomidate this android bug: https://github.com/react-native-webview/react-native-webview/issues/430
-                    }}
-                />
+                    <WebView
+                        source={Source()}
+                        startInLoadingState={true}
+                        scrollEnabled={false}
+                        javascriptEnabled={true}
+                        allowsFullscreenVideo
+                        originWhitelist={['*']}
+                        allowsInlineMediaPlayback={true}
+                        style={{
+                            height: !isLoading ? height : 0,
+                            width: width - (mobileBlockPadding),
+                            margin: 0,
+                            padding: 0,
+                            opacity: isLoading ? 0 : 0.99 // Must be 0.99 to accomidate this android bug: https://github.com/react-native-webview/react-native-webview/issues/430
+                        }}
+                    />
             </View>
         </>
 
