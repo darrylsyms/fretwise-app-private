@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform, View, Text } from "react-native";
+import { Platform, View } from "react-native";
 import { DEVICE_WIDTH, GUTTER } from "@src/styles/global";
 import {
 	SAFE_AREA_BOTTOM,
@@ -41,7 +41,7 @@ import CourseActionButton from "@src/components/Course/CourseActionButton";
 // * Index Screen Defaults * //
 import IndexScreenHeaderHeight from "./src/components/Global/AnimatedHeaderHeight";
 import FilterBarComponents from "./src/components/Global/ReplaceFilterBarComponent";
-//import CustomTabBarBottom from "./src/components/Global/TabBarBottom";
+import CustomTabBarBottom from "./src/components/Global/TabBarBottom";
 import AnimatedHeaderContents from "./src/components/Global/AnimatedHeaderContents";
 // * User Profile * //
 import AfterProfileDetails from "./src/components/Screens/ProfileScreen/AfterProfileDetails";
@@ -76,12 +76,6 @@ export const applyCustomCode = externalCodeSetup => {
 	//externalCodeSetup.moreScreenApi.setContainerPaddingTop(props => 0); //88 props.containerPaddingTop
 	//externalCodeSetup.moreScreenApi.setContentInsetTop(props => 0); // 105 props.contentInsetTop
 	//externalCodeSetup.moreScreenApi.setContentOffsetY(props => 0); // -69 props.contentOffsetY
-
-	/*-----------------------------------------------------------------------------------*/
-	/* BUG FIX */
-	/*-----------------------------------------------------------------------------------*/
-
-
 
 	/*-----------------------------------------------------------------------------------*/
 	/* GLOBAL */
@@ -266,6 +260,7 @@ export const applyCustomCode = externalCodeSetup => {
 
 	externalCodeSetup.blogApi.setBlogItemComponent(props => <BlogItem {...props} />);
 	externalCodeSetup.blogApi.hideSearch();
+	externalCodeSetup.blogSingleApi.setTransformBlogHeaderButtons(() => {return null}); // hide comments icon on blog
 
 
 
@@ -297,7 +292,7 @@ export const applyCustomCode = externalCodeSetup => {
 	//externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: 0 }, true); // For full width Images
 	if (isTabletOrIPad()) externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: GUTTER }, true); // For full width Images
 	if (isTabletOrIPad()) externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: GUTTER }, true); // For full width Images
-	externalCodeSetup.cssApi.addGlobalStyle("videoBlockContainer", { paddingHorizontal: 0 });
+	externalCodeSetup.cssApi.addGlobalStyle("videoBlockContainer", { paddingHorizontal: 0, paddingVertical: 10, flex: 0 });
 
 
 	/*-----------------------------------------------------------------------------------*/
@@ -333,7 +328,7 @@ export const applyCustomCode = externalCodeSetup => {
 
 	// 1. Replace Default Screens
 	externalCodeSetup.navigationApi.setScreensWithoutTabBar(ScreenNames);
-	//externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
+	externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
 
 	externalCodeSetup.navigationApi.replaceScreenComponent("blog", DailyChallengesScreen);
 	externalCodeSetup.navigationApi.replaceScreenComponent("BlockScreen", CustomHomeScreen);

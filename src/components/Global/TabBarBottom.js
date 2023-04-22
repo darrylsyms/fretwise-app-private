@@ -5,8 +5,10 @@ import {
 } from 'react-native';
 import { BlurView } from "@react-native-community/blur";
 import { BottomTabBar } from "react-navigation-tabs";
+import Icon from "@src/components/Icon";
 import BadgeIcon from "@src/components/BadgeIcon";
-import AppImage from "@src/components/AppImage";
+import {getIcon as getIconColor, getLabelColor} from "@src/navigators/util";
+import {glyphMap as bbIconGlyphMap} from "@src/components/BBIcon";
 import { isTabletOrIPad } from "@src/utils";
 import {
     FontWeights,
@@ -16,45 +18,27 @@ import {
 const CustomTabBarBottom = (props) => {
 
     const {
-        style,
-        safeAreaInset,
-        screenProps,
-        color,
         navigation,
-        inactiveTintColor,
         activeTintColor,
-        showLabel
+        inactiveTintColor,
+        showLabel,
+        screenProps
     } = props;
 
-    const getIconUri = (route) => {
-        let icon = route?.routes?.[0]?.params?.item?.icon || "";
-        if (icon) {
-            if (icon.uri) {
-                icon = icon.uri;
-            } else {
-                icon = Platform.select({ ios: icon.ios_uri, android: icon.android_uri });
-            }
-        }
-        return icon;
-
-    }
-
-    const getIcon = (iconProps) => {
-        const { route, tintColor, focused } = iconProps;
-        const { calcFontSize, colors } = props.screenProps;
+    const getIcon = iconProps => {
+        const {route, tintColor, focused} = iconProps;
+        const {calcFontSize, colors} = props.screenProps;
         const item = route?.routes?.[0]?.params?.item;
-
+  
         if (!item) return null;
-
-        const color =
-            item.icon.monochrome &&
-            (!focused ? item.icon?.tint_color || tintColor : tintColor);
-
-        const icon = getIconUri(route);
-        const iconTintColor = !focused ? inactiveTintColor : activeTintColor;
-
-        console.log('iconTintColor', iconTintColor)
-
+  
+        const {color, menuIcon} = getIconColor(
+            item,
+            bbIconGlyphMap,
+            focused,
+            tintColor
+        );
+  
         if (item.object === "notifications" || item.object === "messages") {
             return (
                 <BadgeIcon
@@ -62,60 +46,61 @@ const CustomTabBarBottom = (props) => {
                     tintColor={color}
                     bottomTabsBg={colors.bottomTabsBg}
                     warningColor={colors.warningColor}
+                    foregroundColor={item.icon.fg_color}
                     platform="ios"
                     inMore={false}
                     app={"learnerapp"}
                     type={item.object}
-                    iconUri={icon ? { uri: icon } : null}
+                    icon={menuIcon}
+                    styles={{height: 25, width: 25}}
                 />
             );
         }
-
-        return <AppImage
-            source={{ uri: icon }}
-            style={{ width: 25, height: 25, tintColor: tintColor, color: tintColor }}
-            tintColor={tintColor} // Doesnt work!
-        />
-
+        return (
+            <Icon
+                icon={menuIcon}
+                tintColor={color}
+                styles={{height: 25, width: 25}}
+            />
+        );
     };
 
-    const currentTab = navigation.state.index;
-    const currentTabKey = navigation?.state?.routes[currentTab]?.key;
+    //const currentTab = navigation.state.index;
+    //const currentTabKey = navigation?.state?.routes[currentTab]?.key;
 
-    const renderLabel = (props) => {
-        const label = props.route.routes[0].params.item.label;
-        const tabKeys = props.route?.key;
+    const renderLabel = (labelProps) => {
 
-        const isTabActive = tabKeys == currentTabKey;
-        const tintColor = !isTabActive ? inactiveTintColor : activeTintColor;
-
-        if (showLabel)
-            return (
-                <Text
-                    style={[
-                        screenProps.global.menuLabelStyle,
-                        {
-                            marginRight: 5,
-                            marginTop: isTabletOrIPad() ? -(props.bottomSafeArea / 5) : 2,
-                            marginLeft: Platform.isPad ? 25 : 5,
-                            color: tintColor,
-                            fontWeight: FontWeights["medium"],
-                            ...textRTLStyleFix(),
-                            opacity: 1,
-                            textAlign: "center"
-                        }
-                    ]}
-                    numberOfLines={1}
-                    ellipsizeMode={"tail"}
-                    allowFontScaling={false}
-                >
-                    {label}
-                </Text>
-            );
-
-        return null;
-
-    }
+        const {route} = labelProps;
+        if (!showLabel) return null;
+  
+        const tintColor = getLabelColor(route, navigation, activeTintColor, inactiveTintColor);
+  
+        const label = labelProps.route.routes[0].params.item.label;
+  
+        const textStyle = [
+            screenProps.global.menuLabelStyle,
+            {
+                marginHorizontal: 5,
+                marginTop: isTabletOrIPad() ? -(props.bottomSafeArea / 5) : 2,
+                color: tintColor,
+                fontWeight: FontWeights["medium"],
+                ...textRTLStyleFix(),
+                opacity: 1,
+                textAlign: "center"
+            }
+        ];
+  
+        return (
+            <Text
+                style={textStyle}
+                 numberOfLines={1}
+                ellipsizeMode={"tail"}
+                allowFontScaling={false}
+            >
+                {label}
+            </Text>
+        );
+    };
 
     const renderIcon = (props) => {
         return getIcon(props);
