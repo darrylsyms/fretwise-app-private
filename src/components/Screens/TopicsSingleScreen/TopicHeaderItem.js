@@ -4,7 +4,7 @@ import { getAvatar } from "@src/utils";
 import AppTouchableOpacity from "@src/components/AppTouchableOpacity";
 import AvatarSpecial from "../../Global/CustomComponents/AvatarSpecial";
 
-const TopicHeaderAvatar = (props) => {
+const ItemHeader = (props) => {
 
   const {
     item,
@@ -71,4 +71,4 @@ const TopicHeaderAvatar = (props) => {
   );
 };
 
-export default TopicHeaderAvatar;
+export default ItemHeader;

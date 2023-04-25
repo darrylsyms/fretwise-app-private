@@ -43,9 +43,10 @@ const CourseHeaderItems = (props) => {
         const Item = ({ data, icon }) => {
             return (
                 <View style={{ flexDirection: "row", }}>
-                    <Image
-                        source={icon}
-                        style={{ height: 19, width: 19, tintColor: colors.descLightTextColor }}
+                    <Icon // TODO: src doesnt work on my Android. Check on others!
+                        tintColor={colors.descLightTextColor}
+                        icon={icon}
+                        styles={{ height: 19, width: 19, }}
                     />
                     <Text
                         style={styles.courseDetailsText}

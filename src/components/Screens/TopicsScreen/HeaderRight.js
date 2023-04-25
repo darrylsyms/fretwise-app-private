@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import IconButton from "@src/components/IconButton";
 import ForumsModal from "./ForumsModal";
 
-const HeaderRightComponent = (props) => {
+const HomeHeaderRight = (props) => {
 
     const { navigation, headerRight } = props;
 
@@ -63,4 +63,4 @@ const HeaderRightComponent = (props) => {
     return headerRight || null;
 }
 
-export default withNavigation(HeaderRightComponent);
+export default withNavigation(HomeHeaderRight);
