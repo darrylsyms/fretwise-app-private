@@ -29,44 +29,28 @@ import LessonTitle from "./src/components/Screens/LessonSingleScreen/LessonTitle
 import TopicTitle from "./src/components/Screens/LearnTopicSingleScreen/TopicTitle";
 import PrevNextLessons from './src/components/Screens/LessonSingleScreen/PrevNextButtonsLesson';
 import PrevNextTopics from "./src/components/Screens/LearnTopicSingleScreen/PrevNextButtonsTopic";
-import ContentHeadingsBlock from "./src/components/Global/CoreHeadingBlock";
-import ImageComponent from "./src/components/Global/CoreImageBlock";
-import EmbedsComponent from "./src/components/Global/CoreEmbedBlock";
 import LessonActionComponent from "./src/components/Screens/LessonSingleScreen/LessonBottomActionButton";
 import LearnTopicActionComponent from "./src/components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
-import SpacerComponent from "./src/components/Global/CoreSpacerBlock";
 // * LD Courses * //
 import CourseHeaderItems from "./src/components/Screens/CourseSingleScreen/CourseHeaderDetails";
 import CourseActionButton from "@src/components/Course/CourseActionButton";
 // * Index Screen Defaults * //
-import IndexScreenHeaderHeight from "./src/components/Global/AnimatedHeaderHeight";
 import FilterBarComponents from "./src/components/Global/ReplaceFilterBarComponent";
 import CustomTabBarBottom from "./src/components/Global/TabBarBottom";
-import AnimatedHeaderContents from "./src/components/Global/AnimatedHeaderContents";
 // * User Profile * //
 import AfterProfileDetails from "./src/components/Screens/ProfileScreen/AfterProfileDetails";
 import ProfileHeaderButton from "./src/components/Screens/ProfileScreen/ProfileHeaderRightButton";
 import UserProfileAvatar from "./src/components/Screens/ProfileScreen/ProfileSubscriberBadge";
 // * Forums * //
 import ForumHeaderButtons from './src/components/Screens/ForumsSingleScreen/ForumHeaderRightButtons';
-import HeaderRightComponent from "./src/components/Screens/TopicsScreen/HeaderRight";
 import ReplyItemAvatar from "./src/components/Screens/TopicsSingleScreen/ReplyItemAvatar";
 // * Misc * //
-import GroupDetailsComponent from "./src/components/Screens/GroupSingleScreen/GroupDetailsComponent";
 import MessageText from "./src/components/Screens/MessagesScreen/MessageContents";
 // * Main List Items * //
 import BlogItem from "./src/components/ListItems/BlogItem";
 import TopicItem from "./src/components/ListItems/TopicItem";
 import TopicHeaderAvatar from "./src/components/Screens/TopicsSingleScreen/TopicHeaderItem";
-/*----------------------*/
-/*       Reducers       */
-/*----------------------*/
-import hotTopicsReducer from './src/state/reducers/hotTopics.reducer';
-import coursesReducer from './src/state/reducers/courses.reducer';
-import courseCategoriesReducer from './src/state/reducers/courseCategories.reducer';
-import forumsReducer from './src/state/reducers/forums.reducer';
-import welcomeMessagesReducer from "./src/state/reducers/welcomeMessages.reducer";
-import courseIncludesReducer from "./src/state/reducers/courseIncludes.reducer";
+
 
 export const applyCustomCode = externalCodeSetup => {
 
@@ -81,57 +65,6 @@ export const applyCustomCode = externalCodeSetup => {
 	/* GLOBAL */
 	/*-----------------------------------------------------------------------------------*/
 
-	// Add To State
-	externalCodeSetup.reduxApi.addReducer(
-		"courseIncludesCache",
-		courseIncludesReducer
-	);
-	externalCodeSetup.reduxApi.addReducer(
-		"welcomeMessagesCache",
-		welcomeMessagesReducer
-	);
-	externalCodeSetup.reduxApi.addReducer(
-		"hotTopicCache",
-		hotTopicsReducer
-	);
-	externalCodeSetup.reduxApi.wrapReducer(
-		"forumsCache",
-		forumsReducer
-	);
-	externalCodeSetup.reduxApi.wrapReducer(
-		"courseCategories",
-		courseCategoriesReducer
-	);
-	externalCodeSetup.reduxApi.wrapReducer(
-		"coursesCache",
-		coursesReducer
-	);
-
-	// Core Block Components
-	externalCodeSetup.blocksApi.addCustomBlockRender("core/heading", (props) => <ContentHeadingsBlock {...props} />);
-	/*if (!isTabletOrIPad())*/ externalCodeSetup.blocksApi.addCustomBlockRender("core/image", (props) => <ImageComponent {...props} />);
-	externalCodeSetup.blocksApi.addCustomBlockRender("core/embed", (props) => <EmbedsComponent {...props} />);
-	externalCodeSetup.blocksApi.addCustomBlockRender("core/spacer", (props) => <SpacerComponent {...props} />);
-	//externalCodeSetup.blocksApi.addCustomBlockRender("core/paragraph", (props) => <ParagraphComponent {...props} />);
-
-	externalCodeSetup.blocksApi.setBlockProps("core/embed", (props) => {
-		const { block } = props;
-		if (block.data.provider === "vimeo" || block.data.provider === "youtube") {
-			return {
-				...props,
-				viewWidth: DEVICE_WIDTH
-			}
-		}
-		return props;
-	});
-
-	// Header Variables
-	externalCodeSetup.indexScreenApiHooks.setHeaderHeight(IndexScreenHeaderHeight);
-	externalCodeSetup.indexScreenApiHooks.setRenderHeaderRight(props => <HeaderRightComponent {...props} />);
-	externalCodeSetup.indexScreenApiHooks.setAnimatedListHeaderTitleComponent(props => <AnimatedHeaderContents {...props} />);
-
-	// Group Details
-	externalCodeSetup.socialGroupSingleApi.setGroupDetailsComponent(GroupDetailsComponent);
 
 
 	/*-----------------------------------------------------------------------------------*/
