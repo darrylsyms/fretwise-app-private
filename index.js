@@ -10,17 +10,6 @@ import {
 } from "./src/styles/global";
 import { isTabletOrIPad } from "@src/utils";
 import { NavigationActions } from 'react-navigation';
-import { ScreenNames } from "./src/data/ScreensWithoutTabBar";
-/*----------------------*/
-/*    Custom Screens    */
-/*----------------------*/
-import DownloadedCoursesScreen from "@src/containers/DownloadedCoursesScreen";
-import DailyChallengesScreen from './src/containers/screens/DailyChallengesScreen';
-import TopicsScreeen from "./src/containers/screens/TopicsScreen";
-import CustomCourseCategoriesScreen from "./src/containers/screens/CustomCourseCategoriesScreen";
-import MessagesListScreen from "./src/containers/screens/MessagesListScreen";
-import CustomHomeScreen from "./src/containers/screens/CustomHomeScreen";
-import OnboardingScreen from "./src/containers/screens/OnboardingScreen";
 /*----------------------*/
 /*      Components      */
 /*----------------------*/
@@ -36,7 +25,6 @@ import CourseHeaderItems from "./src/components/Screens/CourseSingleScreen/Cours
 import CourseActionButton from "@src/components/Course/CourseActionButton";
 // * Index Screen Defaults * //
 import FilterBarComponents from "./src/components/Global/ReplaceFilterBarComponent";
-import CustomTabBarBottom from "./src/components/Global/TabBarBottom";
 // * User Profile * //
 import AfterProfileDetails from "./src/components/Screens/ProfileScreen/AfterProfileDetails";
 import ProfileHeaderButton from "./src/components/Screens/ProfileScreen/ProfileHeaderRightButton";
@@ -255,78 +243,5 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.filterScreenApiHooks.setFilterAllButtonHidden(filterType => true);
 
 
-	/*-----------------------------------------------------------------------------------*/
-	/* NAVIGATION */
-	/*-----------------------------------------------------------------------------------*/
-
-	// 1. Replace Default Screens
-	externalCodeSetup.navigationApi.setScreensWithoutTabBar(ScreenNames);
-	externalCodeSetup.navigationApi.setBottomTabBar((props) => <CustomTabBarBottom {...props} />);
-
-	externalCodeSetup.navigationApi.replaceScreenComponent("blog", DailyChallengesScreen);
-	externalCodeSetup.navigationApi.replaceScreenComponent("BlockScreen", CustomHomeScreen);
-	externalCodeSetup.navigationApi.replaceScreenComponent("courses_category", CustomCourseCategoriesScreen);
-	externalCodeSetup.navigationApi.replaceScreenComponent("my_library", DownloadedCoursesScreen);
-	externalCodeSetup.navigationApi.replaceScreenComponent("messages", MessagesListScreen);
-	externalCodeSetup.navigationApi.replaceScreenComponent("HomeTopicsScreen", TopicsScreeen);
-	externalCodeSetup.navigationApi.replaceScreenComponent("topics", TopicsScreeen);
-
-	// 2. Custom App Welcome Screen Navigation Properties
-
-	if (Platform.OS === 'ios') {
-		externalCodeSetup.navigationApi.setAnimatedSwitchNavigator((routes, options, routeProps) => {
-
-			const feature = routeProps.settings.features.multisite_network;
-			const hasMultiSite = Platform.select({
-				ios: feature.is_enabled_ios,
-				android: feature.is_enabled_android
-			})
-
-			const getInitialSwitchRoute = () => {
-
-				const myCustomRoute = "OnboardingScreen"
-
-				if (!routeProps.hasValidSigning) {
-					return "InvalidSigningScreen";
-				}
-
-				if (routeProps.shouldEnforceVersionControl) {
-					return "VersionControlScreen";
-				} else if (routeProps.isLoggedIn) {
-					if (
-						routeProps.isFeatureEnabled(hasMultiSite) &&
-						routeProps.sites.selectedSite === null
-					) {
-						return "AuthSiteSelectionScreen";
-					} else {
-						return routeProps.shouldLockApp ? "AppLockScreen" : "noAuth";
-					}
-				}
-				else {
-					return myCustomRoute; //Use my own custom route instead of the default "Auth" route
-				}
-
-			};
-
-			const newRoutes = {
-				...routes,
-				OnboardingScreen: {
-					screen: OnboardingScreen
-				}
-			}
-
-			const newOptions = {
-				...options,
-				initialRouteName: getInitialSwitchRoute()
-			}
-
-			return {
-				routes: newRoutes,
-				options: newOptions,
-			}
-
-		})
-
-	}
 
 };
