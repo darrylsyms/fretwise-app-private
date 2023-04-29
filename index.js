@@ -9,20 +9,7 @@ import {
 	LESSON_ACTION_BUTTON_ICON_MARGIN
 } from "./src/styles/global";
 import { isTabletOrIPad } from "@src/utils";
-import { NavigationActions } from 'react-navigation';
-/*----------------------*/
-/*      Components      */
-/*----------------------*/
-// * LD Content * //
-import LessonTitle from "./src/components/Screens/LessonSingleScreen/LessonTitle";
-import TopicTitle from "./src/components/Screens/LearnTopicSingleScreen/TopicTitle";
-import PrevNextLessons from './src/components/Screens/LessonSingleScreen/PrevNextButtonsLesson';
-import PrevNextTopics from "./src/components/Screens/LearnTopicSingleScreen/PrevNextButtonsTopic";
-import LessonActionComponent from "./src/components/Screens/LessonSingleScreen/LessonBottomActionButton";
-import LearnTopicActionComponent from "./src/components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
-// * LD Courses * //
-import CourseHeaderItems from "./src/components/Screens/CourseSingleScreen/CourseHeaderDetails";
-import CourseActionButton from "@src/components/Course/CourseActionButton";
+
 // * Index Screen Defaults * //
 import FilterBarComponents from "./src/components/Global/ReplaceFilterBarComponent";
 // * User Profile * //
@@ -74,72 +61,6 @@ export const applyCustomCode = externalCodeSetup => {
 	/*-----------------------------------------------------------------------------------*/
 	/* COURSES */
 	/*-----------------------------------------------------------------------------------*/
-
-	// Add custom course header details
-	externalCodeSetup.courseSingleApi.setCourseHeaderDetails(props => <CourseHeaderItems {...props} />)
-
-	// Remove unnecessary CourseSingleScreen action button.
-	externalCodeSetup.courseSingleApi.setTransformCourseActionButtons((
-		CourseActionBtn,
-		courseVM,
-		t,
-		colors,
-		global,
-		products,
-		navigation,
-		startCourse,
-		continueCourse,
-		priceComponentRender
-	) => {
-
-		const goToProducts = () => {
-			const prods = products[0][1]
-			navigation.dispatch(
-				NavigationActions.navigate({
-					routeName: "ProductsScreen",
-					params: {
-						prods
-					},
-				})
-			)
-		}
-
-		const SubscribeButton =
-			<View style={{
-				paddingHorizontal: 20,
-				paddingVertical: 16,
-				//marginBottom: 30, // bug fix
-				flexDirection: "row",
-				alignItems: "center",
-				justifyContent: "space-between"
-			}}>
-				<CourseActionButton
-					title={"Subscribe for all access!"}
-					onPress={() => goToProducts()}
-					style={{ backgroundColor: colors.headerBg }}
-				/>
-			</View>
-
-		const DefaultButton =
-			<View style={{
-				marginBottom: 0
-			}}>
-				{CourseActionBtn}
-			</View>
-
-		if (!courseVM.hasAccess) return DefaultButton //TODO - change for SubscribeButton
-
-	})
-
-	// Lesson Header & Action Button
-	externalCodeSetup.lessonSingleScreenApi.setLessonTitleComponent(props => <LessonTitle {...props} />);
-	externalCodeSetup.lessonSingleScreenApi.setPrevNextComponent(props => <PrevNextLessons {...props} />);
-	externalCodeSetup.lessonSingleScreenApi.setLessonActionComponent(props => <LessonActionComponent {...props} />);
-
-	// LearnTopic Header & Action Button
-	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicTitleComponent(props => <TopicTitle {...props} />);
-	externalCodeSetup.learnTopicSingleScreenApi.setPrevNextComponent((props) => <PrevNextTopics {...props} />);
-	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicActionComponent(props => <LearnTopicActionComponent {...props} />);
 
 
 	/*-----------------------------------------------------------------------------------*/
