@@ -1,6 +1,6 @@
 import React from "react";
 import { Platform, View } from "react-native";
-import { DEVICE_WIDTH, GUTTER } from "@src/styles/global";
+import { GUTTER } from "@src/styles/global";
 import {
 	SAFE_AREA_BOTTOM,
 	IOS_HOME_INDICATOR,
@@ -9,7 +9,6 @@ import {
 	LESSON_ACTION_BUTTON_ICON_MARGIN
 } from "./src/styles/global";
 import { isTabletOrIPad } from "@src/utils";
-import { NavigationActions } from 'react-navigation';
 import { ScreenNames } from "./src/data/ScreensWithoutTabBar";
 /*----------------------*/
 /*    Custom Screens    */
@@ -21,244 +20,12 @@ import CustomCourseCategoriesScreen from "./src/containers/screens/CustomCourseC
 import MessagesListScreen from "./src/containers/screens/MessagesListScreen";
 import CustomHomeScreen from "./src/containers/screens/CustomHomeScreen";
 import OnboardingScreen from "./src/containers/screens/OnboardingScreen";
-/*----------------------*/
-/*      Components      */
-/*----------------------*/
-// * LD Content * //
-import LessonTitle from "./src/components/Screens/LessonSingleScreen/LessonTitle";
-import TopicTitle from "./src/components/Screens/LearnTopicSingleScreen/TopicTitle";
-import PrevNextLessons from './src/components/Screens/LessonSingleScreen/PrevNextButtonsLesson';
-import PrevNextTopics from "./src/components/Screens/LearnTopicSingleScreen/PrevNextButtonsTopic";
-import ContentHeadingsBlock from "./src/components/Global/CoreHeadingBlock";
-import ImageComponent from "./src/components/Global/CoreImageBlock";
-import EmbedsComponent from "./src/components/Global/CoreEmbedBlock";
-import LessonActionComponent from "./src/components/Screens/LessonSingleScreen/LessonBottomActionButton";
-import LearnTopicActionComponent from "./src/components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
-import SpacerComponent from "./src/components/Global/CoreSpacerBlock";
-// * LD Courses * //
-import CourseHeaderItems from "./src/components/Screens/CourseSingleScreen/CourseHeaderDetails";
-import CourseActionButton from "@src/components/Course/CourseActionButton";
-// * Index Screen Defaults * //
-import IndexScreenHeaderHeight from "./src/components/Global/AnimatedHeaderHeight";
+
 import FilterBarComponents from "./src/components/Global/ReplaceFilterBarComponent";
 import CustomTabBarBottom from "./src/components/Global/TabBarBottom";
-import AnimatedHeaderContents from "./src/components/Global/AnimatedHeaderContents";
-// * User Profile * //
-import AfterProfileDetails from "./src/components/Screens/ProfileScreen/AfterProfileDetails";
-import ProfileHeaderButton from "./src/components/Screens/ProfileScreen/ProfileHeaderRightButton";
-import UserProfileAvatar from "./src/components/Screens/ProfileScreen/ProfileSubscriberBadge";
-// * Forums * //
-import ForumHeaderButtons from './src/components/Screens/ForumsSingleScreen/ForumHeaderRightButtons';
-import HeaderRightComponent from "./src/components/Screens/TopicsScreen/HeaderRight";
-import ReplyItemAvatar from "./src/components/Screens/TopicsSingleScreen/ReplyItemAvatar";
-// * Misc * //
-import GroupDetailsComponent from "./src/components/Screens/GroupSingleScreen/GroupDetailsComponent";
-import MessageText from "./src/components/Screens/MessagesScreen/MessageContents";
-// * Main List Items * //
-import TopicItem from "./src/components/ListItems/TopicItem";
-import TopicHeaderAvatar from "./src/components/Screens/TopicsSingleScreen/TopicHeaderItem";
-/*----------------------*/
-/*       Reducers       */
-/*----------------------*/
-import hotTopicsReducer from './src/state/reducers/hotTopics.reducer';
-import coursesReducer from './src/state/reducers/courses.reducer';
-import courseCategoriesReducer from './src/state/reducers/courseCategories.reducer';
-import forumsReducer from './src/state/reducers/forums.reducer';
-import welcomeMessagesReducer from "./src/state/reducers/welcomeMessages.reducer";
-import courseIncludesReducer from "./src/state/reducers/courseIncludes.reducer";
+
 
 export const applyCustomCode = externalCodeSetup => {
-
-	//externalCodeSetup.sqliteApi.disableSqlite(); // TEMP Disabled because it breaks items listed on CourseCategorySingleScreen.
-
-	// TODO - would like to alter height of More screen, but it's way complicated...
-	//externalCodeSetup.moreScreenApi.setContainerPaddingTop(props => 0); //88 props.containerPaddingTop
-	//externalCodeSetup.moreScreenApi.setContentInsetTop(props => 0); // 105 props.contentInsetTop
-	//externalCodeSetup.moreScreenApi.setContentOffsetY(props => 0); // -69 props.contentOffsetY
-
-	/*-----------------------------------------------------------------------------------*/
-	/* GLOBAL */
-	/*-----------------------------------------------------------------------------------*/
-
-	// Add To State
-	externalCodeSetup.reduxApi.addReducer(
-		"courseIncludesCache",
-		courseIncludesReducer
-	);
-	externalCodeSetup.reduxApi.addReducer(
-		"welcomeMessagesCache",
-		welcomeMessagesReducer
-	);
-	externalCodeSetup.reduxApi.addReducer(
-		"hotTopicCache",
-		hotTopicsReducer
-	);
-	externalCodeSetup.reduxApi.wrapReducer(
-		"forumsCache",
-		forumsReducer
-	);
-	externalCodeSetup.reduxApi.wrapReducer(
-		"courseCategories",
-		courseCategoriesReducer
-	);
-	externalCodeSetup.reduxApi.wrapReducer(
-		"coursesCache",
-		coursesReducer
-	);
-
-	// Core Block Components
-	externalCodeSetup.blocksApi.addCustomBlockRender("core/heading", (props) => <ContentHeadingsBlock {...props} />);
-	/*if (!isTabletOrIPad())*/ externalCodeSetup.blocksApi.addCustomBlockRender("core/image", (props) => <ImageComponent {...props} />);
-	externalCodeSetup.blocksApi.addCustomBlockRender("core/embed", (props) => <EmbedsComponent {...props} />);
-	externalCodeSetup.blocksApi.addCustomBlockRender("core/spacer", (props) => <SpacerComponent {...props} />);
-	//externalCodeSetup.blocksApi.addCustomBlockRender("core/paragraph", (props) => <ParagraphComponent {...props} />);
-
-	externalCodeSetup.blocksApi.setBlockProps("core/embed", (props) => {
-		const { block } = props;
-		if (block.data.provider === "vimeo" || block.data.provider === "youtube") {
-			return {
-				...props,
-				viewWidth: DEVICE_WIDTH
-			}
-		}
-		return props;
-	});
-
-	// Header Variables
-	externalCodeSetup.indexScreenApiHooks.setHeaderHeight(IndexScreenHeaderHeight);
-	externalCodeSetup.indexScreenApiHooks.setRenderHeaderRight(props => <HeaderRightComponent {...props} />);
-	externalCodeSetup.indexScreenApiHooks.setAnimatedListHeaderTitleComponent(props => <AnimatedHeaderContents {...props} />);
-
-	// Group Details
-	externalCodeSetup.socialGroupSingleApi.setGroupDetailsComponent(GroupDetailsComponent);
-
-
-	/*-----------------------------------------------------------------------------------*/
-	/* FORUMS */
-	/*-----------------------------------------------------------------------------------*/
-
-	// Replace default header right button with: "Create Topic".
-	externalCodeSetup.forumSingleHooksApi.setHeaderRightComponent(props => <ForumHeaderButtons {...props} />)
-
-	externalCodeSetup.topicsApi.setTopicItemComponent(props => <TopicItem {...props} />)
-	externalCodeSetup.topicsApi.setSubFiltersFilter((filters) => {
-		return ["activity", "date", "popular"];
-	})
-
-	externalCodeSetup.topicSingleApi.setTopicItemHeader(props => <TopicHeaderAvatar {...props} />)
-	externalCodeSetup.topicSingleApi.setReplyItemAvatar(props => <ReplyItemAvatar {...props} />)
-
-
-	/*-----------------------------------------------------------------------------------*/
-	/* COURSES */
-	/*-----------------------------------------------------------------------------------*/
-
-	// Add custom course header details
-	externalCodeSetup.courseSingleApi.setCourseHeaderDetails(props => <CourseHeaderItems {...props} />)
-
-	// Remove unnecessary CourseSingleScreen action button.
-	externalCodeSetup.courseSingleApi.setTransformCourseActionButtons((
-		CourseActionBtn,
-		courseVM,
-		t,
-		colors,
-		global,
-		products,
-		navigation,
-		startCourse,
-		continueCourse,
-		priceComponentRender
-	) => {
-
-		const goToProducts = () => {
-			const prods = products[0][1]
-			navigation.dispatch(
-				NavigationActions.navigate({
-					routeName: "ProductsScreen",
-					params: {
-						prods
-					},
-				})
-			)
-		}
-
-		const SubscribeButton =
-			<View style={{
-				paddingHorizontal: 20,
-				paddingVertical: 16,
-				//marginBottom: 30, // bug fix
-				flexDirection: "row",
-				alignItems: "center",
-				justifyContent: "space-between"
-			}}>
-				<CourseActionButton
-					title={"Subscribe for all access!"}
-					onPress={() => goToProducts()}
-					style={{ backgroundColor: colors.headerBg }}
-				/>
-			</View>
-
-		const DefaultButton =
-			<View style={{
-				marginBottom: 0
-			}}>
-				{CourseActionBtn}
-			</View>
-
-		if (!courseVM.hasAccess) return DefaultButton //TODO - change for SubscribeButton
-
-	})
-
-	// Lesson Header & Action Button
-	externalCodeSetup.lessonSingleScreenApi.setLessonTitleComponent(props => <LessonTitle {...props} />);
-	externalCodeSetup.lessonSingleScreenApi.setPrevNextComponent(props => <PrevNextLessons {...props} />);
-	externalCodeSetup.lessonSingleScreenApi.setLessonActionComponent(props => <LessonActionComponent {...props} />);
-
-	// LearnTopic Header & Action Button
-	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicTitleComponent(props => <TopicTitle {...props} />);
-	externalCodeSetup.learnTopicSingleScreenApi.setPrevNextComponent((props) => <PrevNextTopics {...props} />);
-	externalCodeSetup.learnTopicSingleScreenApi.setLearnTopicActionComponent(props => <LearnTopicActionComponent {...props} />);
-
-
-	/*-----------------------------------------------------------------------------------*/
-	/* MORE SCREEN ITEMS */
-	/*-----------------------------------------------------------------------------------*/
-
-	// 3. Settings Menu List. Removes "Export Data"
-	externalCodeSetup.settingsScreenApi.setSettingsListFilter((oldTabs, props) => {
-		return [
-			oldTabs[0],
-			oldTabs[1],
-			oldTabs[2],
-			oldTabs[3],
-			oldTabs[4],
-			oldTabs[5],
-			oldTabs[6],
-			oldTabs[7],
-			//oldTabs[8], // Export Data
-			oldTabs[9],
-			oldTabs[10],
-		]
-	})
-
-
-	// 4. Add headerRight Button On Profile Screen
-	externalCodeSetup.profileScreenHooksApi.setAfterDetailsComponent(AfterProfileDetails) // Adds Gamipress info after profile Header
-	externalCodeSetup.profileScreenHooksApi.setUserAvatar(UserProfileAvatar)
-	externalCodeSetup.profileScreenHooksApi.setHeaderRightComponent(() => <ProfileHeaderButton />)
-	externalCodeSetup.profileScreenHooksApi.setIgnoreTabsFilter((list, isOwnAccount) => [
-		...list,
-		"courses"
-	]);
-
-	externalCodeSetup.messagesSingleScreenApi.setThreadItemText((props) => <MessageText {...props} />);
-
-	/*-----------------------------------------------------------------------------------*/
-	/* BLOG / DAILY CHALLENGES */
-	/*-----------------------------------------------------------------------------------*/
-
-	externalCodeSetup.blogApi.hideSearch();
-	externalCodeSetup.blogSingleApi.setTransformBlogHeaderButtons(() => {return null}); // hide comments icon on blog
 
 
 
