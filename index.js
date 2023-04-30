@@ -1,14 +1,4 @@
 import React from "react";
-import { Platform, View } from "react-native";
-import { DEVICE_WIDTH, GUTTER } from "@src/styles/global";
-import {
-	SAFE_AREA_BOTTOM,
-	IOS_HOME_INDICATOR,
-	LESSON_ACTION_BUTTON_HEIGHT,
-	LESSON_ACTION_BUTTON_TEXT_MARGIN,
-	LESSON_ACTION_BUTTON_ICON_MARGIN
-} from "./src/styles/global";
-import { isTabletOrIPad } from "@src/utils";
 import { NavigationActions } from 'react-navigation';
 /*----------------------*/
 /*      Components      */
@@ -61,58 +51,6 @@ export const applyCustomCode = externalCodeSetup => {
 	// Add custom course header details
 	externalCodeSetup.courseSingleApi.setCourseHeaderDetails(props => <CourseHeaderItems {...props} />)
 
-	// Remove unnecessary CourseSingleScreen action button.
-	externalCodeSetup.courseSingleApi.setTransformCourseActionButtons((
-		CourseActionBtn,
-		courseVM,
-		t,
-		colors,
-		global,
-		products,
-		navigation,
-		startCourse,
-		continueCourse,
-		priceComponentRender
-	) => {
-
-		const goToProducts = () => {
-			const prods = products[0][1]
-			navigation.dispatch(
-				NavigationActions.navigate({
-					routeName: "ProductsScreen",
-					params: {
-						prods
-					},
-				})
-			)
-		}
-
-		const SubscribeButton =
-			<View style={{
-				paddingHorizontal: 20,
-				paddingVertical: 16,
-				//marginBottom: 30, // bug fix
-				flexDirection: "row",
-				alignItems: "center",
-				justifyContent: "space-between"
-			}}>
-				<CourseActionButton
-					title={"Subscribe for all access!"}
-					onPress={() => goToProducts()}
-					style={{ backgroundColor: colors.headerBg }}
-				/>
-			</View>
-
-		const DefaultButton =
-			<View style={{
-				marginBottom: 0
-			}}>
-				{CourseActionBtn}
-			</View>
-
-		if (!courseVM.hasAccess) return DefaultButton //TODO - change for SubscribeButton
-
-	})
 
 	// Lesson Header & Action Button
 	externalCodeSetup.lessonSingleScreenApi.setLessonTitleComponent(props => <LessonTitle {...props} />);
@@ -127,35 +65,6 @@ export const applyCustomCode = externalCodeSetup => {
 
 
 
-	/*-----------------------------------------------------------------------------------*/
-	/* COSMETIC STYLES */
-	/*-----------------------------------------------------------------------------------*/
-
-	externalCodeSetup.cssApi.addGlobalStyle("xProfileItemTitle", { fontSize: 18, paddingBottom: 10 });
-	externalCodeSetup.cssApi.addGlobalStyle("xProfileItemValue", { fontSize: 15 });
-	externalCodeSetup.cssApi.addGlobalStyle("xProfileItemTextArea", { fontSize: 14 });
-	externalCodeSetup.cssApi.addGlobalStyle("localVideoContainer", { borderRadius: 14 }, true);
-	externalCodeSetup.cssApi.addGlobalStyle("localVideoPlayer", { borderRadius: 14 }, true);
-	externalCodeSetup.cssApi.addGlobalStyle("offlineVideoContainer", { borderRadius: 14 }, true);
-	// Lesson Bottom Action Button
-	externalCodeSetup.cssApi.addGlobalStyle("lessonActionButtonContainer", { paddingHorizontal: 0, paddingVertical: 0, marginBottom: -SAFE_AREA_BOTTOM });
-	externalCodeSetup.cssApi.addGlobalStyle("completeLessonButtonW", { borderRadius: 0, height: LESSON_ACTION_BUTTON_HEIGHT });
-	externalCodeSetup.cssApi.addGlobalStyle("completeLessonButton", { marginLeft: 0, marginBottom: Platform.OS === 'ios' ? 15 : 0 });
-	externalCodeSetup.cssApi.addGlobalStyle("completeButton", { marginBottom: LESSON_ACTION_BUTTON_TEXT_MARGIN }); // lesson complete text
-	externalCodeSetup.cssApi.addGlobalStyle("lessonActionCompleteIcon", { marginBottom: LESSON_ACTION_BUTTON_ICON_MARGIN, width: 30, height: 30 });
-	externalCodeSetup.cssApi.addGlobalStyle("lessonButtonLoadingIcon", { marginBottom: IOS_HOME_INDICATOR, left: -5 });
-	// Topic Bottom Action Button
-	externalCodeSetup.cssApi.addGlobalStyle("learnTopicActionButtonContainer", { paddingHorizontal: 0, paddingVertical: 0, marginBottom: -SAFE_AREA_BOTTOM });
-	externalCodeSetup.cssApi.addGlobalStyle("completeTopicButtonW", { borderRadius: 0, height: LESSON_ACTION_BUTTON_HEIGHT });
-	externalCodeSetup.cssApi.addGlobalStyle("completeTopicButton", { marginBottom: LESSON_ACTION_BUTTON_TEXT_MARGIN, fontWeight: '600', }); // topic complete text
-	externalCodeSetup.cssApi.addGlobalStyle("learnTopicActionCompleteIcon", { marginBottom: LESSON_ACTION_BUTTON_ICON_MARGIN, width: 30, height: 30 });
-	externalCodeSetup.cssApi.addGlobalStyle("learnTopicButtonLoadingIcon", { marginBottom: IOS_HOME_INDICATOR, left: -5 });
-	// Lesson Container - For full-width videos
-	//externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: 0 }, true); // For full width Images
-	//externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: 0 }, true); // For full width Images
-	if (isTabletOrIPad()) externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: isTabletOrIPad() ? GUTTER : 0 }, true); // For full width Images
-	if (isTabletOrIPad()) externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: GUTTER }, true); // For full width Images
-	externalCodeSetup.cssApi.addGlobalStyle("videoBlockContainer", { paddingHorizontal: 0, paddingVertical: 10, flex: 0 });
 
 
 	/*-----------------------------------------------------------------------------------*/
