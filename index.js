@@ -1,6 +1,5 @@
 import React from "react";
 import { Platform, View } from "react-native";
-import { DEVICE_WIDTH, GUTTER } from "@src/styles/global";
 import {
 	SAFE_AREA_BOTTOM,
 	IOS_HOME_INDICATOR,
@@ -8,7 +7,6 @@ import {
 	LESSON_ACTION_BUTTON_TEXT_MARGIN,
 	LESSON_ACTION_BUTTON_ICON_MARGIN
 } from "./all/styles/global";
-import { isTabletOrIPad } from "@src/utils";
 import { NavigationActions } from 'react-navigation';
 import { ScreenNames } from "./all/data/ScreensWithoutTabBar";
 /*----------------------*/
@@ -114,16 +112,7 @@ export const applyCustomCode = externalCodeSetup => {
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/spacer", (props) => <SpacerComponent {...props} />);
 	//externalCodeSetup.blocksApi.addCustomBlockRender("core/paragraph", (props) => <ParagraphComponent {...props} />);
 
-	externalCodeSetup.blocksApi.setBlockProps("core/embed", (props) => {
-		const { block } = props;
-		if (block.data.provider === "vimeo" || block.data.provider === "youtube") {
-			return {
-				...props,
-				viewWidth: DEVICE_WIDTH
-			}
-		}
-		return props;
-	});
+
 
 	// Header Variables
 	externalCodeSetup.indexScreenApiHooks.setHeaderHeight(IndexScreenHeaderHeight);
@@ -290,8 +279,7 @@ export const applyCustomCode = externalCodeSetup => {
 	// Lesson Container - For full-width videos
 	//externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: 0 }, true); // For full width Images
 	//externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: 0 }, true); // For full width Images
-	if (isTabletOrIPad()) externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: isTabletOrIPad() ? GUTTER : 0 }, true); // For full width Images
-	if (isTabletOrIPad()) externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: GUTTER }, true); // For full width Images
+
 	externalCodeSetup.cssApi.addGlobalStyle("videoBlockContainer", { paddingHorizontal: 0, paddingVertical: 10, flex: 0 });
 
 
