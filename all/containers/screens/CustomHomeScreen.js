@@ -2,11 +2,11 @@ import React from 'react';
 import HomeContent from '../content/HomeScreenContent';
 import ScreenContainer from '../IndexScreenTemplate';
 import { getCourses } from '../../services/Courses.service';
-import { saveCourses } from '../../../src/state/actions/courses';
+import { saveCourses } from '../../../all/state/actions/courses';
 import { getHotTopics } from '../../services/Hot_Topics.service';
-import { saveHotTopics } from '../../../src/state/actions/hotTopics';
+import { saveHotTopics } from '../../../all/state/actions/hotTopics';
 import { getWelcomeMessages } from '../../services/Welcome_Messages.service';
-import { saveWelcomeMessages } from '../../../src/state/actions/welcomeMessages';
+import { saveWelcomeMessages } from '../../../all/state/actions/welcomeMessages';
 
 const CustomHomeScreen = () => {
     return(

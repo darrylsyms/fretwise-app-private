@@ -5,7 +5,7 @@ import { ItemTitle } from "@src/components/TextComponents";
 import IconButton from "@src/components/IconButton";
 import { useSelector } from 'react-redux';
 import { withNavigation } from 'react-navigation';
-import { formatDateTime } from "../../../src/styles/utils";
+import { formatDateTime } from "../../../all/styles/utils";
 import { isTabletOrIPad } from "@src/utils";
 import { isColorDark } from "@src/utils";
 import Icon from "@src/components/Icon";
