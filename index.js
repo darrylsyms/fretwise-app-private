@@ -1,7 +1,6 @@
 import React from "react";
 
 import { NavigationActions } from 'react-navigation';
-import { ScreenNames } from "./all/data/ScreensWithoutTabBar";
 /*----------------------*/
 /*    Custom Screens    */
 /*----------------------*/
@@ -15,10 +14,6 @@ import { ScreenNames } from "./all/data/ScreensWithoutTabBar";
 import CourseHeaderItems from "./all/components/Screens/CourseSingleScreen/CourseHeaderDetails";
 import CourseActionButton from "@src/components/Course/CourseActionButton";
 // * Index Screen Defaults * //
-import IndexScreenHeaderHeight from "./all/components/Global/AnimatedHeaderHeight";
-import FilterBarComponents from "./all/components/Global/ReplaceFilterBarComponent";
-import CustomTabBarBottom from "./all/components/Global/TabBarBottom";
-import AnimatedHeaderContents from "./all/components/Global/AnimatedHeaderContents";
 // * User Profile * //
 import AfterProfileDetails from "./all/components/Screens/ProfileScreen/AfterProfileDetails";
 import ProfileHeaderButton from "./all/components/Screens/ProfileScreen/ProfileHeaderRightButton";
