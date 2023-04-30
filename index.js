@@ -5,13 +5,7 @@ import { ScreenNames } from "./all/data/ScreensWithoutTabBar";
 /*----------------------*/
 /*    Custom Screens    */
 /*----------------------*/
-import DownloadedCoursesScreen from "@src/containers/DownloadedCoursesScreen";
-import DailyChallengesScreen from './all/containers/screens/DailyChallengesScreen';
-import TopicsScreeen from "./all/containers/screens/TopicsScreen";
-import CustomCourseCategoriesScreen from "./all/containers/screens/CustomCourseCategoriesScreen";
-import MessagesListScreen from "./all/containers/screens/MessagesListScreen";
-import CustomHomeScreen from "./all/containers/screens/CustomHomeScreen";
-import OnboardingScreen from "./all/containers/screens/OnboardingScreen";
+
 /*----------------------*/
 /*      Components      */
 /*----------------------*/
@@ -46,9 +40,7 @@ import ReplyItemAvatar from "./all/components/Screens/TopicsSingleScreen/ReplyIt
 import GroupDetailsComponent from "./all/components/Screens/GroupSingleScreen/GroupDetailsComponent";
 import MessageText from "./all/components/Screens/MessagesScreen/MessageContents";
 // * Main List Items * //
-import BlogItem from "./all/components/ListItems/BlogItem";
-import TopicItem from "./all/components/ListItems/TopicItem";
-import TopicHeaderAvatar from "./all/components/Screens/TopicsSingleScreen/TopicHeaderItem";
+
 /*----------------------*/
 /*       Reducers       */
 /*----------------------*/
