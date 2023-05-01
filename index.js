@@ -15,7 +15,9 @@ import TopicTitle from "./all/components/Screens/LearnTopicSingleScreen/TopicTit
 import PrevNextLessons from './all/components/Screens/LessonSingleScreen/PrevNextButtonsLesson';
 import PrevNextTopics from "./all/components/Screens/LearnTopicSingleScreen/PrevNextButtonsTopic";
 import ContentHeadingsBlock from "./all/components/Global/CoreHeadingBlock";
-
+import LessonActionComponent from "./all/components/Screens/LessonSingleScreen/LessonBottomActionButton";
+import LearnTopicActionComponent from "./all/components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
+import SpacerComponent from "./all/components/Global/CoreSpacerBlock";
 // * LD Courses * //
 import CourseActionButton from "@src/components/Course/CourseActionButton";
 // * Index Screen Defaults * //
