@@ -178,7 +178,56 @@ const CourseHeaderItems = (props) => {
                     ...(shouldShowParticipants && { paddingVertical: 12 })
                 }}
             >
-                
+                {courseVM?.members?.length > 0 &&
+                    shouldShowParticipants && (
+                        <View style={{ ...global.row }}>
+                            {courseVM.members
+                                .map(x => x.member_rest?.avatar?.thumb || "")
+                                .map((url, index) => (
+                                    <AppAvatar
+                                        key={url}
+                                        style={[styles.avatar, { left: index === 0 ? 0 : -10 * index, zIndex: index }]}
+                                        borderRadius={size / 2}
+                                        size={size}
+                                        source={{
+                                            uri: url
+                                        }}
+                                    />
+                                ))}
+                            <Text style={styles.enrolledText}>
+                                {courseVM.enrolledMembers > 2
+                                    ? `+${courseVM.enrolledMembers - 2} ${t("course:enrolled")}`
+                                    : ""}
+                            </Text>
+                        </View>
+                    )}
+                {showIncludesTitle && (
+                    <Text
+                        style={[
+                            global.courseIncludesTitle,
+                            {
+                                marginBottom: 15,
+                                marginTop: courseVM?.members?.length > 0 ? 20 : 0
+                            }
+                        ]}
+                    >
+                        {t("course:includesTitle", { label: labels.course })}
+                    </Text>
+                )}
+                {lCount !== 0 && (
+                    <View style={{ flexDirection: "row" }}>
+                        <Icon
+                            tintColor={colors.descLightTextColor}
+                            icon={require("../../../assets/img/courseHeaderDetails/goal.png")}
+                            styles={{ height: 19, width: 19 }}
+                        />
+                        <Text
+                            style={styles.courseDetailsText}
+                        >
+                            {lCount + tCount + qCount} Steps
+                        </Text>
+                    </View>
+                )}
             </View>
         </>
     );
