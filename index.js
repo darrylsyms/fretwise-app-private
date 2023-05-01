@@ -11,8 +11,10 @@ import { NavigationActions } from 'react-navigation';
 // * LD Content * //
 
 // * LD Courses * //
+import CourseHeaderItems from "./all/components/Screens/CourseSingleScreen/CourseHeaderDetails";
 // * Index Screen Defaults * //
 // * User Profile * //
+import AfterProfileDetails from "./all/components/Screens/ProfileScreen/AfterProfileDetails";
 
 // * Forums * //
 
