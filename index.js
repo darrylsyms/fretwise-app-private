@@ -15,8 +15,7 @@ import CourseHeaderItems from "./all/components/Screens/CourseSingleScreen/Cours
 // * Index Screen Defaults * //
 // * User Profile * //
 import AfterProfileDetails from "./all/components/Screens/ProfileScreen/AfterProfileDetails";
-import ProfileHeaderButton from "./all/components/Screens/ProfileScreen/ProfileHeaderRightButton";
-import UserProfileAvatar from "./all/components/Screens/ProfileScreen/ProfileSubscriberBadge";
+
 // * Forums * //
 
 // * Misc * //
