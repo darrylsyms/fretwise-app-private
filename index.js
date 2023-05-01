@@ -1,7 +1,5 @@
 import React from "react";
 
-import { NavigationActions } from 'react-navigation';
-import { ScreenNames } from "./all/data/ScreensWithoutTabBar";
 /*----------------------*/
 /*    Custom Screens    */
 /*----------------------*/
@@ -10,17 +8,9 @@ import { ScreenNames } from "./all/data/ScreensWithoutTabBar";
 /*      Components      */
 /*----------------------*/
 // * LD Content * //
-import ContentHeadingsBlock from "./all/components/Global/CoreHeadingBlock";
-// * LD Courses * //
-import CourseActionButton from "@src/components/Course/CourseActionButton";
-// * Index Screen Defaults * //
-
-// * Forums * //
-
-// * Misc * //
 
 // * Main List Items * //
-
+import BlogItem from "./all/components/ListItems/BlogItem";
 /*----------------------*/
 /*       Reducers       */
 /*----------------------*/
