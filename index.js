@@ -12,7 +12,6 @@ import { NavigationActions } from 'react-navigation';
 
 // * LD Courses * //
 import CourseHeaderItems from "./all/components/Screens/CourseSingleScreen/CourseHeaderDetails";
-import CourseActionButton from "@src/components/Course/CourseActionButton";
 // * Index Screen Defaults * //
 // * User Profile * //
 import AfterProfileDetails from "./all/components/Screens/ProfileScreen/AfterProfileDetails";
