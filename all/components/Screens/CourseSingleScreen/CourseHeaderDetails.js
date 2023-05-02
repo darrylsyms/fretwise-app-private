@@ -214,34 +214,6 @@ const CourseHeaderItems = (props) => {
                         {t("course:includesTitle", { label: labels.course })}
                     </Text>
                 )}
-                {lCount !== 0 && (
-                    <View style={{ flexDirection: "row" }}>
-                        <Icon
-                            tintColor={colors.descLightTextColor}
-                            icon={require("../../../assets/img/courseHeaderDetails/goal.png")}
-                            styles={{ height: 19, width: 19 }}
-                        />
-                        <Text
-                            style={styles.courseDetailsText}
-                        >
-                            {lCount + tCount + qCount} Steps
-                        </Text>
-                    </View>
-                )}
-                {/*<CourseIncludesData />*/}
-                {courseVM.certificate?.available && (
-                    <View style={{ flexDirection: "row" }}>
-                        <Icon
-                            tintColor={colors.descLightTextColor}
-                            icon={require("@src/assets/img/small-certificate.png")}
-                        />
-                        <Text
-                            style={styles.courseDetailsText}
-                        >
-                            {t("course:certificate", { label: labels.course })}
-                        </Text>
-                    </View>
-                )}
             </View>
         </>
     );
