@@ -230,10 +230,6 @@ const CourseHeaderItems = (props) => {
                 )}
                 {courseVM.certificate?.available && (
                     <View style={{ flexDirection: "row" }}>
-                        <Icon
-                            tintColor={colors.descLightTextColor}
-                            icon={require("@src/assets/img/small-certificate.png")}
-                        />
                         <Text
                             style={styles.courseDetailsText}
                         >
