@@ -10,7 +10,7 @@ import React from "react";
 // * LD Content * //
 
 // * Main List Items * //
-import CourseHeaderItems from "./all/components/Screens/CourseSingleScreen/CourseHeaderDetails";
+import BlogItem from "./all/components/ListItems/BlogItem";
 /*----------------------*/
 /*       Reducers       */
 /*----------------------*/
