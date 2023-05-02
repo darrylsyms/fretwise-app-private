@@ -95,18 +95,6 @@ const BlogItem = props => {
                            <Image source={require('../../assets/img/metadata/blog-date.png')} style={{ marginRight: 6, height: 14, width: 14 }} />
                            <Text style={global.itemMeta}>{formatDateTime(item.date_gmt)}</Text>
                            {item.allowComments && <View style={global.dotSep} />}
-                           {item.allowComments && (
-                              <IconButton
-                                 icon={require("@src/assets/img/activity-actions/post-comment.png")}
-                                 tintColor={colors.textIconColor}
-                                 style={{ height: 17, width: 17, marginLeft: -4 }}
-                                 renderText={() => (
-                                    <Text style={[{ marginLeft: 6 }, global.activityCount]}>
-                                       {item.commentCount}
-                                    </Text>
-                                 )}
-                              />
-                           )}
                         </View>
                      </View>
                   </View>
