@@ -57,7 +57,7 @@ const LearnTopicActionComponent = ({
                 {topicVM.completed && (
                   <Icon
                     webIcon={""}
-                    icon={require("@src/assets/img/completed-course.png")}
+                    icon={{fontIconName: "check", weight: 300}} //completed-course.pngx
                     styles={global.learnTopicActionCompleteIcon}
                   />
                 )}

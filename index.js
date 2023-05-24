@@ -31,7 +31,7 @@ import PrevNextLessons from './src/components/Screens/LessonSingleScreen/PrevNex
 import PrevNextTopics from "./src/components/Screens/LearnTopicSingleScreen/PrevNextButtonsTopic";
 import ContentHeadingsBlock from "./src/components/Global/CoreHeadingBlock";
 import ImageComponent from "./src/components/Global/CoreImageBlock";
-import EmbedsComponent from "./src/components/Global/CoreEmbedBlock";
+//import EmbedsComponent from "./src/components/Global/CoreEmbedBlock";
 import LessonActionComponent from "./src/components/Screens/LessonSingleScreen/LessonBottomActionButton";
 import LearnTopicActionComponent from "./src/components/Screens/LearnTopicSingleScreen/TopicBottomActionButton";
 import SpacerComponent from "./src/components/Global/CoreSpacerBlock";
@@ -110,7 +110,7 @@ export const applyCustomCode = externalCodeSetup => {
 	// Core Block Components
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/heading", (props) => <ContentHeadingsBlock {...props} />);
 	/*if (!isTabletOrIPad())*/ externalCodeSetup.blocksApi.addCustomBlockRender("core/image", (props) => <ImageComponent {...props} />);
-	externalCodeSetup.blocksApi.addCustomBlockRender("core/embed", (props) => <EmbedsComponent {...props} />);
+	//externalCodeSetup.blocksApi.addCustomBlockRender("core/embed", (props) => <EmbedsComponent {...props} />);
 	externalCodeSetup.blocksApi.addCustomBlockRender("core/spacer", (props) => <SpacerComponent {...props} />);
 	//externalCodeSetup.blocksApi.addCustomBlockRender("core/paragraph", (props) => <ParagraphComponent {...props} />);
 
@@ -292,7 +292,7 @@ export const applyCustomCode = externalCodeSetup => {
 	//externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: 0 }, true); // For full width Images
 	if (isTabletOrIPad()) externalCodeSetup.cssApi.addGlobalStyle("lessonSingleScreenBlockContainer", { paddingHorizontal: isTabletOrIPad() ? GUTTER : 0 }, true); // For full width Images
 	if (isTabletOrIPad()) externalCodeSetup.cssApi.addGlobalStyle("learnTopicSingleScreenBlockContainer", { paddingHorizontal: GUTTER }, true); // For full width Images
-	externalCodeSetup.cssApi.addGlobalStyle("videoBlockContainer", { paddingHorizontal: 0, paddingVertical: 10, flex: 0 });
+	externalCodeSetup.cssApi.addGlobalStyle("videoBlockContainer", { paddingHorizontal: 0, paddingVertical: 0, flex: 0, margin: 0 });
 
 
 	/*-----------------------------------------------------------------------------------*/

@@ -58,7 +58,7 @@ const LessonActionComponent = ({
                                 {lesson.completed && (
                                     <Icon
                                         webIcon={""}
-                                        icon={require("@src/assets/img/completed-course.png")}
+                                        icon={{fontIconName: "check", weight: 300}} //completed-course.png
                                         styles={global.lessonActionCompleteIcon}
                                     />
                                 )}

@@ -97,7 +97,7 @@ const BlogItem = props => {
                            {item.allowComments && <View style={global.dotSep} />}
                            {item.allowComments && (
                               <IconButton
-                                 icon={require("@src/assets/img/activity-actions/post-comment.png")}
+                                 icon={{fontIconName: "comment-square-dots", weight: 300}} //post-comment.png
                                  tintColor={colors.textIconColor}
                                  style={{ height: 17, width: 17, marginLeft: -4 }}
                                  renderText={() => (
